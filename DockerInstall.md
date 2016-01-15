@@ -1,6 +1,6 @@
-# Installing Crypti (using Docker)
+# Installing Lisk (using Docker)
 
-This tutorial describes how to install the Crypti - Delegate and Developer Edition, using a Docker based container.
+This tutorial describes how to install the Lisk using a Docker based container.
 
 ## 1. Install Docker
 
@@ -24,40 +24,40 @@ To do so, please use the following credentials:
 
 Log onto your Ubuntu based server and enter the following commands:
 
-**NOTE:** The following is only applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
+**NOTE:** The following is applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
 
 ```
-curl -sL http://downloads.cryptichain.me/setup_docker | sudo -E bash -
+curl -sL http://downloads.lisk.io/scripts/setup_docker | sudo -E bash -
 sudo apt-get install -y docker-engine
 ```
 
-## 2. Install Crypti
+## 2. Install Lisk
 
-To install and run the latest version of Crypti - Delegate and Developer Edition, simply run the following commands:
+To install and run the latest version of Lisk - Delegate and Developer Edition, simply run the following commands:
 
 Download the latest docker image:
 
 ```
-docker pull cryptichain/node
+docker pull lisk/node
 ```
 
 Install the docker image (executed only once per installation):
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8040:8040 cryptichain/node
+docker run -d --restart=always -p 0.0.0.0:8080:8080 lisk/node
 ```
 
 **NOTE:** On Windows or Mac OS X, these commands are issued from within the Docker Quickstart Terminal.
 
-Upon successful completion, you will have a running Crypti node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
+Upon successful completion, you will have a running Lisk node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
 
-To access the Crypti web client, open: [http://192.168.99.100:8040/](http://192.168.99.100:8040/), or replace **192.168.99.100** with your public IP address.
+To access the Lisk web client, open: [http://192.168.99.100:8080/](http://192.168.99.100:8080/), or replace **192.168.99.100** with your public IP address.
 
-The Crypti web client should launch successfully.
+The Lisk web client should launch successfully.
 
-## 3. Update Crypti
+## 3. Update Lisk
 
-To update to the latest version of Crypti - Delegate and Developer Edition, simply run the following commands:
+To update to the latest version of Lisk - Delegate and Developer Edition, simply run the following commands:
 
 **WARNING:** The provided instructions will **remove the previous container** and **create a new one**. Please be sure to backup any data before proceeding. See: `docker cp --help` for more information on how to copy files from the container to the host machine.
 
@@ -82,13 +82,13 @@ docker rm container_id
 Download the latest docker image:
 
 ```
-docker pull cryptichain/node
+docker pull lisk/node
 ```
 
 Install the docker image (executed only once per installation):
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8040:8040 cryptichain/node
+docker run -d --restart=always -p 0.0.0.0:8080:8080 lisk/node
 ```
 
 Remove any dangling images:
@@ -170,7 +170,7 @@ Restart the docker container (replace **container_id** with your own id):
 docker restart container_id
 ```
 
-Then, open the Crypti web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
+Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
 
 ## 5. Enable Secure Sockets Layer (SSL)
 
@@ -231,7 +231,7 @@ docker commit container_id secure_node
 Run the new docker image:
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8040:8040 0.0.0.0:443:443 secure_node
+docker run -d --restart=always -p 0.0.0.0:8080:8080 0.0.0.0:443:443 secure_node
 ```
 
 Open the web client. You should now have an SSL enabled connection.
@@ -309,8 +309,8 @@ If you encounter an error while downloading the docker image, using the `docker 
 Please use the following alternative download method:
 
 ```
-curl -o docker_image.tar.gz http://downloads.cryptichain.me/docker_image.tar.gz
+curl -o docker_image.tar.gz http://downloads.lisk.io/docker_image.tar.gz
 zcat docker_image.tar.gz | docker load
 ```
 
-Then proceed with the remainder of the [installation instructions](DockerInstall.md#2-install-crypti).
+Then proceed with the remainder of the [installation instructions](DockerInstall.md#2-install-lisk).
