@@ -1,6 +1,6 @@
-# Installing Crypti (from Binaries)
+# Installing Lisk (from Binaries)
 
-This tutorial describes how to install the Crypti - Delegate and Developer Edition, using pre-built binary packages.
+This tutorial describes how to install the Lisk using pre-built binary packages.
 
 To complete the installation, you will need to have `bash`, `wget` and `unzip` installed. The majority of operating systems have these installed by default.
 
@@ -23,9 +23,9 @@ uname -sm
 
 The resulting output, should tell you if your machine is running on a supported operating system and architecture.
 
-If your architecture is not supported yet, you can try building your own packages using the [crypti-build](https://github.com/karmacoma/crypti-build) automated package building tool.
+If your architecture is not supported yet, you can try building your own packages using the [lisk-build](https://github.com/LiskHQ/lisk-build) automated package building tool.
 
-## 2. Download Crypti
+## 2. Download Lisk
 
 Follow the relevant download instructions for your selected platform as listed below.
 
@@ -34,44 +34,44 @@ Follow the relevant download instructions for your selected platform as listed b
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-Linux-x86_64.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-Linux-x86_64.zip
+  unzip lisk-0.1.0-Linux-x86_64.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-Linux-x86_64
+  cd lisk-0.1.0-Linux-x86_64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (i686)
 
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-Linux-i686.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-Linux-i686.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-Linux-i686.zip
+  unzip lisk-0.1.0-Linux-i686.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-Linux-i686
+  cd lisk-0.1.0-Linux-i686
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (armv6l)
 
@@ -80,22 +80,22 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-Linux-armv6l.zip
+  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-Linux-armv6l.zip
+  unzip lisk-0.1.0-Linux-armv6l.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-Linux-armv6l
+  cd lisk-0.1.0-Linux-armv6l
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (armv7l)
 
@@ -104,91 +104,91 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-Linux-armv7l.zip
+  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-Linux-armv7l.zip
+  unzip lisk-0.1.0-Linux-armv7l.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-Linux-armv7l
+  cd lisk-0.1.0-Linux-armv7l
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Darwin (x86_64)
 
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-Darwin-x86_64.zip
+  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-Darwin-x86_64.zip
+  unzip lisk-0.1.0-Darwin-x86_64.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-Darwin-x86_64
+  cd lisk-0.1.0-Darwin-x86_64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### FreeBSD (amd64)
 
 1. Download the archive:
 
   ```
-  wget http://downloads.cryptichain.me/crypti-0.5.4-FreeBSD-amd64.zip
+  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
 
   ```
-  unzip crypti-0.5.4-FreeBSD-amd64.zip
+  unzip lisk-0.1.0-FreeBSD-amd64.zip
   ```
 
 3. Change directory:
 
   ```
-  cd crypti-0.5.4-FreeBSD-amd64
+  cd lisk-0.1.0-FreeBSD-amd64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Crypti](#3-start-crypti).
+4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
-## 3. Start Crypti
+## 3. Start Lisk
 
-To start crypti, simply run the following command from within the current directory:
+To start lisk, simply run the following command from within the current directory:
 
 ```
-bash crypti.sh autostart
+bash lisk.sh autostart
 ```
 
-On the first invocation of this command: Crypti will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
+On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
-To access the Crypti web client, open: [http://localhost:8040/](http://localhost:8040/), or replace **localhost** with your public IP address.
+To access the Lisk web client, open: [http://localhost:8080/](http://localhost:8080/), or replace **localhost** with your public IP address.
 
-The Crypti web client should launch successfully.
+The Lisk web client should launch successfully.
 
 ## 4. Enable Forging
 
-If you are running your node from a local machine, you can enable forging through the web client, without further interruption. **NOTE:** Should the Crypti node or machine need to be restarted, you will need to re-enable forging again.
+If you are running your node from a local machine, you can enable forging through the web client, without further interruption. **NOTE:** Should the Lisk node or machine need to be restarted, you will need to re-enable forging again.
 
 If your node is running on a remote machine, or if you want to keep forging persistently enabled, you will need to follow the below instructions.
 
-Stop the running Crypti node:
+Stop the running Lisk node:
 
 ```
-bash crypti.sh stop
+bash lisk.sh stop
 ```
 
 Open config.json:
@@ -234,22 +234,22 @@ To set 2 accounts to forge on a single node, enter both account passphrases like
 
 After you have typed in your passphrase. Hit: `Ctrl+ X` Then: `Y`
 
-Start Crypti:
+Start Lisk:
 
 ```
-bash crypti.sh start
+bash lisk.sh start
 ```
 
-Then, open the Crypti web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
+Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
 
 ## 5. Enable Secure Sockets Layer (SSL)
 
 **NOTE:** To complete this step you require a signed certificate (from a CA) and a public and private key pair.
 
-Stop the running Crypti node:
+Stop the running Lisk node:
 
 ```
-bash crypti.sh stop
+bash lisk.sh stop
 ```
 
 Open config.json:
@@ -274,52 +274,52 @@ Arrow down until you find the following section:
 
 After you are done, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
 
-**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must start Crypti with admin rights:
+**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must start Lisk with admin rights:
 
 ```
-sudo bash crypti.sh start
+sudo bash lisk.sh start
 ```
 
-If the port is above 1023, you can start Crypti normally:
+If the port is above 1023, you can start Lisk normally:
 
 ```
-bash crypti.sh start
+bash lisk.sh start
 ```
 
 Open the web client. You should now have an SSL enabled connection.
 
 ## 6. Available Commands
 
-Listed below, are the available commands which can be used to manage your Crypti node.
+Listed below, are the available commands which can be used to manage your Lisk node.
 
-To check the status of crypti:
-
-```
-bash crypti.sh status
-```
-
-To monitor the log file of crypti:
+To check the status of lisk:
 
 ```
-bash crypti.sh logs
+bash lisk.sh status
 ```
 
-To stop/restart/start crypti:
+To monitor the log file of lisk:
 
 ```
-bash crypti.sh stop
-bash crypti.sh start
-bash crypti.sh restart
+bash lisk.sh logs
 ```
 
-To automatically start crypti when booting the machine:
+To stop/restart/start lisk:
 
 ```
-bash crypti.sh autostart
+bash lisk.sh stop
+bash lisk.sh start
+bash lisk.sh restart
+```
+
+To automatically start lisk when booting the machine:
+
+```
+bash lisk.sh autostart
 ```
 
 To replace the blockchain with a new snapshot:
 
 ```
-bash crypti.sh rebuild
+bash lisk.sh rebuild
 ```
