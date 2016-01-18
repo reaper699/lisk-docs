@@ -80,7 +80,7 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 1. Download the archive:
 
   ```
-  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Linux-armv6l.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
@@ -104,7 +104,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```
-  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Linux-armv7l.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
@@ -126,7 +126,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```
-  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-Darwin-x86_64.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
@@ -148,7 +148,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```
-  wget http://downloads.lisk.io//0.1.x/lisk-0.1.0-FreeBSD-amd64.zip
+  wget http://downloads.lisk.io/0.1.x/lisk-0.1.0-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
