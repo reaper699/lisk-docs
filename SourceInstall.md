@@ -14,7 +14,7 @@ sudo apt-get install curl build-essential python wget unzip
 ## 2. Install SQLite3
 
 ```
-curl -sL http://downloads.lisk.io/scripts/setup_sqlite3 | sudo -E bash -
+curl -sL https://downloads.lisk.io/scripts/setup_sqlite3 | sudo -E bash -
 sudo apt-get install -y sqlite3
 ```
 
@@ -48,7 +48,7 @@ npm -v
 Download the Lisk archive:
 
 ```
-wget http://downloads.lisk.io/0.1.x/0.1.0.zip
+wget https://downloads.lisk.io/0.1.x/0.1.0.zip
 ```
 
 Unzip the archive:
@@ -76,7 +76,7 @@ This is a specialized version of Node.js used to execute dapps within a virtual 
 Download the Lisk Node archive:
 
 ```
-wget http://downloads.lisk.io/lisk-node.zip
+wget https://downloads.lisk.io/lisk-node.zip
 ```
 
 Unzip the archive:
@@ -98,7 +98,7 @@ nodejs/node -v
 Download the blockchain archive:
 
 ```
-wget http://downloads.lisk.io/blockchain.db.zip
+wget https://downloads.lisk.io/blockchain.db.zip
 ```
 
 Unzip the archive:

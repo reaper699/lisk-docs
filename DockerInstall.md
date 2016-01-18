@@ -27,7 +27,7 @@ Log onto your Ubuntu based server and enter the following commands:
 **NOTE:** The following is applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
 
 ```
-curl -sL http://downloads.lisk.io/scripts/setup_docker | sudo -E bash -
+curl -sL https://downloads.lisk.io/scripts/setup_docker | sudo -E bash -
 sudo apt-get install -y docker-engine
 ```
 
@@ -309,7 +309,7 @@ If you encounter an error while downloading the docker image, using the `docker 
 Please use the following alternative download method:
 
 ```
-curl -o docker_image.tar.gz http://downloads.lisk.io/docker_image.tar.gz
+curl -o docker_image.tar.gz https://downloads.lisk.io/docker_image.tar.gz
 zcat docker_image.tar.gz | docker load
 ```
 
