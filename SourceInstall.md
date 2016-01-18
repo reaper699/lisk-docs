@@ -48,7 +48,7 @@ npm -v
 Download the Lisk archive:
 
 ```
-wget https://downloads.lisk.io/0.1.x/0.1.0.zip
+wget https://downloads.lisk.io/lisk/main/0.1.0.zip
 ```
 
 Unzip the archive:
