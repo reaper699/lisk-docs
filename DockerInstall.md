@@ -309,8 +309,8 @@ If you encounter an error while downloading the docker image, using the `docker 
 Please use the following alternative download method:
 
 ```
-curl -o docker_image.tar.gz https://downloads.lisk.io/docker_image.tar.gz
-zcat docker_image.tar.gz | docker load
+curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk-docker.tar.gz
+zcat lisk-docker.tar.gz | docker load
 ```
 
 Then proceed with the remainder of the [installation instructions](DockerInstall.md#2-install-lisk).
