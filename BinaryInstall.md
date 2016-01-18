@@ -175,7 +175,7 @@ bash lisk.sh autostart
 
 On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
-To access the Lisk web client, open: [http://localhost:8080/](http://localhost:8080/), or replace **localhost** with your public IP address.
+To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/), or replace **localhost** with your public IP address.
 
 The Lisk web client should launch successfully.
 

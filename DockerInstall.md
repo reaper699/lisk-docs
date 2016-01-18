@@ -44,14 +44,14 @@ docker pull lisk/node
 Install the docker image (executed only once per installation):
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8080:8080 lisk/node
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/node
 ```
 
 **NOTE:** On Windows or Mac OS X, these commands are issued from within the Docker Quickstart Terminal.
 
 Upon successful completion, you will have a running Lisk node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
 
-To access the Lisk web client, open: [http://192.168.99.100:8080/](http://192.168.99.100:8080/), or replace **192.168.99.100** with your public IP address.
+To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/), or replace **192.168.99.100** with your public IP address.
 
 The Lisk web client should launch successfully.
 
@@ -88,7 +88,7 @@ docker pull lisk/node
 Install the docker image (executed only once per installation):
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8080:8080 lisk/node
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/node
 ```
 
 Remove any dangling images:
@@ -231,7 +231,7 @@ docker commit container_id secure_node
 Run the new docker image:
 
 ```
-docker run -d --restart=always -p 0.0.0.0:8080:8080 0.0.0.0:443:443 secure_node
+docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 secure_node
 ```
 
 Open the web client. You should now have an SSL enabled connection.

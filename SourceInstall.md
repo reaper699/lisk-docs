@@ -141,7 +141,7 @@ You will see list of working Node.js processes with logs, process ids and indexe
 
 Verify that Lisk has started without any errors and synchronized with the db.
 
-After it starts, open: [http://localhost:8080/](http://localhost:8080/), or replace **localhost** with your public IP address.
+After it starts, open: [http://localhost:8000/](http://localhost:8000/), or replace **localhost** with your public IP address.
 
 The Lisk web client should launch successfully.
 
