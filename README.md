@@ -6,7 +6,7 @@ Welcome to the Lisk documentation. Please note this documentation is aimed speci
 
 Lisk is a decentralized application platform and crypto-currency, which offers an all round solution for Node.js and JavaScript developers to deploy their own decentralized applications (dapps).
 
-For more information please read our [white paper](https://github.com/LiskHQ/lisk-whitepaper).
+For more information please read our [white paper](/documentation?i=lisk-whitepaper/LiskWhitepaper).
 
 ## Node Installation
 
