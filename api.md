@@ -409,11 +409,77 @@ GET `/api/blocks/get?id=id`
 }
 ```
 
+### Get blocks
+Get all blocks.
 
+GET `/api/blocks?generatorPublicKey=generatorPublicKey&height=height&previousBlock=previousBlock&totalAmount=totalAmount&totalFee=totalFee&limit=limit&offset=offset&orderBy=orderBy`
 
+All parameters joins by OR.
 
+Example:  
+`/api/blocks?height=100&totalAmount=10000` looks like: height=100 OR totalAmount=10000
 
+- totalFee: total fee of block. (Integer)
+- totalAmount: total amount of block. (Integer)
+- previousBlock: previous block of need block. (String)
+- height: height of block. (Integer)
+- generatorPublicKey: generator id of block in hex. (String)
+- limit: limit of blocks to add to response. Default to 20. (Integer)
+- offset: offset to load blocks. (Integer)
+- orderBy: field name to order by. Format: fieldname:orderType. Example: height:desc, timestamp:asc (String)
 
+**Response**
+```
+{
+  "success": true,
+  "blocks": [
+    "array of blocks"
+  ]
+}
+```
+
+### Get blockchain fee percent
+
+GET `/api/blocks/getFee`
+
+**Response**
+```
+{
+  "success": true,
+  "fee": "fee percent"
+}
+```
+
+### Get blockchain height
+Get blockchain height.
+
+GET `/api/blocks/getHeight`
+
+**Response**
+```
+{
+  "success": true,
+  "height": "Height of blockchain. Integer"
+}
+```
+
+### Get forged by account
+Get amount forged by account.
+
+GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPublicKey`
+
+- generatorPublicKey: generator id of block in hex. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "sum": "Forged amount. Integer"
+}
+```
+
+## Signatures
+Blocks manage API.
 
 
 
