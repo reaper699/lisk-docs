@@ -48,19 +48,19 @@ npm -v
 Download the Lisk archive:
 
 ```text
-wget https://downloads.lisk.io/lisk/main/0.1.0.zip
+wget https://downloads.lisk.io/lisk/main/0.1.1.zip
 ```
 
 Unzip the archive:
 
 ```text
-unzip 0.1.0.zip
+unzip 0.1.1.zip
 ```
 
 Change directory:
 
 ```text
-cd 0.1.0
+cd 0.1.1
 ```
 
 Install node modules:
