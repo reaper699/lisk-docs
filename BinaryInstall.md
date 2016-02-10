@@ -34,19 +34,19 @@ Follow the relevant download instructions for your selected platform as listed b
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-Linux-x86_64.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-Linux-x86_64.zip
+  unzip lisk-0.1.1-Linux-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-Linux-x86_64
+  cd lisk-0.1.1-Linux-x86_64
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
@@ -56,19 +56,19 @@ Follow the relevant download instructions for your selected platform as listed b
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-Linux-i686.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-i686.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-Linux-i686.zip
+  unzip lisk-0.1.1-Linux-i686.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-Linux-i686
+  cd lisk-0.1.1-Linux-i686
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
@@ -80,19 +80,19 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-Linux-armv6l.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-Linux-armv6l.zip
+  unzip lisk-0.1.1-Linux-armv6l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-Linux-armv6l
+  cd lisk-0.1.1-Linux-armv6l
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
@@ -104,19 +104,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-Linux-armv7l.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-Linux-armv7l.zip
+  unzip lisk-0.1.1-Linux-armv7l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-Linux-armv7l
+  cd lisk-0.1.1-Linux-armv7l
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
@@ -126,19 +126,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-Darwin-x86_64.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-Darwin-x86_64.zip
+  unzip lisk-0.1.1-Darwin-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-Darwin-x86_64
+  cd lisk-0.1.1-Darwin-x86_64
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
@@ -148,19 +148,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 1. Download the archive:
 
   ```text
-  wget https://downloads.lisk.io/lisk/main/lisk-0.1.0-FreeBSD-amd64.zip
+  wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.0-FreeBSD-amd64.zip
+  unzip lisk-0.1.1-FreeBSD-amd64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.0-FreeBSD-amd64
+  cd lisk-0.1.1-FreeBSD-amd64
   ```
 
 4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
