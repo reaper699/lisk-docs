@@ -481,23 +481,624 @@ GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPubli
 ## Signatures
 Blocks manage API.
 
+### Get signature
+Get second signature of account.
 
+GET `/api/signatures/get?id=id`
 
+- id: Id of signature. (String)
 
+**Response**
+```
+{
+    "success" : true,
+    "signature" : {
+        "id" : "Id. String",
+        "timestamp" : "TimeStamp. Integer",
+        "publicKey" : "Public key of signature. hex",
+        "generatorPublicKey" : "Public Key of Generator. hex",
+        "signature" : [array],
+        "generationSignature" : "Generation Signature"
+    }
+}
+```
 
+### Add second signature
+Add second signature to account.
 
+PUT `/api/signatures`
 
+**Request**
+```
+{
+  "secret": "secret key of account",
+  "secondsecret": "second key of account",
+  "publicKey": "optional, to verify valid secret key and account"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "id of transaction with new signature",
+  "publicKey": "Public key of signature. hex"
+}
+```
 
+## Delegates
+Delegates API.
 
+### Enable delegate on account
+Calls for delegates functional.
 
+PUT `/api/delegates`
 
+**Request**
+```
+{
+  "secret": "Secret key of account",
+  "secondSecret": "Second secret of account",
+  "username": "Username of delegate. String from 1 to 20 characters."
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transaction": "transaction object"
+}
+```
 
+### Get delegates
+Get delegates list.
 
+GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 
+- limit: Limit to show. Integer. Maximum is 100. (Integer)
+- offset: Offset (Integer)
+- orderBy: Order by field (String)
 
+**Response**
+```
+{
+  "success": true,
+  "delegates": "delegates objects array"
+}
+```
 
+### Get delegate
+Get delegate by transaction id.
 
+GET `/api/delegates/get?id=transactionId`
 
+- transactionId: Id of transaction where delegated was putted. (String)
 
+**Response**
+```
+{
+    "success": true,
+    "delegate": {
+        "username": "username of delegate",
+        "transactionId": "transaction id",
+        "votes": "amount of stake voted for this delegate"
+}
+```
 
+### Get votes of account
+Get votes by account address.
 
+GET `/api/accounts/delegates/?address=address`
+
+- address: Address of account. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "delegates": "array of delegates"
+}
+```
+
+### Get voters
+Get voters of delegate.
+
+GET `/api/delegates/voters?publicKey=publicKey`
+
+- publicKey: Public key of delegate. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "accounts": [
+    "array of accounts who vote for delegate"
+  ]
+}
+```
+
+### Enable forging on delegate
+Enable forging
+
+POST `/api/delegates/forging/enable`
+
+**Request**
+```
+{
+  "secret": "secret key of delegate account"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "address": "address"
+}
+```
+
+### Disable forging on delegate
+Disable forging
+
+POST `/api/delegates/forging/disable`
+
+**Request**
+```
+{
+  "secret": "secret key of delegate account"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "address": "address"
+}
+```
+
+## Messages
+Messages API.
+
+### Send message
+Send message to recipient.
+
+PUT `/api/messages`
+
+**Request**
+```
+{
+    "recipientId" : "id of recipient. String. Optional.",
+    "encrypt" : "encrypt message or not encrypt. Boolean. Default to false. If equal true need to provide recipient public key.",
+    "recipientPublicKey" : "Public key of recipient account. Required if encrypt == true. String."
+    "message" : "Message to send. From 1 to 140 characters. Required",
+    "secret" : "Secret passphrase of your account. String. Required",
+    "secondSecret": "Second public key if using. String. ",
+    "publicKey": "Your public key to verify sender. String, Hex. Optional"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "Id of transaction."
+}
+```
+
+## Usernames
+Usernames API
+
+### Register username
+Register username.
+
+PUT `/api/accounts/username`
+
+**Request**
+```
+{
+  "secret": "Secret passphrase of your account. String. Required",
+  "secondSecret": "Second public key if using. String. ",
+  "publicKey": "Your public key to verify sender. String, Hex. Optional",
+  "username": "Username of delegate. String from 1 to 20 characters."
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "Id of transaction."
+}
+```
+
+## Contacts
+Usernames API
+
+### Add contact
+Add contact
+
+PUT `/api/contacts`
+
+**Request**
+```
+{
+  "secret": "Secret passphrase of your account. String. Required",
+  "secondSecret": "Second public key if using. String. ",
+  "publicKey": "Your public key to verify sender. String, Hex. Optional",
+  "following": "Address or username of account to follow. String. Required"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "Id of transaction."
+}
+```
+
+### Get contacts
+Get contacts of account by public key.
+
+GET `/api/contacts/?publicKey=publicKey`
+
+- publicKey: Public key of account. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "following": "array of you following accounts",
+  "followers": "array of your followers"
+}
+```
+
+### Get unconfirmed contacts
+Get unconfirmed contacts of account by public key.
+
+GET `/api/contacts/unconfirmed?publicKey=publicKey`
+
+- publicKey: Public key of account. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "contacts": [
+    "array of contacts transactions"
+  ]
+}
+```
+
+## Dapps
+Dapp API.
+
+### Dapps
+Register dapp.
+
+PUT `/api/dapps`
+
+**Request**
+```
+{
+  "secret": "Secret of account. String. Required",
+  "secondSecret": "Second secret of account. String. Optional",
+  "publicKey": "Public key to verify sender secret key. Hex. Optional",
+  "category": "Category of DApp. Integer. Required",
+  "name": "Name of DApp. String. Required",
+  "description": "Description of DApp. String. Optional",
+  "tags": "Tags of DApp. String. Optional",
+  "type": "Type of DApp, now supported only 0 type. Integer. Required",
+  "siaAscii": "ASCII code of sia shared file. String. Optional",
+  "git": "Link to git repository. String. Optional",
+  "icon": "Link to icon file. PNG and JPG/JPEG supported. String. Optional",
+  "siaIcon": "ASCII code of sia shared icon file. String. Optional"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "id of transaction"
+}
+```
+
+### Get dapps
+Get specifc dapps.
+
+GET `/api/dapps?category=category&name=name&type=type&git=git&siaAscii=siaAscii&siaIcon=siaIcon&icon=icon&limit=limit&offset=offset&orderBy=orderBy`
+
+- category: Category of DApp. (Integer)
+- name: Name of DApp. (String)
+- type: Type of DApp. (Integer)
+- git: Git repository link to DApp. (String)
+- limit: Limit of dapps in query. Maximum is 100. (Integer)
+- offset: Offset of dapps in query. (Integer)
+- orderBy: Order by field. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "dapps": "Array of dapps"
+}
+```
+
+### Get dapp
+Get a specifc dapp.
+
+GET `/api/dapps/get?id=id`
+
+- id: Id of dapp
+
+**Response**
+```
+{
+  "success": true,
+  "dapp": "dapp"
+}
+```
+
+### Search dapp store
+Get specifc dapps.
+
+GET `/api/dapps/search?q=q&category=category&installed=installed`
+
+- q: Query to search. (String)
+- category: Category to search. (Integer)
+- installed: Search only in installed dapps. 1 or 0. (Integer)
+
+**Response**
+```
+{
+  "success": true,
+  "dapps": [
+    "array of dapps"
+  ]
+}
+```
+
+### Install dapp
+Will install dapp on your node.
+
+POST `/api/dapps/install`
+
+**Request**
+```
+{
+  "id": "id of dapp"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "path": "path of installed dapp"
+}
+```
+
+### Installed dapps
+Return list of installed dapps.
+
+GET `/api/dapps/installed`
+
+**Response**
+```
+{
+  "success": "true",
+  "dapps": [
+    "array of dapps"
+  ]
+}
+```
+
+### Installed dapps Ids
+Return list of installed dapps ids.
+
+GET `/api/dapps/installedIds`
+
+**Response**
+```
+{
+  "success": true,
+  "ids": [
+    "ids of dapps"
+  ]
+}
+```
+
+### Uninstall dapps
+Will uninstall dapp from your node.
+
+POST `/api/dapps/uninstall`
+
+**Request**
+```
+{
+  "id": "id of dapp"
+}
+```
+**Response**
+```
+{
+  "success": true
+}
+```
+
+### Launch dapp
+It will launch dapp on your node.
+
+POST `/api/dapps/launch`
+
+**Request**
+```
+{
+  "id": "id of dapp to launch",
+  "params": "params to launch dapp, not required, array"
+}
+```
+**Response**
+```
+{
+  "success": true
+}
+```
+
+### Installing
+Will return dapps that in installing right now.
+
+GET `/api/dapps/installing`
+
+**Response**
+```
+{
+  "success": true,
+  "installing": [
+    "ids of dapps that installing"
+  ]
+}
+```
+
+### Removing
+Will return dapps that in uninstalling right now.
+
+GET `/api/dapps/removing`
+
+**Response**
+```
+{
+  "success": true,
+  "removing": [
+    "ids of dapps that removing"
+  ]
+}
+```
+
+### Launched
+Will return launched dapps.
+
+GET `/api/dapps/launched`
+
+**Response**
+```
+{
+  "success": true,
+  "launched": [
+    "list of launched dapps ids"
+  ]
+}
+```
+
+### Categories
+Will return categories of dapps.
+
+GET `/api/dapps/categories`
+
+**Response**
+```
+{
+  "success": true,
+  "category": "object with names and ids of dapps categories"
+}
+```
+
+### Stop dapp
+Will stop dapp on your node.
+
+POST `/api/dapps/stop`
+
+**Request**
+```
+{
+  "id": "id of dapp to stop it"
+}
+```
+**Response**
+```
+{
+  "success": true
+}
+```
+
+### Icon dapp
+Using to get icon of dapp from sia.
+
+GET `/api/dapps/icon`
+
+- id: Id of dapp. (String)
+
+**Response**
+```
+Not specified.
+```
+
+## Multi-Signature
+Multisignature group API.
+
+### Get pending multi-signature transactions
+Return multisig transaction that waiting for your signature.
+
+GET `/api/multisignatures/pending?publicKey=publicKey`
+
+- publicKey: Public key of account (String)
+
+**Response**
+```
+{
+    "success": true,
+    "transactions": ['array of transactions to sign']
+}
+```
+
+### Create multi-signature account
+Create a multisignature account.
+
+PUT `/api/multisignatures`
+
+**Request**
+```
+{
+    "secret": "your secret. string. required.",
+    "lifetime": "request lifetime in hours (1-24). required.",
+    "min": "minimum signatures needed to approve a tx or a change (1-15). integer. required",
+    "keysgroup": [array of public keys strings]. add '+' before publicKey to add an account or '-' to remove. required. 
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "transaction id"
+}
+```
+
+### Sign transaction
+Sign transaction that wait for your signature.
+
+POST `/api/multisignatures/sign`
+
+**Request**
+```
+{
+  "secret": "your secret. string. required.",
+  "publicKey": "public key of your account. string. optional.",
+  "transactionId": "id of transaction to sign"
+}
+```
+**Response**
+```
+{
+  "success": true,
+  "transactionId": "transaction id"
+}
+```
+
+### Get accounts of multisignature
+Get accounts of multisignature.
+
+GET `/api/multisignatures/accounts?publicKey=publicKey`
+
+- publicKey: Public key of multi-signature account (String)
+
+**Response**
+```
+{
+  "success": true,
+  "accounts": "array of accounts"
+}
+```
