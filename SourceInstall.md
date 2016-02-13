@@ -1,6 +1,6 @@
 # Installing Lisk (from Source)
 
-This tutorial describes how to install the Lisk from source on a Ubuntu based machine.
+This tutorial describes how to install Lisk from source on a Ubuntu based machine.
 
 **NOTE:** The following is applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
 
@@ -114,16 +114,6 @@ Install forever, a Node.js process manager:
 ```text
 sudo npm install -g forever
 ```
-
-Next synchronize your machine's clock:
-
-```text
-sudo service ntp stop
-sudo ntpdate pool.ntp.org
-sudo service ntp start
-```
-
-**NOTE:** Some systems don't have ntp running so you may get the message "ntp: unrecognized service". This is ok just continue with next command.
 
 Start Lisk:
 
