@@ -2,7 +2,7 @@
 
 This tutorial describes how to install the Lisk using pre-built binary packages.
 
-To complete the installation, you will need to have `bash`, `wget` and `unzip` installed. The majority of operating systems have these installed by default.
+To complete the installation, you will need to have `bash`, `curl`, `wget` and `unzip` installed. The majority of operating systems have these installed by default, if not, please install them before continuing.
 
 ## 1. Select Platform
 
@@ -31,10 +31,18 @@ Follow the relevant download instructions for your selected platform as listed b
 
 ### Linux (x86_64)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-x86_64.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
@@ -53,10 +61,18 @@ Follow the relevant download instructions for your selected platform as listed b
 
 ### Linux (i686)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-i686.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
@@ -77,10 +93,18 @@ Follow the relevant download instructions for your selected platform as listed b
 
 Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/model-b-plus/) / [Raspberry Pi Zero](https://www.raspberrypi.org/products/pi-zero/)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-armv6l.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
@@ -101,10 +125,18 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 
 Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) / [C.H.I.P.](http://getchip.com/)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  For **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-armv7l.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
@@ -123,10 +155,18 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ### Darwin (x86_64)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Darwin-x86_64.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
@@ -145,10 +185,18 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ### FreeBSD (amd64)
 
-1. Download the archive:
+1. Choose a network and download the archive:
+
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-FreeBSD-amd64.zip
+  ```
+
+  **Testnet** (_for development purposes_):
+
+  ```text
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.1-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
