@@ -33,7 +33,7 @@ sudo apt-get install -y docker-engine
 
 ## 2. Install Lisk
 
-To install and run the latest version of Lisk as a docker container, please proceed with the following:
+To install the latest version of Lisk as a docker container, please proceed with the following:
 
 Choose a network:
 
