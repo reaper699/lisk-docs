@@ -35,38 +35,38 @@ sudo apt-get install -y docker-engine
 
 To install and run the latest version of Lisk as a docker container, please proceed with the following:
 
-### 1. Choose a network:
+Choose a network:
 
-  * **Mainnet** (_for normal usage_)
-  * **Testnet** (_for development purposes_)
+* **Mainnet** (_for normal usage_)
+* **Testnet** (_for development purposes_)
 
-### 2. Download the appropriate docker image:
+Download the appropriate docker image:**
 
-  **Mainnet:**
+**Mainnet:**
 
-  ```text
-  docker pull lisk/mainnet
-  ```
+```text
+docker pull lisk/mainnet
+```
 
-  **Testnet:**
+**Testnet:**
 
-  ```text
-  docker pull lisk/testnet
-  ```
+```text
+docker pull lisk/testnet
+```
 
-### 2. Install the docker image (executed only once per installation):
+Install the docker image (executed only once per installation):
 
-  **Mainnet:**
+**Mainnet:**
 
-  ```text
-  docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
-  ```
+```text
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
+```
 
-  **Testnet:**
+**Testnet:**
 
-  ```text
-  docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
-  ```
+```text
+docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
+```
 
 **NOTE:** On Windows or Mac OS X, these commands are issued from within the Docker Quickstart Terminal.
 
