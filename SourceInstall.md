@@ -101,9 +101,9 @@ nodejs/node -v
 
 - Node.js should have the following version number: `v0.12.9`
 
-## 6. Download Blockchain (Mainnet Only)
+## 6. Download Blockchain
 
-Download the blockchain archive:
+Download the blockchain archive (applicable to the mainnet only):
 
 ```text
 wget https://downloads.lisk.io/blockchain.db.zip
