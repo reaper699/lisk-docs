@@ -1,6 +1,6 @@
 # Installing Lisk (using Docker)
 
-This tutorial describes how to install the Lisk using a Docker based container.
+This tutorial describes how to install Lisk as a Docker based container.
 
 ## 1. Install Docker
 
@@ -26,38 +26,59 @@ Log onto your Ubuntu based server and enter the following commands:
 
 **NOTE:** The following is applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
 
-```text
+```
 curl -sL https://downloads.lisk.io/scripts/setup_docker | sudo -E bash -
 sudo apt-get install -y docker-engine
 ```
 
 ## 2. Install Lisk
 
-To install and run the latest version of Lisk as a docker container, simply run the following commands:
+To install and run the latest version of Lisk as a docker container, please proceed with the following:
 
-Download the latest docker image:
+### 1. Choose a network:
 
-```text
-docker pull lisk/node
-```
+  * **Mainnet** (_for normal usage_)
+  * **Testnet** (_for development purposes_)
 
-Install the docker image (executed only once per installation):
+### 2. Download the appropriate docker image:
 
-```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/node
-```
+  **Mainnet:**
+
+  ```text
+  docker pull lisk/mainnet
+  ```
+
+  **Testnet:**
+
+  ```text
+  docker pull lisk/testnet
+  ```
+
+### 2. Install the docker image (executed only once per installation):
+
+  **Mainnet:**
+
+  ```text
+  docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
+  ```
+
+  **Testnet:**
+
+  ```text
+  docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
+  ```
 
 **NOTE:** On Windows or Mac OS X, these commands are issued from within the Docker Quickstart Terminal.
 
 Upon successful completion, you will have a running Lisk node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
 
-To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/), or replace **192.168.99.100** with your public IP address.
+To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/) if on the mainnet or [http://192.168.99.100:7000/](http://192.168.99.100:7000/) if on a testnet, replacing **192.168.99.100** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
 
 ## 3. Update Lisk
 
-To update to the latest version of Lisk - Delegate and Developer Edition, simply run the following commands:
+To update to the latest version of Lisk, simply run the following commands:
 
 **WARNING:** The provided instructions will **remove the previous container** and **create a new one**. Please be sure to backup any data before proceeding. See: `docker cp --help` for more information on how to copy files from the container to the host machine.
 
@@ -81,14 +102,30 @@ docker rm container_id
 
 Download the latest docker image:
 
+**If on the mainnet:**
+
 ```text
-docker pull lisk/node
+docker pull lisk/mainnet
+```
+
+**If on a testnet:**
+
+```text
+docker pull lisk/testnet
 ```
 
 Install the docker image (executed only once per installation):
 
+**If on the mainnet:**
+
 ```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/node
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
+```
+
+**If on a testnet:**
+
+```text
+docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
 ```
 
 Remove any dangling images:
@@ -225,13 +262,21 @@ docker stop container_id
 Commit a new docker image (replace **container_id** with your own id):
 
 ```text
-docker commit container_id secure_node
+docker commit container_id ssl_mainnet
 ```
 
 Run the new docker image:
 
+**If on the mainnet:**
+
 ```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 secure_node
+docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 ssl_mainnet
+```
+
+**If on a testnet:**
+
+```text
+docker run -d --restart=always -p 0.0.0.0:7000:7000 0.0.0.0:443:443 ssl_testnet
 ```
 
 Open the web client. You should now have an SSL enabled connection.
@@ -308,8 +353,17 @@ If you encounter an error while downloading the docker image, using the `docker 
 
 Please use the following alternative download method:
 
+**If on the mainnet:**
+
 ```text
-curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk-docker.tar.gz
+curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/main/lisk-docker.tar.gz
+zcat lisk-docker.tar.gz | docker load
+```
+
+**If on a testnet:**
+
+```text
+curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
 zcat lisk-docker.tar.gz | docker load
 ```
 
