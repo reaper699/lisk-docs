@@ -101,7 +101,7 @@ nodejs/node -v
 
 - Node.js should have the following version number: `v0.12.9`
 
-## 6. Download Blockchain
+## 6. Download Blockchain (Mainnet Only)
 
 Download the blockchain archive:
 
