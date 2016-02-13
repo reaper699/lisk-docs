@@ -127,7 +127,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 1. Choose a network and download the appropriate archive:
 
-  For **Mainnet** (_for normal usage_):
+  **Mainnet** (_for normal usage_):
 
   ```text
   wget https://downloads.lisk.io/lisk/main/lisk-0.1.1-Linux-armv7l.zip
