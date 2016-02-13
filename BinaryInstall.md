@@ -31,7 +31,7 @@ Follow the relevant download instructions for your selected platform as listed b
 
 ### Linux (x86_64)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   **Mainnet** (_for normal usage_):
 
@@ -61,7 +61,7 @@ Follow the relevant download instructions for your selected platform as listed b
 
 ### Linux (i686)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   **Mainnet** (_for normal usage_):
 
@@ -93,7 +93,7 @@ Follow the relevant download instructions for your selected platform as listed b
 
 Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/model-b-plus/) / [Raspberry Pi Zero](https://www.raspberrypi.org/products/pi-zero/)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   **Mainnet** (_for normal usage_):
 
@@ -125,7 +125,7 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 
 Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) / [C.H.I.P.](http://getchip.com/)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   For **Mainnet** (_for normal usage_):
 
@@ -155,7 +155,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ### Darwin (x86_64)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   **Mainnet** (_for normal usage_):
 
@@ -185,7 +185,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ### FreeBSD (amd64)
 
-1. Choose a network and download the archive:
+1. Choose a network and download the appropriate archive:
 
   **Mainnet** (_for normal usage_):
 
@@ -221,9 +221,9 @@ To start lisk, simply run the following command from within the current director
 bash lisk.sh autostart
 ```
 
-On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
+On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and (if on the mainnet) a snapshot of the blockchain will be downloaded for your convenience.
 
-To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/), or replace **localhost** with your public IP address.
+To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
 
