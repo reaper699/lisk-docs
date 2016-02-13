@@ -45,10 +45,18 @@ npm -v
 
 ## 4. Install Lisk
 
-Download the Lisk archive:
+Choose a network and download the appropriate archive:
+
+**Mainnet** (_for normal usage_):
 
 ```text
 wget https://downloads.lisk.io/lisk/main/0.1.1.zip
+```
+
+**Testnet** (_for development purposes_):
+
+```text
+wget https://downloads.lisk.io/lisk/test/0.1.1.zip
 ```
 
 Unzip the archive:
@@ -91,7 +99,7 @@ Check version of Node.js:
 nodejs/node -v
 ```
 
-- Node.js should have the following version number: `v0.12.2`
+- Node.js should have the following version number: `v0.12.9`
 
 ## 6. Download Blockchain
 
@@ -131,7 +139,7 @@ You will see list of working Node.js processes with logs, process ids and indexe
 
 Verify that Lisk has started without any errors and synchronized with the db.
 
-After it starts, open: [http://localhost:8000/](http://localhost:8000/), or replace **localhost** with your public IP address.
+After it starts, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
 
