@@ -40,7 +40,7 @@ Choose a network:
 * **Mainnet** (_for normal usage_)
 * **Testnet** (_for development purposes_)
 
-Download the appropriate docker image:**
+Download the appropriate docker image:
 
 **Mainnet:**
 
