@@ -1,6 +1,6 @@
-# Crypti API
+# Lisk API
 ## INTRODUCTION
-Crypti Wallet REST API. All api using /api prefix.
+Lisk Wallet REST API. All api using /api prefix.
 ### How to work with API
 - Information need to return.
 - Success parameter. Determines the success of a response.
