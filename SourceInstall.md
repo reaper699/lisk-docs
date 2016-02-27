@@ -277,7 +277,7 @@ Your Lisk node should now automatically start when booting your machine. By inst
 
 ## 11. Troubleshooting
 
-If one of the following errors occur:
+**Problem 1:**
 
   * `bash: /usr/local/bin/forever: No such file or directory`
   * `npm ERR! cb() never called!`
@@ -292,5 +292,21 @@ Please ensure that your old Lisk client isn't running anymore. Then follow the t
   3. Follow the installation guide again (don't just re-install forever!)
   4. Run `sudo npm cache clear`
   5. Run `sudo npm install -g forever`
+
+Your problem should now be resolved.
+
+**Problem 2:**
+
+  * `npm ERR! git clone --template=/root/.npm/_git-remotes/_templates..`
+  * `npm ERR! Permission denied (publickey).`
+  * Or something else with *github* or *publickey* inside.
+
+It is likely that *git* or *ssh* is not installed and configured. 
+
+  1. Run `sudo apt-get install git ssh`
+  2. Generate a key pair for ssh `ssh-keygen -t rsa`
+  3. Open the just created public key with `nano ~/.ssh/id_rsa.pub`
+  4. Create a new SSH key at the GitHub [SSH keys](https://github.com/settings/ssh) settings page. 
+  5. Copy your public key into the *key* field and click on *Add SSH key*.
 
 Your problem should now be resolved.
