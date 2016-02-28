@@ -301,12 +301,12 @@ Your problem should now be resolved.
   * `npm ERR! Permission denied (publickey).`
   * Or something else with *github* or *publickey* inside.
 
-It is likely that *git* or *ssh* is not installed and configured. 
+It is likely that *git* or *ssh* is not installed and configured.
 
   1. Run `sudo apt-get install git ssh`
   2. Generate a key pair for ssh `ssh-keygen -t rsa`
   3. Open the just created public key with `nano ~/.ssh/id_rsa.pub`
-  4. Create a new SSH key at the GitHub [SSH keys](https://github.com/settings/ssh) settings page. 
+  4. Create a new SSH key at the GitHub [SSH keys](https://github.com/settings/ssh) settings page.
   5. Copy your public key into the *key* field and click on *Add SSH key*.
 
 Your problem should now be resolved.
