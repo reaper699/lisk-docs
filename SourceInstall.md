@@ -277,7 +277,7 @@ Your Lisk node should now automatically start when booting your machine. By inst
 
 ## 11. Troubleshooting
 
-**Problem 1:**
+### Problem 1
 
   * `bash: /usr/local/bin/forever: No such file or directory`
   * `npm ERR! cb() never called!`
@@ -295,7 +295,9 @@ Please ensure that your old Lisk client isn't running anymore. Then follow the t
 
 Your problem should now be resolved.
 
-**Problem 2:**
+***
+
+### Problem 2
 
   * `npm ERR! git clone --template=/root/.npm/_git-remotes/_templates..`
   * `npm ERR! Permission denied (publickey).`
