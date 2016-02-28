@@ -16,9 +16,9 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 
 ## Node API
 
-* [Lisk 0.1.0 API Documentation](http://api.lisk.io/)
+* Lisk 0.1.0 API Documentation
 
 ## Dapps Development
 
 * [Lisk Dapps Documentation](https://github.com/LiskHQ/lisk-dapps-docs)
-* [Lisk Dapps API Documentation](http://dapps-api.lisk.io/)
+* Lisk Dapps API Documentation
