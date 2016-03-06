@@ -20,5 +20,5 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 
 ## Dapps Development
 
-* [Lisk Dapps Documentation](https://github.com/LiskHQ/lisk-dapps-docs)
+* [Lisk Dapps Documentation](/documentation?i=lisk-dapps-docs/README)
 * Lisk Dapps API Documentation
