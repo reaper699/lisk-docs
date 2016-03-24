@@ -14,11 +14,15 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 * [Installing Lisk (using Docker)](/documentation?i=lisk-docs/DockerInstall)
 * [Installing Lisk (from Source)](/documentation?i=lisk-docs/SourceInstall)
 
-## Node API
-
-* Lisk 0.1.0 API Documentation
-
 ## Dapps Development
 
 * [Lisk Dapps Documentation](/documentation?i=lisk-dapps-docs/README)
-* Lisk Dapps API Documentation
+* Lisk Dapps API Documentation (Work-in-Progress)
+
+## Node API
+
+* [Lisk 0.1.0 API Documentation](/documentation?i=lisk-docs/APIReference)
+
+## Whitepaper
+
+* [English Version](/documentation?i=lisk-whitepaper/LiskWhitepaper)
