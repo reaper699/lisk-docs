@@ -24,7 +24,7 @@ After it installs, check version of sqlite3:
 sqlite3 -version
 ```
 
-SQLite3 should have the following version number: `3.8.2`
+SQLite3 should have the following version number (or greater): `3.8.2`
 
 ## 3. Install Node.js
 
@@ -40,8 +40,8 @@ node -v
 npm -v
 ```
 
-- Node.js should have the following version number: `v0.12.9`
-- npm should have the following version number: `2.14.9`
+- Node.js should have the following version number (or greater): `v0.12.9`
+- npm should have the following version number (or greater): `2.14.9`
 
 ## 4. Install Lisk
 
@@ -99,7 +99,7 @@ Check version of Node.js:
 nodejs/node -v
 ```
 
-- Node.js should have the following version number: `v0.12.9`
+- Node.js should have the following version number (or greater): `v0.12.9`
 
 ## 6. Download Blockchain
 
