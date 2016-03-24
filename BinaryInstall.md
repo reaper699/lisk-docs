@@ -57,7 +57,15 @@ Follow the relevant download instructions for your selected platform as listed b
   cd lisk-0.1.1-Linux-x86_64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (i686)
 
@@ -87,7 +95,15 @@ Follow the relevant download instructions for your selected platform as listed b
   cd lisk-0.1.1-Linux-i686
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (armv6l)
 
@@ -119,7 +135,15 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   cd lisk-0.1.1-Linux-armv6l
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Linux (armv7l)
 
@@ -151,7 +175,15 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   cd lisk-0.1.1-Linux-armv7l
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### Darwin (x86_64)
 
@@ -181,7 +213,15 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   cd lisk-0.1.1-Darwin-x86_64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ### FreeBSD (amd64)
 
@@ -211,7 +251,15 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   cd lisk-0.1.1-FreeBSD-amd64
   ```
 
-4. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
+4. Configure environment _(optional, for dapps development)_:
+
+  ```
+  export PATH=$(pwd)/bin:$PATH
+  ```
+
+  Add this to your `.bash_profile` to make this change permanent.
+
+5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
 ## 3. Start Lisk
 
