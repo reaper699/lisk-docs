@@ -59,7 +59,7 @@ Follow the relevant download instructions for your selected platform as listed b
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
@@ -97,7 +97,7 @@ Follow the relevant download instructions for your selected platform as listed b
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
@@ -137,7 +137,7 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
@@ -177,7 +177,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
@@ -215,7 +215,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
@@ -253,7 +253,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 4. Configure environment _(optional, for dapps development)_:
 
-  ```
+  ```text
   export PATH=$(pwd)/bin:$PATH
   ```
 
