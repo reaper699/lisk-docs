@@ -227,7 +227,7 @@ PUT `/api/transactions`
 ```
 {
     "secret" : "Secret key of account",
-    "amount" : /* Amount of transaction * 10^8. Example: to send 1.1234 XCR, use 112340000 as amount */,
+    "amount" : /* Amount of transaction * 10^8. Example: to send 1.1234 LISK, use 112340000 as amount */,
     "recipientId" : "Recipient of transaction. Address or username.",
     "publicKey" : "Public key of sender account, to verify secret passphrase in wallet. Optional, only for UI",
     "secondSecret" : "Secret key from second transaction, required if user uses second signature"
