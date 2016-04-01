@@ -35,18 +35,7 @@ sudo apt-get install -y docker-engine
 
 To install the latest version of Lisk as a docker container, please proceed with the following:
 
-Choose a network:
-
-* **Mainnet** (_for normal usage_)
-* **Testnet** (_for development purposes_)
-
 Download the appropriate docker image:
-
-**Mainnet:**
-
-```text
-docker pull lisk/mainnet
-```
 
 **Testnet:**
 
@@ -55,12 +44,6 @@ docker pull lisk/testnet
 ```
 
 Install the docker image (executed only once per installation):
-
-**Mainnet:**
-
-```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
-```
 
 **Testnet:**
 
@@ -72,7 +55,7 @@ docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
 
 Upon successful completion, you will have a running Lisk node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
 
-To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/) if on the mainnet or [http://192.168.99.100:7000/](http://192.168.99.100:7000/) if on a testnet, replacing **192.168.99.100** with your public IP address if you have one.
+To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/) if on the mainnet (once Lisk is launched) or [http://192.168.99.100:7000/](http://192.168.99.100:7000/) if on a testnet, replacing **192.168.99.100** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
 
@@ -102,12 +85,6 @@ docker rm container_id
 
 Download the latest docker image:
 
-**If on the mainnet:**
-
-```text
-docker pull lisk/mainnet
-```
-
 **If on a testnet:**
 
 ```text
@@ -115,12 +92,6 @@ docker pull lisk/testnet
 ```
 
 Install the docker image (executed only once per installation):
-
-**If on the mainnet:**
-
-```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
-```
 
 **If on a testnet:**
 
@@ -262,16 +233,10 @@ docker stop container_id
 Commit a new docker image (replace **container_id** with your own id):
 
 ```text
-docker commit container_id ssl_mainnet
+docker commit container_id ssl_testnet
 ```
 
 Run the new docker image:
-
-**If on the mainnet:**
-
-```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 ssl_mainnet
-```
 
 **If on a testnet:**
 
@@ -352,13 +317,6 @@ If this does not work, please check the Docker daemon is running correctly befor
 If you encounter an error while downloading the docker image, using the `docker pull` command.
 
 Please use the following alternative download method:
-
-**If on the mainnet:**
-
-```text
-curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/main/lisk-docker.tar.gz
-zcat lisk-docker.tar.gz | docker load
-```
 
 **If on a testnet:**
 
