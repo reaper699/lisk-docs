@@ -47,28 +47,22 @@ npm -v
 
 Choose a network and download the appropriate archive:
 
-**Mainnet** (_for normal usage_):
-
-```text
-wget https://downloads.lisk.io/lisk/main/0.1.1.zip
-```
-
 **Testnet** (_for development purposes_):
 
 ```text
-wget https://downloads.lisk.io/lisk/test/0.1.1.zip
+wget https://downloads.lisk.io/lisk/test/0.1.2.zip
 ```
 
 Unzip the archive:
 
 ```text
-unzip 0.1.1.zip
+unzip 0.1.2.zip
 ```
 
 Change directory:
 
 ```text
-cd 0.1.1
+cd 0.1.2
 ```
 
 Install node modules:
@@ -139,7 +133,7 @@ You will see list of working Node.js processes with logs, process ids and indexe
 
 Verify that Lisk has started without any errors and synchronized with the db.
 
-After it starts, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
+After it starts, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
 
