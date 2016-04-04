@@ -1,24 +1,25 @@
 # Lisk API
 ## INTRODUCTION
-Lisk Wallet REST API. All api using /api prefix.
-### How to work with API
+Lisk Wallet REST API. All API calls are using /api prefix.
+### How to work with the API
 - Information need to return.
 - Success parameter. Determines the success of a response.
-- Error perameter. Provided if the success parameter equal "false".
+- Error parameter. Provided if the success parameter equal `false`.
  
-API available only after wallet loading, before all routes will return:
+The API is only available after the client is completely loaded (!=synced), else all routes return:
 ```
 {
     "success" : false,
     "error" : "loading"
 }
 ```
+In the case the client is not fully synced all routes return intermediate/old values. 
 
 ## Accounts
-Account manage api.
+Account related API calls.
 
 ### Open account
-Open account in wallet.
+Get information about an account.
 
 POST `/api/accounts/open`
 
@@ -33,9 +34,9 @@ POST `/api/accounts/open`
 {
   "success": true,
   "account": {
-    "address": "Address of account. string",
-    "unconfirmedBalance": "Unconfirmed balance of account. integer",
-    "balance": "Balance of account. integer",
+    "address": "Address of account. String",
+    "unconfirmedBalance": "Unconfirmed balance of account. Integer",
+    "balance": "Balance of account. Integer",
     "publicKey": "Public key of account. Hex",
     "unconfirmedSignature": "If account enabled second signature, but it's still not confirmed. Boolean: true or false",
     "secondSignature": "If account enabled second signature. Boolean: true or false",
@@ -46,11 +47,11 @@ POST `/api/accounts/open`
 ```
 
 ### Get balance
-Get balance of account.
+Get the balance of an account.
 
 GET `/api/accounts/getBalance?address=address`
 
-- address: Address of account
+- address: Address of the account
 
 **Response**
 ```
@@ -62,7 +63,7 @@ GET `/api/accounts/getBalance?address=address`
 ```
 
 ### Get account public key
-Get public key of account. If the account does not exist (not opened) will return error.
+Get the public key of an account. If the account does not exist the API call will return an error.
 
 GET `/api/accounts/getPublicKey?address=address`
 
@@ -77,7 +78,7 @@ GET `/api/accounts/getPublicKey?address=address`
 ```
 
 ### Generate public key
-Will return public key of provided secret key.
+Returns the public key of the provided secret key.
 
 POST `/api/accounts/generatePublicKey`
 
@@ -96,7 +97,7 @@ POST `/api/accounts/generatePublicKey`
 ```
 
 ### Get account
-Will return account by address.
+Return account information of an address.
 
 GET `/api/accounts?address=address`
 
@@ -119,7 +120,7 @@ GET `/api/accounts?address=address`
 ```
 
 ### Get delegates
-Will return account's delegates by address.
+Returns delegate accounts by address.
 
 GET `/api/accounts/delegates?address=address`
 
@@ -134,7 +135,7 @@ GET `/api/accounts/delegates?address=address`
 ```
 
 ### Put delegates
-Will vote for selected delegates.
+Vote for the selected delegates. Maximum of 33 delegates at once.
 
 PUT `/api/accounts/delegates`
 
@@ -156,10 +157,10 @@ PUT `/api/accounts/delegates`
 ```
 
 ## Loader
-Loader API. Providing sync & loading information. Only this API working when wallet on loading.
+Provides the synchronisation and loading information of a client. These API calls are only working if the client is syncing or loading.
 
 ### Get loading status
-Will return account's delegates by address.
+Returns account's delegates by address.
 
 GET `/api/loader/status`
 
@@ -173,8 +174,8 @@ GET `/api/loader/status`
 }
 ```
 
-### Get synchronization status
-Get synchronization status of wallet.
+### Get synchronisation status
+Get the synchronisation status of the client.
 
 GET `/api/loader/status/sync`
 
@@ -189,7 +190,7 @@ GET `/api/loader/status/sync`
 ```
 
 ## Transactions
-Transactions API.
+API calls related to transactions.
 
 ### Get list of transactions
 Transactions list matched by provided parameters.
