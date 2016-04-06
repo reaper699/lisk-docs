@@ -68,7 +68,7 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-i686.zip
   ```
 
 2. Unzip the archive:
