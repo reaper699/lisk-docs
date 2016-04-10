@@ -36,19 +36,19 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-Linux-x86_64.zip
+  unzip lisk-0.1.3-Linux-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-Linux-x86_64
+  cd lisk-0.1.3-Linux-x86_64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -68,19 +68,19 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-i686.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-Linux-i686.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-Linux-i686.zip
+  unzip lisk-0.1.3-Linux-i686.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-Linux-i686
+  cd lisk-0.1.3-Linux-i686
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -102,19 +102,19 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-armv6l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-Linux-armv6l.zip
+  unzip lisk-0.1.3-Linux-armv6l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-Linux-armv6l
+  cd lisk-0.1.3-Linux-armv6l
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -136,19 +136,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Linux-armv7l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-Linux-armv7l.zip
+  unzip lisk-0.1.3-Linux-armv7l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-Linux-armv7l
+  cd lisk-0.1.3-Linux-armv7l
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -168,19 +168,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-Darwin-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-Darwin-x86_64.zip
+  unzip lisk-0.1.3-Darwin-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-Darwin-x86_64
+  cd lisk-0.1.3-Darwin-x86_64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -200,19 +200,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.1.2-FreeBSD-amd64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-0.1.3-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.1.2-FreeBSD-amd64.zip
+  unzip lisk-0.1.3-FreeBSD-amd64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.1.2-FreeBSD-amd64
+  cd lisk-0.1.3-FreeBSD-amd64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
