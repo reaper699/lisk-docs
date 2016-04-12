@@ -368,7 +368,7 @@ GET `/api/peers/version`
 ```
 {
   "success": true,
-  "version": "version of Crypti",
+  "version": "version of Lisk",
   "build": "time of build"
 }
 ```
