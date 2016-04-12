@@ -134,6 +134,8 @@ GET `/api/accounts/delegates?address=address`
 }
 ```
 
+- Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
+
 ### Put delegates
 Vote for the selected delegates. Maximum of 33 delegates at once.
 
@@ -567,6 +569,8 @@ GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 }
 ```
 
+- Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
+
 ### Get delegate
 Get delegate by transaction id.
 
@@ -599,6 +603,8 @@ GET `/api/accounts/delegates/?address=address`
   "delegates": "array of delegates"
 }
 ```
+
+- Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
 ### Get voters
 Get voters of delegate.
