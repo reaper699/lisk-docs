@@ -50,19 +50,19 @@ Choose a network and download the appropriate archive:
 **Testnet** (_for development purposes_):
 
 ```text
-wget https://downloads.lisk.io/lisk/test/0.1.3.zip
+wget https://downloads.lisk.io/lisk/test/0.1.4.zip
 ```
 
 Unzip the archive:
 
 ```text
-unzip 0.1.3.zip
+unzip 0.1.4.zip
 ```
 
 Change directory:
 
 ```text
-cd 0.1.3
+cd 0.1.4
 ```
 
 Install node modules:
