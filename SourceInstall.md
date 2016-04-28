@@ -8,23 +8,22 @@ This tutorial describes how to install Lisk from source on a Ubuntu based machin
 
 ```text
 sudo apt-get update
-sudo apt-get install curl build-essential python wget unzip
+sudo apt-get install curl build-essential gunzip python tar wget
 ```
 
-## 2. Install SQLite3
+## 2. Install PostgreSQL
 
 ```text
-curl -sL https://downloads.lisk.io/scripts/setup_sqlite3 | sudo -E bash -
-sudo apt-get install -y sqlite3
+curl -sL https://downloads.lisk.io/scripts/setup_postgresql.Linux | sudo -E bash -
 ```
 
-After it installs, check version of sqlite3:
+After it installs, check version of psql:
 
 ```text
-sqlite3 -version
+psql -version
 ```
 
-SQLite3 should have the following version number (or greater): `3.8.2`
+Psql should have the following version number (or greater): `9.5.2`
 
 ## 3. Install Node.js
 
@@ -40,8 +39,8 @@ node -v
 npm -v
 ```
 
-- Node.js should have the following version number (or greater): `v0.12.9`
-- npm should have the following version number (or greater): `2.14.9`
+- Node.js should have the following version number (or greater): `v0.12.13`
+- npm should have the following version number (or greater): `2.15.0`
 
 ## 4. Install Lisk
 
@@ -50,19 +49,19 @@ Choose a network and download the appropriate archive:
 **Testnet** (_for development purposes_):
 
 ```text
-wget https://downloads.lisk.io/lisk/test/0.2.0.zip
+wget https://downloads.lisk.io/lisk/test/lisk-source.tar.gz
 ```
 
-Unzip the archive:
+Decompress the archive:
 
 ```text
-unzip 0.2.0.zip
+tar -zxvf lisk-source.tar.gz
 ```
 
 Change directory:
 
 ```text
-cd 0.2.0
+cd lisk-source
 ```
 
 Install node modules:
@@ -78,13 +77,13 @@ This is a specialized version of Node.js used to execute dapps within a virtual 
 Download the Lisk Node archive:
 
 ```text
-wget https://downloads.lisk.io/lisk-node.zip
+wget https://downloads.lisk.io/lisk-node/lisk-node-Linux-x86_64.tar.gz
 ```
 
-Unzip the archive:
+Decompress the archive:
 
 ```text
-unzip lisk-node.zip
+tar -zxvf lisk-node-Linux-x86_64.tar.gz
 ```
 
 Check version of Node.js:
@@ -93,20 +92,22 @@ Check version of Node.js:
 nodejs/node -v
 ```
 
-- Node.js should have the following version number (or greater): `v0.12.9`
+- Node.js should have the following version number (or greater): `v0.12.13`
 
 ## 6. Download Blockchain
 
-Download the blockchain archive (applicable to the mainnet only):
+Download the blockchain archive:
+
+**Testnet** (_for development purposes_):
 
 ```text
-wget https://downloads.lisk.io/blockchain.db.zip
+wget https://downloads.lisk.io/lisk/test/blockchain.db.gz
 ```
 
-Unzip the archive:
+Decompress the archive:
 
 ```text
-unzip blockchain.db.zip
+gunzip blockchain.db.gz
 ```
 
 ## 7. Start Lisk
