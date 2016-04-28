@@ -25,7 +25,23 @@ psql -version
 
 Psql should have the following version number (or greater): `9.5.2`
 
-## 3. Install Node.js
+## 3. Configure PostgreSQL
+
+Create a postgresql user (and choose a password):
+
+```text
+sudo -u postgres createuser --createdb --password $USER
+```
+
+Create a postgresql database:
+
+**Testnet** (_for development purposes_):
+
+```text
+createdb lisk_test
+```
+
+## 4. Install Node.js
 
 ```text
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
@@ -42,7 +58,7 @@ npm -v
 - Node.js should have the following version number (or greater): `v0.12.13`
 - npm should have the following version number (or greater): `2.15.0`
 
-## 4. Install Lisk
+## 5. Install Lisk
 
 Choose a network and download the appropriate archive:
 
@@ -70,7 +86,7 @@ Install node modules:
 npm install --production
 ```
 
-## 5. Install Lisk Node
+## 6. Install Lisk Node
 
 This is a specialized version of Node.js used to execute dapps within a virtual machine.
 
@@ -94,7 +110,7 @@ nodejs/node -v
 
 - Node.js should have the following version number (or greater): `v0.12.13`
 
-## 6. Download Blockchain
+## 7. Download Blockchain
 
 Download the blockchain archive:
 
@@ -110,7 +126,7 @@ Decompress the archive:
 gunzip blockchain.db.gz
 ```
 
-## 7. Start Lisk
+## 8. Start Lisk
 
 Install forever, a Node.js process manager:
 
@@ -138,7 +154,7 @@ After it starts, open: [http://localhost:8000/](http://localhost:8000/) if on th
 
 The Lisk web client should launch successfully.
 
-## 8. Enable Forging
+## 9. Enable Forging
 
 If you are running your node from a local machine, you can enable forging through the web client, without further interruption. **NOTE:** Should the Lisk node or machine need to be restarted, you will need to re-enable forging again.
 
@@ -201,7 +217,7 @@ forever start app.js
 
 Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
 
-## 9. Enable Secure Sockets Layer (SSL)
+## 10. Enable Secure Sockets Layer (SSL)
 
 **NOTE:** To complete this step you require a signed certificate (from a CA) and a public and private key pair.
 
@@ -247,7 +263,7 @@ forever start app.js
 
 Open the web client. You should now have an SSL enabled connection.
 
-## 10. Configure Autostart
+## 11. Configure Autostart
 
 To have Lisk automatically start each time your machine boots:
 
@@ -270,7 +286,7 @@ Your Lisk node should now automatically start when booting your machine. By inst
 * Restart:  ```sudo restart lisk```
 * Status:  ```sudo status lisk```
 
-## 11. Troubleshooting
+## 12. Troubleshooting
 
 ### Problem 1
 
