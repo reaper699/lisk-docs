@@ -2,7 +2,7 @@
 
 This tutorial describes how to install the Lisk using pre-built binary packages.
 
-To complete the installation, you will need to have `bash`, `curl`, `wget` and `unzip` installed. The majority of operating systems have these installed by default, if not, please install them before continuing.
+To complete the installation, you will need to have `bash`, `curl`, `wget` and `tar` installed. The majority of operating systems have these installed by default, if not, please install them before continuing.
 
 ## 1. Select Platform
 
@@ -36,19 +36,19 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-Linux-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-Linux-x86_64.zip
+  unzip lisk-Linux-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-Linux-x86_64
+  cd lisk-Linux-x86_64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -68,19 +68,19 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-Linux-i686.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-i686.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-Linux-i686.zip
+  unzip lisk-Linux-i686.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-Linux-i686
+  cd lisk-Linux-i686
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -102,19 +102,19 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-Linux-armv6l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv6l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-Linux-armv6l.zip
+  unzip lisk-Linux-armv6l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-Linux-armv6l
+  cd lisk-Linux-armv6l
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -136,19 +136,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-Linux-armv7l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv7l.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-Linux-armv7l.zip
+  unzip lisk-Linux-armv7l.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-Linux-armv7l
+  cd lisk-Linux-armv7l
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -168,19 +168,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-Darwin-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Darwin-x86_64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-Darwin-x86_64.zip
+  unzip lisk-Darwin-x86_64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-Darwin-x86_64
+  cd lisk-Darwin-x86_64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -200,19 +200,19 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-0.2.0-FreeBSD-amd64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-FreeBSD-amd64.zip
   ```
 
 2. Unzip the archive:
 
   ```text
-  unzip lisk-0.2.0-FreeBSD-amd64.zip
+  unzip lisk-FreeBSD-amd64.zip
   ```
 
 3. Change directory:
 
   ```text
-  cd lisk-0.2.0-FreeBSD-amd64
+  cd lisk-FreeBSD-amd64
   ```
 
 4. Configure environment _(optional, for dapps development)_:
@@ -227,13 +227,13 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ## 3. Start Lisk
 
-To start lisk, simply run the following command from within the current directory:
+To start lisk for the first time, simply run the following command from within the current directory:
 
 ```text
-bash lisk.sh autostart
+bash lisk.sh coldstart
 ```
 
-On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
+On the first invocation of this command: Lisk will install PostgresQL, configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
 To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
@@ -352,16 +352,10 @@ Open the web client. You should now have an SSL enabled connection.
 
 Listed below, are the available commands which can be used to manage your Lisk node.
 
-To check the status of lisk:
+To perform a coldstart (only needs to be performed once):
 
 ```text
-bash lisk.sh status
-```
-
-To monitor the log file of lisk:
-
-```text
-bash lisk.sh logs
+bash lisk.sh coldstart
 ```
 
 To stop/restart/start lisk:
@@ -372,10 +366,16 @@ bash lisk.sh start
 bash lisk.sh restart
 ```
 
-To automatically start lisk when booting the machine:
+To check the status of lisk:
 
 ```text
-bash lisk.sh autostart
+bash lisk.sh status
+```
+
+To monitor the log file of lisk:
+
+```text
+bash lisk.sh logs
 ```
 
 To replace the blockchain with a new snapshot:
