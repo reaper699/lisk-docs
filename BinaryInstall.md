@@ -227,10 +227,10 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ## 3. Start Lisk
 
-To start lisk for the first time, simply run the following command from within the current directory:
+To start lisk for the first time, simply run the following command as a super user (root) from within the current directory:
 
 ```text
-bash lisk.sh coldstart
+sudo bash lisk.sh coldstart
 ```
 
 On the first invocation of this command: Lisk will install PostgresQL, configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
