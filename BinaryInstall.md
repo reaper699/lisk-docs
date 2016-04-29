@@ -36,13 +36,13 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-Linux-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-x86_64.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-Linux-x86_64.zip
+  tar -zxvf lisk-Linux-x86_64.tar.gz
   ```
 
 3. Change directory:
@@ -68,13 +68,13 @@ Follow the relevant download instructions for your selected platform as listed b
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-Linux-i686.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-i686.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-Linux-i686.zip
+  tar -zxvf lisk-Linux-i686.tar.gz
   ```
 
 3. Change directory:
@@ -102,13 +102,13 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv6l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv6l.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-Linux-armv6l.zip
+  tar -zxvf lisk-Linux-armv6l.tar.gz
   ```
 
 3. Change directory:
@@ -136,13 +136,13 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv7l.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Linux-armv7l.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-Linux-armv7l.zip
+  tar -zxvf lisk-Linux-armv7l.tar.gz
   ```
 
 3. Change directory:
@@ -168,13 +168,13 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-Darwin-x86_64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-Darwin-x86_64.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-Darwin-x86_64.zip
+  tar -zxvf lisk-Darwin-x86_64.tar.gz
   ```
 
 3. Change directory:
@@ -200,13 +200,13 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   **Testnet** (_for development purposes_):
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/lisk-FreeBSD-amd64.zip
+  wget https://downloads.lisk.io/lisk/test/lisk-FreeBSD-amd64.tar.gz
   ```
 
-2. Unzip the archive:
+2. Decompress the archive:
 
   ```text
-  unzip lisk-FreeBSD-amd64.zip
+  tar -zxvf lisk-FreeBSD-amd64.tar.gz
   ```
 
 3. Change directory:
