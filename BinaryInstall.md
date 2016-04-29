@@ -235,6 +235,12 @@ bash lisk.sh coldstart
 
 On the first invocation of this command: Lisk will install PostgresQL, configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
+If you have successfully started lisk with the `coldstart` command once, simply run the following command to start it again:
+
+```text
+bash lisk.sh start
+```
+
 To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
 The Lisk web client should launch successfully.
