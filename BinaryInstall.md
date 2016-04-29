@@ -235,7 +235,7 @@ bash lisk.sh coldstart
 
 On the first invocation of this command: Lisk will install PostgresQL, configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
-If you have successfully started lisk with the `coldstart` command once, simply run the following command to start it again:
+In the case you have successfully launched lisk once with the `bash lisk.sh coldstart` command and needed to stop it afterwards. You can simply start it again, run the following command from within the correct directory:
 
 ```text
 bash lisk.sh start
