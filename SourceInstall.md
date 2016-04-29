@@ -8,7 +8,7 @@ This tutorial describes how to install Lisk from source on a Ubuntu based machin
 
 ```text
 sudo apt-get update
-sudo apt-get install curl build-essential gunzip python tar wget
+sudo apt-get install curl build-essential gzip python tar wget
 ```
 
 ## 2. Install PostgreSQL
