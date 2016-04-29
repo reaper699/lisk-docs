@@ -21,7 +21,7 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 
 ## Node API
 
-* [Lisk v0.1.2 API Documentation](/documentation?i=lisk-docs/APIReference)
+* [Lisk v0.2.0 API Documentation](/documentation?i=lisk-docs/APIReference)
 
 ## Whitepaper
 
