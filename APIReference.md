@@ -714,64 +714,6 @@ PUT `/api/accounts/username`
 }
 ```
 
-## Contacts
-Usernames API
-
-### Add contact
-Add contact
-
-PUT `/api/contacts`
-
-**Request**
-```
-{
-  "secret": "Secret passphrase of your account. String. Required",
-  "secondSecret": "Second public key if using. String. ",
-  "publicKey": "Your public key to verify sender. String, Hex. Optional",
-  "following": "Address or username of account to follow. String. Required"
-}
-```
-**Response**
-```
-{
-  "success": true,
-  "transactionId": "Id of transaction."
-}
-```
-
-### Get contacts
-Get contacts of account by public key.
-
-GET `/api/contacts/?publicKey=publicKey`
-
-- publicKey: Public key of account. (String)
-
-**Response**
-```
-{
-  "success": true,
-  "following": "array of you following accounts",
-  "followers": "array of your followers"
-}
-```
-
-### Get unconfirmed contacts
-Get unconfirmed contacts of account by public key.
-
-GET `/api/contacts/unconfirmed?publicKey=publicKey`
-
-- publicKey: Public key of account. (String)
-
-**Response**
-```
-{
-  "success": true,
-  "contacts": [
-    "array of contacts transactions"
-  ]
-}
-```
-
 ## Dapps
 Dapp API.
 
