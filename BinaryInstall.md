@@ -55,9 +55,10 @@ Follow the relevant download instructions for your selected platform as listed b
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -87,9 +88,10 @@ Follow the relevant download instructions for your selected platform as listed b
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -121,9 +123,10 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -155,9 +158,10 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -187,9 +191,10 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -219,9 +224,10 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
   ```text
   export PATH=$(pwd)/bin:$PATH
+  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
