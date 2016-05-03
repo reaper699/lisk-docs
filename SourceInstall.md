@@ -14,7 +14,7 @@ sudo apt-get install curl build-essential gzip python tar wget
 ## 2. Install PostgreSQL
 
 ```text
-curl -sL https://downloads.lisk.io/scripts/setup_postgresql.Linux | sudo -E bash -
+curl -sL https://downloads.lisk.io/scripts/setup_postgresql.Linux | bash -
 ```
 
 After it installs, check version of psql:
