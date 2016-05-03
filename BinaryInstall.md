@@ -54,11 +54,11 @@ Follow the relevant download instructions for your selected platform as listed b
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-Linux-x86_64/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-Linux-x86_64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -87,11 +87,11 @@ Follow the relevant download instructions for your selected platform as listed b
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-Linux-i686/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-Linux-i686/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -122,11 +122,11 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-Linux-armv6l/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-Linux-armv6l/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -157,11 +157,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-Linux-armv7l/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-Linux-armv7l/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -190,11 +190,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-Darwin-x86_64/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-Darwin-x86_64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -223,11 +223,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH=$(pwd)/bin:$PATH
-  export LD_LIBRARY_PATH="$(pwd)/pgsql/lib:$LD_LIBRARY_PATH"
+  export PATH="$HOME/lisk-FreeBSD-amd64/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/lisk-FreeBSD-amd64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
-  Add this to your `.bash_profile` to make this change permanent (replacing `$(pwd)` with the absolute path of your Lisk installation.
+  Add this to your `.bash_profile` to make this change permanent.
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
