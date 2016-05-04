@@ -251,13 +251,15 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 
 ## 3. Start Lisk
 
-To start lisk for the first time, simply run the following command as a super user (root) from within the current directory:
+**NOTE:** With the release of **0.2.1** PostgreSQL no longer needs to be installed separately. If you have previously installed it as part of a previous Lisk release, please stop it before continuing, e.g. on Ubuntu Linux do the following: **sudo service postgresql stop**.
+
+To start lisk for the first time, simply run the following command from within the current directory:
 
 ```text
-sudo bash lisk.sh coldstart
+bash lisk.sh coldstart
 ```
 
-On the first invocation of this command: Lisk will install PostgresQL, configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
+On the first invocation of this command: Lisk will configure itself to automatically start when booting your machine, and a snapshot of the blockchain will be downloaded for your convenience.
 
 The `bash lisk.sh coldstart` command only needs to be executed **once**. To manually stop or start your lisk node, please use the following commands:
 
