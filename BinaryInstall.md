@@ -58,8 +58,8 @@ Follow the relevant download instructions for your selected platform as listed b
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
@@ -94,8 +94,8 @@ Follow the relevant download instructions for your selected platform as listed b
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
@@ -132,8 +132,8 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
@@ -170,8 +170,8 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
@@ -206,8 +206,8 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
@@ -242,8 +242,8 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   ```
 
   Add this to your `.bash_profile` to make this change permanent:
-  
-  ```
+
+  ```text
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
