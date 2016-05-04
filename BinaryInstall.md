@@ -54,7 +54,7 @@ Follow the relevant download instructions for your selected platform as listed b
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-Linux-x86_64/bin:$PATH"
+  export PATH="$HOME/lisk-Linux-x86_64/bin:$HOME/lisk-Linux-x86_64/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-Linux-x86_64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
@@ -87,7 +87,7 @@ Follow the relevant download instructions for your selected platform as listed b
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-Linux-i686/bin:$PATH"
+  export PATH="$HOME/lisk-Linux-i686/bin:$HOME/lisk-Linux-i686/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-Linux-i686/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
@@ -122,7 +122,7 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-Linux-armv6l/bin:$PATH"
+  export PATH="$HOME/lisk-Linux-i686/bin:$HOME/lisk-Linux-armv6l/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-Linux-armv6l/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
@@ -157,7 +157,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-Linux-armv7l/bin:$PATH"
+  export PATH="$HOME/lisk-Linux-armv7l/bin:$HOME/lisk-Linux-armv7l/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-Linux-armv7l/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
@@ -190,7 +190,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-Darwin-x86_64/bin:$PATH"
+  export PATH="$HOME/lisk-Darwin-x86_64/bin:$HOME/lisk-Darwin-x86_64/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-Darwin-x86_64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
@@ -223,7 +223,7 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
 4. Configure environment _(optional, for dapps development)_:
 
   ```text
-  export PATH="$HOME/lisk-FreeBSD-amd64/bin:$PATH"
+  export PATH="$HOME/lisk-FreeBSD-amd64/bin:$HOME/lisk-FreeBSD-amd64/pgsql/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/lisk-FreeBSD-amd64/pgsql/lib:$LD_LIBRARY_PATH"
   ```
 
