@@ -57,7 +57,11 @@ Follow the relevant download instructions for your selected platform as listed b
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -89,7 +93,11 @@ Follow the relevant download instructions for your selected platform as listed b
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -123,7 +131,11 @@ Tested devices: [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/m
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -157,7 +169,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -189,7 +205,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
@@ -221,7 +241,11 @@ Tested devices: [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/ra
   source env.sh
   ```
 
-  Add this to your `.bash_profile` to make this change permanent.
+  Add this to your `.bash_profile` to make this change permanent:
+  
+  ```
+  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  ```
 
 5. Proceed with the next step in this tutorial to [Start Lisk](#3-start-lisk).
 
