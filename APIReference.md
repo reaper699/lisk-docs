@@ -661,64 +661,11 @@ POST `/api/delegates/forging/disable`
 }
 ```
 
-## Messages
-Messages API.
-
-### Send message
-Send message to recipient.
-
-PUT `/api/messages`
-
-**Request**
-```
-{
-    "recipientId" : "id of recipient. String. Optional.",
-    "encrypt" : "encrypt message or not encrypt. Boolean. Default to false. If equal true need to provide recipient public key.",
-    "recipientPublicKey" : "Public key of recipient account. Required if encrypt == true. String."
-    "message" : "Message to send. From 1 to 140 characters. Required",
-    "secret" : "Secret passphrase of your account. String. Required",
-    "secondSecret": "Second public key if using. String. ",
-    "publicKey": "Your public key to verify sender. String, Hex. Optional"
-}
-```
-**Response**
-```
-{
-  "success": true,
-  "transactionId": "Id of transaction."
-}
-```
-
-## Usernames
-Usernames API
-
-### Register username
-Register username.
-
-PUT `/api/accounts/username`
-
-**Request**
-```
-{
-  "secret": "Secret passphrase of your account. String. Required",
-  "secondSecret": "Second public key if using. String. ",
-  "publicKey": "Your public key to verify sender. String, Hex. Optional",
-  "username": "Username of delegate. String from 1 to 20 characters."
-}
-```
-**Response**
-```
-{
-  "success": true,
-  "transactionId": "Id of transaction."
-}
-```
-
 ## Dapps
-Dapp API.
+Dapps API.
 
 ### Dapps
-Register dapp.
+Registers a dapp.
 
 PUT `/api/dapps`
 
@@ -728,48 +675,46 @@ PUT `/api/dapps`
   "secret": "Secret of account. String. Required",
   "secondSecret": "Second secret of account. String. Optional",
   "publicKey": "Public key to verify sender secret key. Hex. Optional",
-  "category": "Category of DApp. Integer. Required",
-  "name": "Name of DApp. String. Required",
-  "description": "Description of DApp. String. Optional",
-  "tags": "Tags of DApp. String. Optional",
-  "type": "Type of DApp, now supported only 0 type. Integer. Required",
-  "siaAscii": "ASCII code of sia shared file. String. Optional",
-  "git": "Link to git repository. String. Optional",
-  "icon": "Link to icon file. PNG and JPG/JPEG supported. String. Optional",
-  "siaIcon": "ASCII code of sia shared icon file. String. Optional"
+  "category": "DApp category. Integer. Required",
+  "name": "DApp name. String. Required",
+  "description": "DApp description. String. Optional",
+  "tags": "DApp tags. String. Optional",
+  "type": "DApp type. Integer. Required (Only type 0 is currently supported)",
+  "link": "Link to DApp file. ZIP supported. String. Required",
+  "icon": "Link to icon file. PNG and JPG/JPEG supported. String. Optional"
 }
 ```
 **Response**
 ```
 {
   "success": true,
-  "transactionId": "id of transaction"
+  "transactionId": "transaction id"
 }
 ```
 
 ### Get dapps
-Get specifc dapps.
+Gets a list of dapps registered on the network.
 
-GET `/api/dapps?category=category&name=name&type=type&git=git&siaAscii=siaAscii&siaIcon=siaIcon&icon=icon&limit=limit&offset=offset&orderBy=orderBy`
+GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offset=offset&orderBy=orderBy`
 
-- category: Category of DApp. (Integer)
-- name: Name of DApp. (String)
-- type: Type of DApp. (Integer)
-- git: Git repository link to DApp. (String)
-- limit: Limit of dapps in query. Maximum is 100. (Integer)
-- offset: Offset of dapps in query. (Integer)
+- category: DApp category. (Integer)
+- name: DApp name. (String)
+- type: DApp type. (Integer)
+- link: DApp link. (String)
+- limit: Query limit. Maximum is 100. (Integer)
+- offset: Query offset. (Integer)
 - orderBy: Order by field. (String)
 
 **Response**
 ```
 {
   "success": true,
-  "dapps": "Array of dapps"
+  "dapps": "array of dapps"
 }
 ```
 
 ### Get dapp
-Get a specifc dapp.
+Gets a specific dapp by id.
 
 GET `/api/dapps/get?id=id`
 
@@ -779,18 +724,18 @@ GET `/api/dapps/get?id=id`
 ```
 {
   "success": true,
-  "dapp": "dapp"
+  "dapp": "dapp object"
 }
 ```
 
-### Search dapp store
-Get specifc dapps.
+### Search for dapps
+Searches for dapps by keyword(s).
 
 GET `/api/dapps/search?q=q&category=category&installed=installed`
 
-- q: Query to search. (String)
-- category: Category to search. (Integer)
-- installed: Search only in installed dapps. 1 or 0. (Integer)
+- q: Search criteria. (String)
+- category: Category to search within. (Integer)
+- installed: Search installed dapps only. 1 or 0. (Integer)
 
 **Response**
 ```
@@ -803,26 +748,26 @@ GET `/api/dapps/search?q=q&category=category&installed=installed`
 ```
 
 ### Install dapp
-Will install dapp on your node.
+Installs a dapp by id on the node.
 
 POST `/api/dapps/install`
 
 **Request**
 ```
 {
-  "id": "id of dapp"
+  "id": "dapp id to install"
 }
 ```
 **Response**
 ```
 {
   "success": true,
-  "path": "path of installed dapp"
+  "path": "dppp install path"
 }
 ```
 
 ### Installed dapps
-Return list of installed dapps.
+Returns a list of installed dapps on the requested node.
 
 GET `/api/dapps/installed`
 
@@ -837,7 +782,7 @@ GET `/api/dapps/installed`
 ```
 
 ### Installed dapps Ids
-Return list of installed dapps ids.
+Returns a list of installed dapp ids on the requested node.
 
 GET `/api/dapps/installedIds`
 
@@ -846,20 +791,20 @@ GET `/api/dapps/installedIds`
 {
   "success": true,
   "ids": [
-    "ids of dapps"
+    "array of dapp ids"
   ]
 }
 ```
 
 ### Uninstall dapps
-Will uninstall dapp from your node.
+Uninstalls a dapp by id from the requested node.
 
 POST `/api/dapps/uninstall`
 
 **Request**
 ```
 {
-  "id": "id of dapp"
+  "id": "dapp id to uninstall"
 }
 ```
 **Response**
@@ -870,15 +815,15 @@ POST `/api/dapps/uninstall`
 ```
 
 ### Launch dapp
-It will launch dapp on your node.
+Launches a dapp by id on the requested node.
 
 POST `/api/dapps/launch`
 
 **Request**
 ```
 {
-  "id": "id of dapp to launch",
-  "params": "params to launch dapp, not required, array"
+  "id": "dapp id to launch",
+  "params": "dapp launch params, not required, array"
 }
 ```
 **Response**
@@ -889,7 +834,7 @@ POST `/api/dapps/launch`
 ```
 
 ### Installing
-Will return dapps that in installing right now.
+Returns a list of dapp ids currently being installed on the requested node.
 
 GET `/api/dapps/installing`
 
@@ -898,28 +843,28 @@ GET `/api/dapps/installing`
 {
   "success": true,
   "installing": [
-    "ids of dapps that installing"
+    "array of dapp ids"
   ]
 }
 ```
 
-### Removing
-Will return dapps that in uninstalling right now.
+### Uninstalling
+Returns a list of dapp ids currently being uninstalled on the requested node.
 
-GET `/api/dapps/removing`
+GET `/api/dapps/uninstalling`
 
 **Response**
 ```
 {
   "success": true,
-  "removing": [
-    "ids of dapps that removing"
+  "uninstalling": [
+    "array of dapp ids"
   ]
 }
 ```
 
 ### Launched
-Will return launched dapps.
+Returns a list of dapp ids which are currently launched on the requested node.
 
 GET `/api/dapps/launched`
 
@@ -928,13 +873,13 @@ GET `/api/dapps/launched`
 {
   "success": true,
   "launched": [
-    "list of launched dapps ids"
+    "array of dapp ids"
   ]
 }
 ```
 
 ### Categories
-Will return categories of dapps.
+Returns a full list of dapp categories.
 
 GET `/api/dapps/categories`
 
@@ -942,19 +887,19 @@ GET `/api/dapps/categories`
 ```
 {
   "success": true,
-  "category": "object with names and ids of dapps categories"
+  "category": "object containing category names and ids"
 }
 ```
 
 ### Stop dapp
-Will stop dapp on your node.
+Stops a dapp by id on the requested node.
 
 POST `/api/dapps/stop`
 
 **Request**
 ```
 {
-  "id": "id of dapp to stop it"
+  "id": "dapp id to stop"
 }
 ```
 **Response**
@@ -962,18 +907,6 @@ POST `/api/dapps/stop`
 {
   "success": true
 }
-```
-
-### Icon dapp
-Using to get icon of dapp from sia.
-
-GET `/api/dapps/icon`
-
-- id: Id of dapp. (String)
-
-**Response**
-```
-Not specified.
 ```
 
 ## Multi-Signature
