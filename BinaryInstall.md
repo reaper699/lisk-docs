@@ -170,19 +170,13 @@ Arrow down until you find the following section:
 
 After you are done, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
 
-**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must alter the port specified with setcap.
+**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must alter the port specified with setcap or change it to be outside of that range.
 
 ```text
 sudo setcap cap_net_bind_service=+ep bin/node
 ```
 
-Then you may start Lisk
-
-```text
-bash lisk.sh start
-```
-
-If the port is above 1023, you can start Lisk normally:
+Once this is done, or the port specified is above 1024, you may start Lisk
 
 ```text
 bash lisk.sh start
