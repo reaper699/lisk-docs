@@ -138,7 +138,7 @@ bash lisk.sh start
 
 Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
 
-## 5. Enable Secure Sockets Layer (SSL)
+## 4. Enable Secure Sockets Layer (SSL)
 
 **NOTE:** To complete this step you require a signed certificate (from a CA) and a public and private key pair.
 
@@ -170,10 +170,14 @@ Arrow down until you find the following section:
 
 After you are done, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
 
-**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must start Lisk with admin rights:
+**NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must alter the port specified with setcap.
 
 ```text
-sudo bash lisk.sh start
+sudo setcap cap_net_bind_service=+ep bin/node
+```
+
+```text
+bash lisk.sh start
 ```
 
 If the port is above 1023, you can start Lisk normally:
@@ -184,7 +188,7 @@ bash lisk.sh start
 
 Open the web client. You should now have an SSL enabled connection.
 
-## 6. Available Commands
+## 5. Available Commands
 
 Listed below, are the available commands which can be used to manage your Lisk node.
 
