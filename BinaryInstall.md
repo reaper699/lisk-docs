@@ -202,6 +202,12 @@ bash lisk.sh start
 bash lisk.sh restart
 ```
 
+To reload config.json changes:
+
+```text
+bash lisk.sh reload
+```
+
 To check the status of lisk:
 
 ```text
