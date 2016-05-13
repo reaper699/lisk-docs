@@ -176,6 +176,8 @@ After you are done, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
 sudo setcap cap_net_bind_service=+ep bin/node
 ```
 
+Then you may start Lisk
+
 ```text
 bash lisk.sh start
 ```
