@@ -67,13 +67,11 @@ Follow the download instructions to install Lisk for your selected platform.
 
 5. Accessing Lisk
 
- To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
+  To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
- The Lisk web client should launch successfully.
+  The Lisk web client should launch successfully.
  
 6. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
-
-
 
 ## 3. Enable Forging
 
