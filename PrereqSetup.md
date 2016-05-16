@@ -74,7 +74,9 @@ whoami
   %sudo   ALL=(ALL:ALL) ALL
   ```
   
-  Exit with `:wq!`
+On Ubuntu:  Hit: `Ctrl+ X` Then: `Y` to exit and save
+
+On RHEL: type `:wq!`
 
 #### 5. Update the systems Locale
 
@@ -96,3 +98,6 @@ Once in the config file, edit the LANG line to match below, if it doesn't alread
   LANG="en_US.UTF-8"
   ```
   
+On Ubuntu:  Hit: `Ctrl+ X` Then: `Y` to exit and save
+
+On RHEL: type `:wq!`
