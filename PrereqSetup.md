@@ -37,13 +37,13 @@ whoami
 
 #### 1. Install `curl, wget, tar, sudo`
 
-*  If you are running Ubuntu
+*If you are running Ubuntu
   
   ```text
   apt-get install curl wget tar sudo
   ```
   
-*  If you are running RHEL or CentOS
+*If you are running RHEL or CentOS
 
   ```text
   yum install curl wget tar sudo
@@ -78,13 +78,13 @@ whoami
 
 #### 5. Update the systems Locale
 
-*  If you are running Ubuntu
+*If you are running Ubuntu
 
   ```text
   nano /etc/default/locale
   ```
 
-*  If you are running RHEL or CentOS
+*If you are running RHEL or CentOS
 
   ```text
   vi /etc/locale.conf
