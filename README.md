@@ -11,7 +11,7 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 ## Prerequisites for Installation
 
 * [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
-* 
+
 ## Node Installation
 
 * [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
