@@ -35,20 +35,21 @@ whoami
 
 ### Linux
 
-1. Install `curl, wget, tar, sudo`
+#### 1. Install `curl, wget, tar, sudo`
 
 *  If you are running Ubuntu
-*  
+  
   ```text
   apt-get install curl wget tar sudo
   ```
   
 *  If you are running RHEL or CentOS
+
   ```text
   yum install curl wget tar sudo
   ```
 
-2. Create a user to run lisk, create sudo group and give the lisk user sudo permissions
+#### 2. Create a user to run lisk, create sudo group and give the lisk user sudo permissions
 
   ```text
   useradd lisk
@@ -56,13 +57,13 @@ whoami
   usermod -a -G sudo lisk
   ```
 
-3. Set a password for the lisk user, make this password strong.
+#### 3. Set a password for the lisk user, make this password strong.
 
   ```text
   passwd lisk
   ```
 
-4. Setup the sudoers file
+#### 4. Setup the sudoers file
 
   ```text
   visudo
