@@ -37,13 +37,14 @@ whoami
 
 1. Install `curl, wget, tar, sudo`
 
+*  If you are running Ubuntu
+*  
   ```text
-  If you are running Ubuntu
-  
   apt-get install curl wget tar sudo
+  ```
   
-  If you are running RHEL or CentOS
-  
+*  If you are running RHEL or CentOS
+  ```text
   yum install curl wget tar sudo
   ```
 
