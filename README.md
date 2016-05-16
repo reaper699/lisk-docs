@@ -8,6 +8,10 @@ Lisk is a decentralized application platform and crypto-currency, which offers a
 
 For more information please read our [white paper](/documentation?i=lisk-whitepaper/LiskWhitepaper).
 
+## Prerequisites for Installation
+
+* [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
+* 
 ## Node Installation
 
 * [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
