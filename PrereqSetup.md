@@ -33,12 +33,18 @@ whoami
 ```
 
 
-### Debian Based Linux
+### Linux
 
 1. Install `curl, wget, tar, sudo`
 
   ```text
+  If you are running Ubuntu
+  
   apt-get install curl wget tar sudo
+  
+  If you are running RHEL or CentOS
+  
+  yum install curl wget tar sudo
   ```
 
 2. Create a user to run lisk, create sudo group and give the lisk user sudo permissions
