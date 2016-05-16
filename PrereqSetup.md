@@ -107,3 +107,7 @@ If you modified this file, you must reboot your node at this time.
 ```text
 reboot
 ```
+
+#### 6. Continue on to installing Lisk!
+
+* [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
