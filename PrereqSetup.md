@@ -76,4 +76,23 @@ whoami
   
   Exit with `:wq!`
 
+#### 5. Update the systems Locale
+
+*  If you are running Ubuntu
+
+  ```text
+  nano /etc/default/locale
+  ```
+
+*  If you are running RHEL or CentOS
+
+  ```text
+  vi /etc/locale.conf
+  ```
+
+Once in the config file, edit the LANG line to match below, if it doesn't already
+
+  ```text
+  LANG="en_US.UTF-8"
+  ```
   
