@@ -60,11 +60,12 @@ whoami
   ```text
   visudo
   ```
-
-  ```text
   
-  Add this to your `.bash_profile` to make this change permanent:
-
+  Paste this line in at the bottom of the file
   ```text
-  echo "source $(pwd)/env.sh" >> ~/.bash_profile
+  %sudo   ALL=(ALL:ALL) ALL
   ```
+  
+  Exit with `:wq!`
+
+  
