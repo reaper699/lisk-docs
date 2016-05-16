@@ -101,3 +101,9 @@ Once in the config file, edit the LANG line to match below, if it doesn't alread
 On Ubuntu:  Hit: `Ctrl+ X` Then: `Y` to exit and save
 
 On RHEL: type `:wq!`
+
+If you modified this file, you must reboot your node at this time.
+
+```text
+reboot
+```
