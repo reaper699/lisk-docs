@@ -52,7 +52,7 @@ whoami
 #### 2. Create a user to run lisk, create sudo group and give the lisk user sudo permissions
 
   ```text
-  useradd lisk
+  useradd -d /home/lisk -m lisk
   groupadd sudo
   usermod -a -G sudo lisk
   ```
