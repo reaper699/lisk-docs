@@ -7,10 +7,10 @@ This tutorial describes how to prepare your operating system for Lisk.
 
 The following operating systems and architectures are supported:
 
-- [Linux (x86_64)](#linux-x86_64-)
-- [Linux (i686)](#linux-i686-)
-- [Linux (armv6l)](#linux-armv6l-)
-- [Linux (armv7l)](#linux-armv7l-)
+- [Linux (x86_64)](#linux)
+- [Linux (i686)](#linux)
+- [Linux (armv6l)](#linux))
+- [Linux (armv7l)](#linux)
 - [Darwin (x86_64)](#darwin-x86_64-)
 - [FreeBSD (amd64)](#freebsd-amd64-)
 
