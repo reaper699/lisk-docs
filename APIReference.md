@@ -441,7 +441,8 @@ Example:
 }
 ```
 
-### Get blockchain fee percent
+### Get blockchain fee
+Get transaction fee for sending "normal" transactions.
 
 GET `/api/blocks/getFee`
 
@@ -449,7 +450,7 @@ GET `/api/blocks/getFee`
 ```
 {
   "success": true,
-  "fee": "fee percent"
+  "fee": "fee amount"
 }
 ```
 
