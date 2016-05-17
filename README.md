@@ -18,6 +18,10 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 * [Installing Lisk (using Docker)](/documentation?i=lisk-docs/DockerInstall)
 * [Installing Lisk (from Source)](/documentation?i=lisk-docs/SourceInstall)
 
+## Node Upgrade
+
+* [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
+
 ## Dapps Development
 
 * [Lisk Dapps Documentation](/documentation?i=lisk-dapps-docs/README)
