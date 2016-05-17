@@ -35,17 +35,17 @@ whoami
 
 ### Linux
 
-#### 1. Install `curl, wget, tar, sudo`
+#### 1. Install `curl, wget, tar, sudo, unzip`
 
 Execute the following code block in your command line
 
   ```text
   if [[ -f "/etc/redhat-release" ]]; then
     yum update
-    yum install curl wget tar sudo
+    yum install curl wget tar sudo unzip
   elif [[ -f "/etc/debian_version" ]]; then
     apt-get update
-    apt-get install curl wget tar sudo
+    apt-get install curl wget tar sudo unzip
   fi
   ```
 
