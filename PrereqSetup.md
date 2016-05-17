@@ -93,7 +93,7 @@ Set the systems operating language to en_US.UTF-8
   fi
 ```
 
-If you modified this file, you must reboot your node at this time.
+#### 6. Reboot your system to apply changes
 
 ```text
 reboot
