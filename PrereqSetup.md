@@ -11,8 +11,8 @@ The following operating systems and architectures are supported:
 - [Linux (i686)](#linux)
 - [Linux (armv6l)](#linux))
 - [Linux (armv7l)](#linux)
-- [Darwin (x86_64)](#darwin-x86_64-)
-- [FreeBSD (amd64)](#freebsd-amd64-)
+- [Darwin (x86_64)](#Darwin)
+- [FreeBSD (amd64)](#FreeBSD)
 
 If you are unsure which platform to choose from, open a terminal and run the following command:
 
@@ -102,3 +102,11 @@ reboot
 #### 6. Continue on to installing Lisk!
 
 * [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
+
+### FreeBSD
+
+* Coming soon
+
+### Darwin
+
+* Coming soon
