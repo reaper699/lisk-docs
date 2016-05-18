@@ -88,7 +88,7 @@ npm install --production
 
 ## 6. Install Lisk Node
 
-This is a specialized version of Node.js used to execute dapps within a virtual machine.
+This is a specialized version of Node.js used to execute apps within a virtual machine.
 
 Download the Lisk Node archive:
 
