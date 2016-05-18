@@ -53,7 +53,7 @@ Follow the download instructions to install Lisk for your selected platform.
   cd lisk
   ```
 
-4. Configure environment _(optional, for dapps development)_:
+4. Configure environment _(optional, for apps development)_:
 
   ```text
   source env.sh
