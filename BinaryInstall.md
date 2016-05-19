@@ -10,12 +10,12 @@ To complete the installation, you will need to have `bash`, `curl`, `wget` and `
 
 The following operating systems and architectures are supported:
 
-- [Linux (x86_64)](#All Platforms)
-- [Linux (i686)](#All Platforms)
-- [Linux (armv6l)](#All Platforms)
-- [Linux (armv7l)](#All Platforms)
-- [Darwin (x86_64)](#All Platforms)
-- [FreeBSD (amd64)](#All Platforms)
+- [Linux (x86_64)](#all-platforms)
+- [Linux (i686)](#all-platforms)
+- [Linux (armv6l)](#all-platforms)
+- [Linux (armv7l)](#all-platforms)
+- [Darwin (x86_64)](#all-platforms)
+- [FreeBSD (amd64)](#all-platforms)
 
 If you are unsure which platform to choose from, open a terminal and run the following command:
 
