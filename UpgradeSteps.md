@@ -1,36 +1,38 @@
-#### Upgrading Lisk from Previous Version
+# Upgrading Lisk from Previous Version
 
-1. Switch to your lisk folder
+## 1. Switch to your Lisk folder and Stop Lisk processes
 
-[code]	cd lisk[/code]
+```text
+cd lisk
+bash lisk.sh stop
+```
 	
-2. Stop lisk processes
+## 2. Backup your config.json and ssl folder (if needed)
 
-[code]	bash lisk.sh stop[/code]
-	
-3. Backup your config.json and ssl folder (if needed)
+```text
+mkdir ~/backup
+cp config.json ~/backup/
+cp ./ssl/* ~/backup/
+```
 
-[code]	mkdir ~/backup
-	cp config.json ~/backup/
-	cp ./ssl/* ~/backup/
-	[/code]
+## 3. Remove your old Lisk folder and install script
 
-4. Remove your old Lisk folder and install script
-
-[code]
+```text
 cd ~
 rm -rf ~/lisk
-rm -rf installLisk.sh[/code]	
+rm -rf installLisk.sh	
+```
 
+## 4. If you are upgrading from a release prior to 0.2.1 run these commands
 
-5. If you are upgrading from a release prior to 0.2.1 run these commands
-
-[code]sudo apt-get --purge remove postgresql postgresql postgresql-client postgresql-client postgresql-client-common postgresql-common postgresql-contrib postgresql-contrib
+```text
+sudo apt-get --purge remove postgresql postgresql postgresql-client postgresql-client postgresql-client-common postgresql-common postgresql-contrib postgresql-contrib
 
 rm -rf /var/lib/postgresql/
 sudo rm -rf /var/log/postgresql/
-sudo rm -rf /etc/postgresql/[/code]
+sudo rm -rf /etc/postgresql/
+```
 
-6. Follow the Binary Install Guide!
+## 5. Follow the Binary Install Guide!
 	
-[url]https://lisk.io/documentation?i=lisk-docs/BinaryInstall[/url]
+https://lisk.io/documentation?i=lisk-docs/BinaryInstall
