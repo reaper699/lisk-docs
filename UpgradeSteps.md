@@ -1,4 +1,4 @@
-# Upgrading Lisk from Previous Version
+# Upgrading Lisk from Test Net to Main Net
 
 ## 1. Switch to your Lisk folder and Stop Lisk processes
 
