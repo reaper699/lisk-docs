@@ -30,7 +30,7 @@ Psql should have the following version number (or greater): `9.5.2`
 Create a postgresql user (and choose a password):
 
 ```text
-sudo -u postgres createuser --createdb --password $USER
+sudo -u postgres createuser --createdb --password lisk
 ```
 
 Create a postgresql database:
