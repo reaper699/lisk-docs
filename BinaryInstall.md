@@ -2,7 +2,7 @@
 
 This tutorial describes how to install the Lisk using pre-built binary packages. It is built under the assumption you are deploying Lisk for Main Net.
 
-To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
+**NOTE:** To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
 
 * [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
 
