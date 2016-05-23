@@ -223,3 +223,15 @@ To replace the blockchain with a new snapshot:
 ```text
 bash lisk.sh rebuild
 ```
+
+## 6. Troubleshooting
+
+**X Failed to create Postgresql user.**
+
+There may be a problem with your locale settings. Please use the following commands and try it again.
+
+```text
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+```
