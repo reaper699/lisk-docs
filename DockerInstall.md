@@ -37,6 +37,12 @@ To install the latest version of Lisk as a docker container, please proceed with
 
 Download the appropriate docker image:
 
+**Mainnet:**
+
+```text
+docker pull lisk/mainnet
+```
+
 **Testnet:**
 
 ```text
@@ -44,6 +50,12 @@ docker pull lisk/testnet
 ```
 
 Install the docker image (executed only once per installation):
+
+**Mainnet:**
+
+```text
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/testnet
+```
 
 **Testnet:**
 
@@ -85,7 +97,13 @@ docker rm container_id
 
 Download the latest docker image:
 
-**If on a testnet:**
+**If on Mainnet:**
+
+```text
+docker pull lisk/mainnet
+```
+
+**If on Testnet:**
 
 ```text
 docker pull lisk/testnet
@@ -93,7 +111,13 @@ docker pull lisk/testnet
 
 Install the docker image (executed only once per installation):
 
-**If on a testnet:**
+**If on mainnet:**
+
+```text
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/testnet
+```
+
+**If on testnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
@@ -238,7 +262,13 @@ docker commit container_id ssl_testnet
 
 Run the new docker image:
 
-**If on a testnet:**
+**If on Mainnet**
+
+```text
+docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 ssl_testnet
+```
+
+**If on Testnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:7000:7000 0.0.0.0:443:443 ssl_testnet
@@ -318,6 +348,12 @@ If you encounter an error while downloading the docker image, using the `docker 
 
 Please use the following alternative download method:
 
+**If on a testnet:**
+
+```text
+curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
+zcat lisk-docker.tar.gz | docker load
+```
 **If on a testnet:**
 
 ```text
