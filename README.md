@@ -27,10 +27,14 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 * [Lisk Apps Documentation](/documentation?i=lisk-apps-docs/README)
 * Lisk Apps API Documentation (Work-in-Progress)
 
+## Handbooks
+
+* [Delegates & Forging](/documentation?i=lisk-handbooks/DelegateHandbook)
+
 ## Node API
 
 * [Lisk API Documentation](/documentation?i=lisk-docs/APIReference)
 
 ## Whitepaper
 
-* [English Version](/documentation?i=lisk-whitepaper/LiskWhitepaper)
+An updated whitepaper will be released end of June.
