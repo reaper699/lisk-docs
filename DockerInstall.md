@@ -353,7 +353,7 @@ Please use the following alternative download method:
 **If on Mainnet:**
 
 ```text
-curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
+curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/main/lisk-docker.tar.gz
 zcat lisk-docker.tar.gz | docker load
 ```
 **If on Testnet:**
