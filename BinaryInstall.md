@@ -1,21 +1,25 @@
 # Installing Lisk (from Binaries)
 
-This tutorial describes how to install the Lisk using pre-built binary packages.
+This tutorial describes how to install the Lisk using pre-built binary packages. It is built under the assumption you are deploying Lisk for Main Net.
 
-To complete the installation, you will need to have `bash`, `curl`, `wget` and `tar` installed. The majority of operating systems have these installed by default, if not, please install them before continuing.
+**NOTE:** To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
 
-**NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please stop it before continuing, e.g. on Ubuntu Linux do the following: **sudo service postgresql stop**.
+* [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
+
+**NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please review the upgrade guide before continuing.
+
+* [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
 
 ## 1. Select Platform
 
 The following operating systems and architectures are supported:
 
-- [Linux (x86_64)](#linux-x86_64-)
-- [Linux (i686)](#linux-i686-)
-- [Linux (armv6l)](#linux-armv6l-)
-- [Linux (armv7l)](#linux-armv7l-)
-- [Darwin (x86_64)](#darwin-x86_64-)
-- [FreeBSD (amd64)](#freebsd-amd64-)
+- [Linux (x86_64)](#all-platforms)
+- [Linux (i686)](#all-platforms)
+- [Linux (armv6l)](#all-platforms)
+- [Linux (armv7l)](#all-platforms)
+- [Darwin (x86_64)](#all-platforms)
+- [FreeBSD (amd64)](#all-platforms)
 
 If you are unsure which platform to choose from, open a terminal and run the following command:
 
@@ -29,16 +33,14 @@ If your architecture is not supported yet, you can try building your own package
 
 ## 2. Download Lisk
 
-Follow the download instructions to install Lisk for your selected platform.
+Follow the download instructions to install Lisk for your selected platform. 
 
 ### All Platforms
 
-1. Choose a network and download the appropriate install script:
-
-  **Testnet** (_for development purposes_):
+1. Download the install script.
 
   ```text
-  wget https://downloads.lisk.io/lisk/test/installLisk.sh
+  wget https://downloads.lisk.io/scripts/installLisk.sh
   ```
 
 2. Execute the install script. This will download and install Lisk, configuring the environment for use.
@@ -46,11 +48,14 @@ Follow the download instructions to install Lisk for your selected platform.
   ```text
   bash installLisk.sh install
   ```
+ 
+ * You will be prompted for your installation directory, pressing enter will choose the default.
+ * The second prompt will ask you for Main network or Test network. Pressing enter will take Main network as a default.
 
 3. Change directory:
 
   ```text
-  cd lisk
+  cd lisk-main
   ```
 
 4. Configure environment _(optional, for apps development)_:

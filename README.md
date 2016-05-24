@@ -8,13 +8,25 @@ Lisk is a blockchain application platform and crypto-currency, which offers an a
 
 For more information please read our [white paper](/documentation?i=lisk-whitepaper/LiskWhitepaper).
 
+## Prerequisites for Installation
+
+* [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
+
 ## Node Installation
 
 * [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
 * [Installing Lisk (using Docker)](/documentation?i=lisk-docs/DockerInstall)
 * [Installing Lisk (from Source)](/documentation?i=lisk-docs/SourceInstall)
 
+<<<<<<< HEAD
+## Node Upgrade
+
+* [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
+
+## Dapps Development
+=======
 ## Apps Development
+>>>>>>> refs/remotes/origin/development
 
 * [Lisk Apps Documentation](/documentation?i=lisk-apps-docs/README)
 * Lisk Apps API Documentation (Work-in-Progress)
