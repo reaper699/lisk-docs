@@ -2,34 +2,24 @@
 
 This tutorial describes how to install the Lisk using pre-built binary packages. It is built under the assumption you are deploying Lisk for Main Net.
 
-**NOTE:** To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
+## 1. Prepare your System
+
+The following operating systems and architectures are supported:
+
+- Linux (x86_64)
+- Linux (i686)
+- Linux (armv6l)
+- Linux (armv7l)
+- Darwin (x86_64))
+- FreeBSD (amd64)
+
+To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
 
 * [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
 
 **NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please review the upgrade guide before continuing.
 
 * [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
-
-## 1. Select Platform
-
-The following operating systems and architectures are supported:
-
-- [Linux (x86_64)](#all-platforms)
-- [Linux (i686)](#all-platforms)
-- [Linux (armv6l)](#all-platforms)
-- [Linux (armv7l)](#all-platforms)
-- [Darwin (x86_64)](#all-platforms)
-- [FreeBSD (amd64)](#all-platforms)
-
-If you are unsure which platform to choose from, open a terminal and run the following command:
-
-```text
-uname -sm
-```
-
-The resulting output, should tell you if your machine is running on a supported operating system and architecture.
-
-If your architecture is not supported yet, you can try building your own packages using the [lisk-build](https://github.com/LiskHQ/lisk-build) automated package building tool.
 
 ## 2. Download Lisk
 
@@ -233,10 +223,4 @@ bash lisk.sh rebuild
 
 **X Failed to create Postgresql user.**
 
-There may be a problem with your locale settings. Please use the following commands and try it again.
-
-```text
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-```
+There may be a problem with your locale settings. Please take a look at our [system preparation guide](/documentation?i=lisk-docs/PrereqSetup).
