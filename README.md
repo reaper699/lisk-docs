@@ -18,7 +18,6 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 * [Installing Lisk (using Docker)](/documentation?i=lisk-docs/DockerInstall)
 * [Installing Lisk (from Source)](/documentation?i=lisk-docs/SourceInstall)
 
-<<<<<<< HEAD
 ## Node Upgrade
 
 * [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
@@ -26,7 +25,6 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 ## Dapps Development
 =======
 ## Apps Development
->>>>>>> refs/remotes/origin/development
 
 * [Lisk Apps Documentation](/documentation?i=lisk-apps-docs/README)
 * Lisk Apps API Documentation (Work-in-Progress)
