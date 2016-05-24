@@ -35,6 +35,12 @@ sudo -u postgres createuser --createdb --password lisk
 
 Create a postgresql database:
 
+**Maintnet** 
+
+```text
+createdb lisk_main
+```
+
 **Testnet** (_for development purposes_):
 
 ```text
@@ -55,12 +61,18 @@ node -v
 npm -v
 ```
 
-- Node.js should have the following version number (or greater): `v0.12.13`
+- Node.js should have the following version number (or greater): `v0.12.14`
 - npm should have the following version number (or greater): `2.15.0`
 
 ## 5. Install Lisk
 
 Choose a network and download the appropriate archive:
+
+**Mainnet**
+
+```text
+wget https://downloads.lisk.io/lisk/main/lisk-source.tar.gz
+```
 
 **Testnet** (_for development purposes_):
 
@@ -108,11 +120,17 @@ Check version of Node.js:
 nodejs/node -v
 ```
 
-- Node.js should have the following version number (or greater): `v0.12.13`
+- Node.js should have the following version number (or greater): `v0.12.14`
 
 ## 7. Download Blockchain
 
 Download the blockchain archive:
+
+**Mainnet** 
+
+```text
+wget https://downloads.lisk.io/lisk/main/blockchain.db.gz
+```
 
 **Testnet** (_for development purposes_):
 
