@@ -22,6 +22,8 @@ uname -sm
 
 The resulting output, should tell you if your machine is running on a supported operating system and architecture.
 
+If your architecture is not supported yet, you can try building your own packages using the [lisk-build](https://github.com/LiskHQ/lisk-build) automated package building tool.
+
 ## 2. Download and Install packages
 
 Follow these instructions to load required software to your system.
