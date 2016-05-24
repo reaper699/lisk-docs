@@ -22,8 +22,6 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 
 * [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
 
-## Dapps Development
-=======
 ## Apps Development
 
 * [Lisk Apps Documentation](/documentation?i=lisk-apps-docs/README)
