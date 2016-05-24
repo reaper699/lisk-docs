@@ -1,6 +1,6 @@
 # Installing Lisk (from Binaries)
 
-This tutorial describes how to install the Lisk using pre-built binary packages. It is built under the assumption you are deploying Lisk for Main Net.
+This tutorial describes how to install the Lisk using pre-built binary packages. It is built under the assumption you are deploying Lisk for the main network.
 
 ## 1. Prepare your System
 
@@ -40,7 +40,7 @@ Follow the download instructions to install Lisk for your selected platform.
   ```
  
  * You will be prompted for your installation directory, pressing enter will choose the default.
- * The second prompt will ask you for Main network or Test network. Pressing enter will take Main network as a default.
+ * The second prompt will ask you for main network or test network. Pressing enter will take main network as a default.
 
 3. Change directory:
 
@@ -62,7 +62,7 @@ Follow the download instructions to install Lisk for your selected platform.
 
 5. Accessing Lisk
 
-  To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
+  To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the main network (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a test network, replacing **localhost** with your public IP address if you have one.
 
   The Lisk web client should launch successfully.
  
