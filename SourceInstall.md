@@ -30,7 +30,7 @@ Psql should have the following version number (or greater): `9.5.2`
 Create a postgresql user (and choose a password):
 
 ```text
-sudo -u postgres createuser --createdb --password $USER
+sudo -u postgres createuser --createdb --password lisk
 ```
 
 Create a postgresql database:
@@ -88,7 +88,7 @@ npm install --production
 
 ## 6. Install Lisk Node
 
-This is a specialized version of Node.js used to execute dapps within a virtual machine.
+This is a specialized version of Node.js used to execute apps within a virtual machine.
 
 Download the Lisk Node archive:
 

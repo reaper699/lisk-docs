@@ -441,7 +441,8 @@ Example:
 }
 ```
 
-### Get blockchain fee percent
+### Get blockchain fee
+Get transaction fee for sending "normal" transactions.
 
 GET `/api/blocks/getFee`
 
@@ -449,7 +450,7 @@ GET `/api/blocks/getFee`
 ```
 {
   "success": true,
-  "fee": "fee percent"
+  "fee": "fee amount"
 }
 ```
 
@@ -661,11 +662,11 @@ POST `/api/delegates/forging/disable`
 }
 ```
 
-## Dapps
-Dapps API.
+## Apps
+Apps API.
 
-### Dapps
-Registers a dapp.
+### Apps
+Registers a app.
 
 PUT `/api/dapps`
 
@@ -692,8 +693,8 @@ PUT `/api/dapps`
 }
 ```
 
-### Get dapps
-Gets a list of dapps registered on the network.
+### Get apps
+Gets a list of apps registered on the network.
 
 GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offset=offset&orderBy=orderBy`
 
@@ -713,12 +714,12 @@ GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offs
 }
 ```
 
-### Get dapp
-Gets a specific dapp by id.
+### Get app
+Gets a specific app by id.
 
 GET `/api/dapps/get?id=id`
 
-- id: Id of dapp
+- id: Id of app
 
 **Response**
 ```
@@ -728,14 +729,14 @@ GET `/api/dapps/get?id=id`
 }
 ```
 
-### Search for dapps
-Searches for dapps by keyword(s).
+### Search for apps
+Searches for apps by keyword(s).
 
 GET `/api/dapps/search?q=q&category=category&installed=installed`
 
 - q: Search criteria. (String)
 - category: Category to search within. (Integer)
-- installed: Search installed dapps only. 1 or 0. (Integer)
+- installed: Search installed apps only. 1 or 0. (Integer)
 
 **Response**
 ```
@@ -747,8 +748,8 @@ GET `/api/dapps/search?q=q&category=category&installed=installed`
 }
 ```
 
-### Install dapp
-Installs a dapp by id on the node.
+### Install app
+Installs a app by id on the node.
 
 POST `/api/dapps/install`
 
@@ -766,8 +767,8 @@ POST `/api/dapps/install`
 }
 ```
 
-### Installed dapps
-Returns a list of installed dapps on the requested node.
+### Installed apps
+Returns a list of installed apps on the requested node.
 
 GET `/api/dapps/installed`
 
@@ -781,8 +782,8 @@ GET `/api/dapps/installed`
 }
 ```
 
-### Installed dapps Ids
-Returns a list of installed dapp ids on the requested node.
+### Installed apps Ids
+Returns a list of installed app ids on the requested node.
 
 GET `/api/dapps/installedIds`
 
@@ -796,8 +797,8 @@ GET `/api/dapps/installedIds`
 }
 ```
 
-### Uninstall dapps
-Uninstalls a dapp by id from the requested node.
+### Uninstall apps
+Uninstalls a app by id from the requested node.
 
 POST `/api/dapps/uninstall`
 
@@ -814,8 +815,8 @@ POST `/api/dapps/uninstall`
 }
 ```
 
-### Launch dapp
-Launches a dapp by id on the requested node.
+### Launch app
+Launches a app by id on the requested node.
 
 POST `/api/dapps/launch`
 
@@ -834,7 +835,7 @@ POST `/api/dapps/launch`
 ```
 
 ### Installing
-Returns a list of dapp ids currently being installed on the requested node.
+Returns a list of app ids currently being installed on the requested node.
 
 GET `/api/dapps/installing`
 
@@ -849,7 +850,7 @@ GET `/api/dapps/installing`
 ```
 
 ### Uninstalling
-Returns a list of dapp ids currently being uninstalled on the requested node.
+Returns a list of app ids currently being uninstalled on the requested node.
 
 GET `/api/dapps/uninstalling`
 
@@ -864,7 +865,7 @@ GET `/api/dapps/uninstalling`
 ```
 
 ### Launched
-Returns a list of dapp ids which are currently launched on the requested node.
+Returns a list of app ids which are currently launched on the requested node.
 
 GET `/api/dapps/launched`
 
@@ -879,7 +880,7 @@ GET `/api/dapps/launched`
 ```
 
 ### Categories
-Returns a full list of dapp categories.
+Returns a full list of app categories.
 
 GET `/api/dapps/categories`
 
@@ -891,8 +892,8 @@ GET `/api/dapps/categories`
 }
 ```
 
-### Stop dapp
-Stops a dapp by id on the requested node.
+### Stop app
+Stops a app by id on the requested node.
 
 POST `/api/dapps/stop`
 

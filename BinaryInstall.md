@@ -58,7 +58,7 @@ Follow the download instructions to install Lisk for your selected platform.
   cd lisk-main
   ```
 
-4. Configure environment _(optional, for dapps development)_:
+4. Configure environment _(optional, for apps development)_:
 
   ```text
   source env.sh
@@ -72,13 +72,11 @@ Follow the download instructions to install Lisk for your selected platform.
 
 5. Accessing Lisk
 
- To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
+  To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the mainnet (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a testnet, replacing **localhost** with your public IP address if you have one.
 
- The Lisk web client should launch successfully.
+  The Lisk web client should launch successfully.
  
 6. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
-
-
 
 ## 3. Enable Forging
 
@@ -229,4 +227,16 @@ To replace the blockchain with a new snapshot:
 
 ```text
 bash lisk.sh rebuild
+```
+
+## 6. Troubleshooting
+
+**X Failed to create Postgresql user.**
+
+There may be a problem with your locale settings. Please use the following commands and try it again.
+
+```text
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 ```

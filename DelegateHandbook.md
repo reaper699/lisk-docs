@@ -27,14 +27,14 @@
 4. Do I have to update to the latest version if I want to forge?
 5. What are the recommended server specifications for forging?
 6. How much can I earn by forging and how are the fees distributed?
-7. Does it makes a difference how many LISK my delegate account holds?
+7. Does it makes a difference how many LSK my delegate account holds?
  
 ### A. Consensus
 **1. Delegated Proof of Stake (DPoS)**
 
 Proof of Delegates is the consensus algorithm used by Lisk. It combines elements taken from the Proof of Work (PoW), Proof of Stake (PoS), and Delegated Proof of Stake (DPoS) consensus algorithms.
  
-The Lisk network is secured and/or protected by 101 active delegates. Each delegate is elected by the stakeholders of LISK. Once voted into the list of active delegates they are given the authority to generate blocks. Every Lisk stakeholder can be a part of the electoral process, by placing votes for delegates in their favour, or by becoming a candidate themselves.  
+The Lisk network is secured and/or protected by 101 active delegates. Each delegate is elected by the stakeholders of LSK. Once voted into the list of active delegates they are given the authority to generate blocks. Every Lisk stakeholder can be a part of the electoral process, by placing votes for delegates in their favour, or by becoming a candidate themselves.  
 The duty of the 101 active delegates is to secure the Lisk main blockchain (i.e. the mainchain). In order to provide an incentive to secure the network, transaction fees on the network are distributed equally amongst the 101 active delegates. In addition, an inflationary block reward (aka forging reward) is distributed to each block generator.
  
 **2. Benefits of Delegated Proof of Stake in comparison to PoW/PoS**
@@ -64,7 +64,7 @@ Vitalik Buterin, founder of Ethereum, calls our type of blockchain a consortium 
 ### B. Delegates
 **1. What is a delegate?**
  
-A delegate is nothing more than a special type of Lisk account. Any Lisk account can become a delegate, by simply registering a delegate username within the client. After the registration your account ID appears in the list of all delegates. The registration fee is 100 LISK, however this may be subject to change in the future.
+A delegate is nothing more than a special type of Lisk account. Any Lisk account can become a delegate, by simply registering a delegate username within the client. After the registration your account ID appears in the list of all delegates. The registration fee is 100 LSK, however this may be subject to change in the future.
  
 **2. What is the difference between an active and a standby delegate?**
  
@@ -72,9 +72,9 @@ Every delegate is placed at a specific position on the delegate ranking list. Th
  
 **3. What are delegate votes and where can I vote for delegates?**
  
-In order to determine the delegate rank position, Lisk has a decentralized voting mechanism built directly into the client. Users can vote for any delegates registered on the network. One vote equals 0.00000001 LISK, and a user can only vote with his entire LISK balance. One vote costs the user 1 LISK and he can vote for 33 delegates in one go. He can vote for 101 delegates in total, for this he needs to initiate 4 votes (33+33+33+2 = 101). It is not possible to vote for the same delegate twice.
+In order to determine the delegate rank position, Lisk has a decentralized voting mechanism built directly into the client. Users can vote for any delegates registered on the network. One vote equals 0.00000001 LSK, and a user can only vote with his entire LSK balance. One vote costs the user 1 LSK and he can vote for 33 delegates in one go. He can vote for 101 delegates in total, for this he needs to initiate 4 votes (33+33+33+2 = 101). It is not possible to vote for the same delegate twice.
  
-The number of votes are represented as an “Approval” within the client, and is shown as a percentage. An approval of 1% equals 1% of all LISK in the network. At launch this would be 1,000,000 LISK (later more, due to inflation) or 100,000,000,000,000 votes.
+The number of votes are represented as an “Approval” within the client, and is shown as a percentage. An approval of 1% equals 1% of all LSK in the network. At launch this would be 1,000,000 LSK (later more, due to inflation) or 100,000,000,000,000 votes.
  
 **4. How can I become an active delegate?**
  
@@ -153,15 +153,15 @@ The total share of regular transaction fees, is dependent on the volume of trans
  
 The forging rewards occur at a fixed rate per block, and change over the course of the network’s lifetime as follows:
  
-- 5 LISK per block - in the 1st year.
-- 4 LISK per block - in the 2nd year.
-- 3 LISK per block - in the 3rd year.
-- 2 LISK per block - in the 4th year.
-- 1 LISK per block – in all other years.
+- 5 LSK per block - in the 1st year.
+- 4 LSK per block - in the 2nd year.
+- 3 LSK per block - in the 3rd year.
+- 2 LSK per block - in the 4th year.
+- 1 LSK per block – in all other years.
 
-**7. Does it make a difference how many LISK my delegate account holds?**
+**7. Does it make a difference how many LSK my delegate account holds?**
 
-No, it doesn’t. An active delegate with 100 LISK receives the same amount of LISK from forging as an active delegate with 1,000,000 LISK.
+No, it doesn’t. An active delegate with 100 LSK receives the same amount of LSK from forging as an active delegate with 1,000,000 LSK.
 
 ### D. Sources
 [1] http://bytemaster.github.io/bitshares/2015/01/04/Delegated-Proof-of-Stake-vs-Proof-of-Work/  
