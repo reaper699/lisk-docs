@@ -15,7 +15,7 @@ The following operating systems and architectures are supported:
 
 To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
 
-* [Preparing Your System for Lisk](/documentation?i=lisk-docs/PrereqSetup)
+* [Preparing Your system for Lisk](/documentation?i=lisk-docs/PrereqSetup)
 
 **NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please review the upgrade guide before continuing.
 
