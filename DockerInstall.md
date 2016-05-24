@@ -2,6 +2,8 @@
 
 This tutorial describes how to install Lisk as a Docker based container.
 
+This document is broken into parts. One being Mainnet and the other being Testnet. Please be sure to follow the instructions for only the network you are configuring your machine to use.
+
 ## 1. Install Docker
 
 ### Windows / Mac OS X
@@ -111,13 +113,13 @@ docker pull lisk/testnet
 
 Install the docker image (executed only once per installation):
 
-**If on mainnet:**
+**If on Mainnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/testnet
 ```
 
-**If on testnet:**
+**If on Testnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
@@ -348,13 +350,13 @@ If you encounter an error while downloading the docker image, using the `docker 
 
 Please use the following alternative download method:
 
-**If on a testnet:**
+**If on Mainnet:**
 
 ```text
 curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
 zcat lisk-docker.tar.gz | docker load
 ```
-**If on a testnet:**
+**If on Testnet:**
 
 ```text
 curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
