@@ -116,7 +116,7 @@ Install the docker image (executed only once per installation):
 **If on Mainnet:**
 
 ```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/testnet
+docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
 ```
 
 **If on Testnet:**
