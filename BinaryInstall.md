@@ -224,3 +224,11 @@ bash lisk.sh rebuild
 **X Failed to create Postgresql user.**
 
 There may be a problem with your locale settings. Please take a look at our [system preparation guide](/documentation?i=lisk-docs/PrereqSetup).
+
+If it doesn't solve the problem, do the following:
+
+ ```text		
+ -export LC_ALL=en_US.UTF-8  
+ -export LANG=en_US.UTF-8  
+ -export LANGUAGE=en_US.UTF-8  
+ ```
