@@ -9,7 +9,7 @@ cd lisk-main
 bash lisk.sh stop
 ```
 	
-## 2. Backup your config.json and ssl folder (if needed)
+## 2. Backup your ssl folder (if needed)
 
 ```text
 mkdir ~/backup
