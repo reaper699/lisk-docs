@@ -1,9 +1,11 @@
-# Upgrading Lisk from Test Net to Main Net
+# Upgrading Lisk 
+
+This tutorial will provide proper instructions on upgrading version of Lisk. The document assumes you are updating between Main Network versions. Replace all instances of Main with Test if using Test Network.
 
 ## 1. Switch to your Lisk folder and Stop Lisk processes
 
 ```text
-cd lisk
+cd lisk-main
 bash lisk.sh stop
 ```
 	
@@ -19,7 +21,7 @@ cp ./ssl/* ~/backup/
 
 ```text
 cd ~
-rm -rf ~/lisk
+rm -rf ~/lisk-main
 rm -rf installLisk.sh	
 ```
 
