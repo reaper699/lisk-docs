@@ -13,7 +13,6 @@ bash lisk.sh stop
 
 ```text
 mkdir ~/backup
-cp config.json ~/backup/
 cp ./ssl/* ~/backup/
 ```
 
