@@ -64,7 +64,7 @@ Vitalik Buterin, founder of Ethereum, calls our type of blockchain a consortium 
 ### B. Delegates
 **1. What is a delegate?**
  
-A delegate is nothing more than a special type of Lisk account. Any Lisk account can become a delegate, by simply registering a delegate username within the client. After the registration your account ID appears in the list of all delegates. The registration fee is 100 LSK, however this may be subject to change in the future.
+A delegate is nothing more than a special type of Lisk account. Any Lisk account can become a delegate, by simply registering a delegate username within the client. After the registration your account ID appears in the list of all delegates. The registration fee is 25 LSK, however this may be subject to change in the future.
  
 **2. What is the difference between an active and a standby delegate?**
  
