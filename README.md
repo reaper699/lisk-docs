@@ -24,7 +24,7 @@ For more information please read our [white paper](/documentation?i=lisk-whitepa
 
 ## Apps Development
 
-* [Lisk Apps Documentation](/documentation?i=lisk-apps-docs/README)
+* [Lisk Apps Documentation](/documentation?i=lisk-dapps-docs/README)
 * Lisk Apps API Documentation (Work-in-Progress)
 
 ## Handbooks
