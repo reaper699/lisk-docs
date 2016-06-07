@@ -1,6 +1,6 @@
 # Lisk Delegate Handbook
 
-#### 8th March 2016
+#### 2nd June 2016
 
 ## Table of Contents
 
