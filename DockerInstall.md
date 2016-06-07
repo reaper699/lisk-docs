@@ -69,7 +69,7 @@ docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
 
 Upon successful completion, you will have a running Lisk node with an up-to-date snapshot of the blockchain. The container is configured to automatically restart upon reboot of the server or any occurrence of an error.
 
-To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/) if on the mainnet (once Lisk is launched) or [http://192.168.99.100:7000/](http://192.168.99.100:7000/) if on a testnet.
+To access the Lisk web client, open: [http://192.168.99.100:8000/](http://192.168.99.100:8000/) if on the mainnet or [http://192.168.99.100:7000/](http://192.168.99.100:7000/) if on a testnet.
 
 The Lisk web client should launch successfully.
 
@@ -99,13 +99,13 @@ docker rm container_id
 
 Download the latest docker image:
 
-**If on Mainnet:**
+**Mainnet:**
 
 ```text
 docker pull lisk/mainnet
 ```
 
-**If on Testnet:**
+**Testnet:**
 
 ```text
 docker pull lisk/testnet
@@ -113,13 +113,13 @@ docker pull lisk/testnet
 
 Install the docker image (executed only once per installation):
 
-**If on Mainnet:**
+**Mainnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:8000:8000 lisk/mainnet
 ```
 
-**If on Testnet:**
+**Testnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:7000:7000 lisk/testnet
@@ -258,19 +258,27 @@ docker stop container_id
 
 Commit a new docker image (replace **container_id** with your own id):
 
+**Mainnet**
+
+```text
+docker commit container_id ssl_mainnet
+```
+
+**Testnet:**
+
 ```text
 docker commit container_id ssl_testnet
 ```
 
 Run the new docker image:
 
-**If on Mainnet**
+**Mainnet**
 
 ```text
-docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 ssl_testnet
+docker run -d --restart=always -p 0.0.0.0:8000:8000 0.0.0.0:443:443 ssl_mainnet
 ```
 
-**If on Testnet:**
+**Testnet:**
 
 ```text
 docker run -d --restart=always -p 0.0.0.0:7000:7000 0.0.0.0:443:443 ssl_testnet
@@ -350,13 +358,13 @@ If you encounter an error while downloading the docker image, using the `docker 
 
 Please use the following alternative download method:
 
-**If on Mainnet:**
+**Mainnet:**
 
 ```text
 curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/main/lisk-docker.tar.gz
 zcat lisk-docker.tar.gz | docker load
 ```
-**If on Testnet:**
+**Testnet:**
 
 ```text
 curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.gz
