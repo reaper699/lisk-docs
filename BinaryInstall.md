@@ -15,11 +15,11 @@ The following operating systems and architectures are supported:
 
 To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
 
-* [Preparing your system for Lisk](/documentation?i=lisk-docs/PrereqSetup)
+* [Preparing your system for Lisk](https://lisk.io/documentation?i=lisk-docs/PrereqSetup)
 
 **NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please review the upgrade guide before continuing.
 
-* [Preparing your system for upgrade](/documentation?i=lisk-docs/UpgradeSteps)
+* [Preparing your system for upgrade](https://lisk.io/documentation?i=lisk-docs/UpgradeSteps)
 
 ## 2. Download Lisk
 
@@ -223,7 +223,7 @@ bash lisk.sh rebuild
 
 **X Failed to create Postgresql user.**
 
-There may be a problem with your locale settings. Please take a look at our [system preparation guide](/documentation?i=lisk-docs/PrereqSetup).
+There may be a problem with your locale settings. Please take a look at our [system preparation guide](https://lisk.io/documentation?i=lisk-docs/PrereqSetup).
 
 If it doesn't solve the problem, do the following:
 
