@@ -371,4 +371,4 @@ curl -o lisk-docker.tar.gz https://downloads.lisk.io/lisk/test/lisk-docker.tar.g
 zcat lisk-docker.tar.gz | docker load
 ```
 
-Then proceed with the remainder of the [installation instructions](/documentation?i=lisk-docs/DockerInstall#2-install-lisk).
+Then proceed with the remainder of the [installation instructions](https://lisk.io/documentation?i=lisk-docs/DockerInstall#2-install-lisk).
