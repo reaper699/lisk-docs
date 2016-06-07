@@ -3,7 +3,7 @@
 
 This tutorial describes how to prepare your operating system for Lisk.
 
-## 1. Confirm your operating system is supported.
+## 1. Confirm your operating system is supported
 
 The following operating systems and architectures are supported:
 
@@ -60,7 +60,7 @@ Execute the following code block in your command line
   usermod -a -G sudo lisk
   ```
 
-#### 3. Set a password for the lisk user, make this password strong.
+#### 3. Set a password for the lisk user, make this password strong
 
   ```text
   passwd lisk
@@ -87,11 +87,11 @@ Set the systems operating language to en_US.UTF-8
 
 ```text
   if [[ -f "/etc/redhat-release" ]]; then
-   localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
-   localectl set-locale LANG=en_US.UTF-8
+    localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
+    localectl set-locale LANG=en_US.UTF-8
   elif [[ -f "/etc/debian_version" ]]; then
-   locale-gen en_US.UTF-8
-   update-locale LANG=en_US.UTF-8
+    locale-gen en_US.UTF-8
+    update-locale LANG=en_US.UTF-8
   fi
 ```
 
