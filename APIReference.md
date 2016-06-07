@@ -1,19 +1,23 @@
 # Lisk API
-## INTRODUCTION
-Lisk Wallet REST API. All API calls are using /api prefix.
-### How to work with the API
-- Information need to return.
-- Success parameter. Determines the success of a response.
-- Error parameter. Provided if the success parameter equal `false`.
+
+## Introduction
+Lisk client API. All API endpoints are relative to the `/api` prefix.
+
+All endpoints return:
+
+- Success parameter. `true` or `false` dependent on success.
+- Error parameter. Provided when response is unsuccessful.
  
-The API is only available after the client is completely loaded (!=synced), else all routes return:
+The API is only available after the client has successfully loaded, otherwise all routes return:
+
 ```
 {
     "success" : false,
     "error" : "loading"
 }
 ```
-In the case the client is not fully synced all routes return intermediate/old values. 
+
+In the case the client is not fully synced all routes may return intermediate/old values. 
 
 ## Accounts
 Account related API calls.
