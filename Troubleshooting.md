@@ -30,9 +30,24 @@ info 2016-04-04 21:32:10 Fork { delegate: 'a48bad28661406130df30ea016ed1f59561a6
      previousBlock: '15794674487202740739' },
   cause: 1 }
 ```
+
+`Fork Cause 1` means the node has received a block which has the correct block height, but the previous block id is different, hence a fork is detected. In this circumstance there are two outcomes.
+
+1. The node will discard the block and continue searching for the correct block.
+2. If the node forged the forking block, it will retain the block and be forked indefinitely.
+
+Mitigation
+
+In the instance of the second error, the node will continue to search other nodes in vain unable to find a common block. The node will need to be rebuilt using `bash lisk.sh rebuild`
+
+
 ##### Cause 2
 
 ##### Cause 3
+
+In this case it means your node has gone into an unrecoverable fork. The issue affecting these forks was fixed in the 0.1.2 release. Some delegates are still running 0.1.1, and therefore signing blocks which can't be properly verified.
+
+The fork cause 3 basically means the block being verified has been signed by a different delegate than expected.
 
 ```
 error 2016-04-05 07:23:54 Can't verify slot: 17900401180294209692
