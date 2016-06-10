@@ -31,7 +31,7 @@ info 2016-04-04 21:32:10 Fork { delegate: 'a48bad28661406130df30ea016ed1f59561a6
   cause: 1 }
 ```
 
-`Fork Cause 1` means the node has received a block which has the correct block height, but the previous block id is different, hence a fork is detected. In this circumstance there are two outcomes.
+`Fork Cause 1` indicates the node has received a block which has the correct block height, but the previous block id is different, hence a fork is detected. In this circumstance there are two outcomes.
 
 1. The node will discard the block and continue searching for the correct block.
 2. If the node forged the forking block, it will retain the block and be forked indefinitely.
@@ -44,10 +44,6 @@ In the instance of the second error, the node will continue to search other node
 ##### Cause 2
 
 ##### Cause 3
-
-In this case it means your node has gone into an unrecoverable fork. The issue affecting these forks was fixed in the 0.1.2 release. Some delegates are still running 0.1.1, and therefore signing blocks which can't be properly verified.
-
-The fork cause 3 basically means the block being verified has been signed by a different delegate than expected.
 
 ```
 error 2016-04-05 07:23:54 Can't verify slot: 17900401180294209692
@@ -65,11 +61,14 @@ info 2016-04-05 07:24:14 Fork { delegate: '45bc77403105fffe822314b305ac7ca6db7a4
   cause: 3 }
 ```
 
+`Fork Cause 3` indicates that there is corruption in the database is missing voting data. This means that when processing the next block in the chain it expects one delegate to have forged the block for that slot and timestamp. In this case that expectation is wrong.
+
+Mitigation
+
+This error is unrecoverable. The node will need to be rebuilt using `bash lisk.sh rebuild`
+
 ##### Cause 5
 
-This fork cause 5, means that your node has received a block from a peer which failed to validate because the block id does not match with nodes own chain, even though it's the right height and the previous block data matches.
-
-Therefore instead of the block being processed, as in a confirmation produced, it will simply discard it. So nothing for you to worry about.
 ```
 {"level":"info",
 "message":"Fork",
@@ -81,6 +80,14 @@ Therefore instead of the block being processed, as in a confirmation produced, i
 "previousBlock":"10210628004998625034"},
 "cause":5}}
 ```
+
+`Fork Cause 5` indicates that the node has received a block from a peer which failed to validate due to the block id not matching with nodes expected next block id even though the block is at the right height and the previous block data matches.
+
+In the case of a `Fork Cause 5` the block is not validated and given a confirmation like a normal block. It is discarded instead.
+
+Mitigation
+
+There is none, this is an informational error only.
 
 ## error: Forever detected script was killed by signal: SIGKILL
 
