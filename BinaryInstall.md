@@ -10,7 +10,7 @@ The following operating systems and architectures are supported:
 - Linux (i686)
 - Linux (armv6l)
 - Linux (armv7l)
-- Darwin (x86_64))
+- Darwin (x86_64)
 - FreeBSD (amd64)
 
 To complete the installation there are prerequisites that need to be completed. You can find them below if you have not already performed them.
