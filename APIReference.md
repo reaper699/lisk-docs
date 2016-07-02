@@ -3,12 +3,12 @@
 ## Introduction
 Lisk client API. All API endpoints are relative to the `/api` prefix.
 
-All endpoints return:
+All endpoints will return:
 
 - Success parameter. `true` or `false` dependent on success.
 - Error parameter. Provided when response is unsuccessful.
- 
-The API is only available after the client has successfully loaded, otherwise all routes return:
+
+The API is only available after the client has successfully loaded, otherwise all endpoints will return:
 
 ```
 {
@@ -17,13 +17,15 @@ The API is only available after the client has successfully loaded, otherwise al
 }
 ```
 
-In the case the client is not fully synced all routes may return intermediate/old values. 
+In the case the client is not fully synced all routes may return intermediate/old values.
+
+Each API entry contains an example call to help provide understanding of how to use the call. These examples rely on `curl` being installed and Lisk running on the localhost. The examples also include `<field>`; use this for easy identification of what needs to be changed for the call to function.
 
 ## Accounts
-Account related API calls.
+API calls related to Account functionality.
 
 ### Open account
-Get information about an account.
+Request information about an account.
 
 POST `/api/accounts/open`
 
@@ -50,12 +52,19 @@ POST `/api/accounts/open`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
+http://localhost:8000/api/accounts/open
+```
+
 ### Get balance
-Get the balance of an account.
+Request the balance of an account.
 
-GET `/api/accounts/getBalance?address=address`
+GET `/api/accounts/getBalance?address=<address>`
 
-- address: Address of the account
+- address: wallet address of the account
 
 **Response**
 ```
@@ -66,12 +75,17 @@ GET `/api/accounts/getBalance?address=address`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/accounts/getBalance?address=<address>
+```
+
 ### Get account public key
 Get the public key of an account. If the account does not exist the API call will return an error.
 
 GET `/api/accounts/getPublicKey?address=address`
 
-- address: Address of account
+- address: wallet address of the account
 
 **Response**
 ```
@@ -79,6 +93,11 @@ GET `/api/accounts/getPublicKey?address=address`
   "success": true,
   "publicKey": "Public key of account. Hex"
 }
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/accounts/getPublicKey?address=<address>
 ```
 
 ### Generate public key
@@ -100,12 +119,19 @@ POST `/api/accounts/generatePublicKey`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
+http://localhost:8000/api/accounts/generatePublicKey
+```
+
 ### Get account
-Return account information of an address.
+Returns account information of an address.
 
 GET `/api/accounts?address=address`
 
-- address: Address of account
+- address: wallet address of an account
 
 **Response**
 ```
@@ -123,12 +149,17 @@ GET `/api/accounts?address=address`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/accounts?address=<address>
+```
+
 ### Get delegates
 Returns delegate accounts by address.
 
 GET `/api/accounts/delegates?address=address`
 
-- address: Address of account
+- address: wallet address of account
 
 **Response**
 ```
@@ -136,9 +167,15 @@ GET `/api/accounts/delegates?address=address`
     "success": true,
     "delegates": [array]
 }
+
 ```
 
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/accounts/delegates?address=<address>
+```
 
 ### Put delegates
 Vote for the selected delegates. Maximum of 33 delegates at once.
@@ -154,6 +191,7 @@ PUT `/api/accounts/delegates`
     "delegates" : "Array of string in the following format: ["+DelegatePublicKey"] OR ["-DelegatePublicKey"]. Use + to UPvote, - to DOWNvote"
 }
 ```
+
 **Response**
 ```
 {
@@ -162,11 +200,32 @@ PUT `/api/accounts/delegates`
 }
 ```
 
+**Example - No Second Secret**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>","delegates":["<INSERT DELEGATE PUBLICKEY HERE>"]}' \
+http://localhost:8000/api/accounts/delegates
+```
+
+**Example - With Second Secret**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>",secondSecret"="<INSERT SECONDSECRET HERE>,"delegates":["<INSERT DELEGATE PUBLICKEY HERE>"]}' \
+http://localhost:8000/api/accounts/delegates
+```
+
+**Example - Multiple Votes**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>","delegates":["<INSERT DELEGATE PUBLICKEY HERE>","<INSERT DELEGATE PUBLICKEY HERE>"]}' \
+http://localhost:8000/api/accounts/delegates
+```
+
 ## Loader
-Provides the synchronisation and loading information of a client. These API calls are only working if the client is syncing or loading.
+Provides the synchronization and loading information of a client. These API calls will only work if the client is syncing or loading.
 
 ### Get loading status
-Returns account's delegates by address.
+Returns the status of the blockchain
 
 GET `/api/loader/status`
 
@@ -180,8 +239,13 @@ GET `/api/loader/status`
 }
 ```
 
-### Get synchronisation status
-Get the synchronisation status of the client.
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/loader/status/
+```
+
+### Get synchronization status
+Get the synchronization status of the client.
 
 GET `/api/loader/status/sync`
 
@@ -195,11 +259,16 @@ GET `/api/loader/status/sync`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/loader/status/sync
+```
+
 ## Transactions
 API calls related to transactions.
 
 ### Get list of transactions
-Transactions list matched by provided parameters.
+List of transactions matched by provided parameters.
 
 GET `/api/transactions?blockId=blockId&senderId=senderId&recipientId=recipientId&limit=limit&offset=offset&orderBy=field`
 
@@ -210,7 +279,7 @@ GET `/api/transactions?blockId=blockId&senderId=senderId&recipientId=recipientId
 - offset: Offset to load. (Integer number)
 - orderBy: Name of column to order. After column name must go "desc" or "acs" to choose order type, prefix for column name is t_. Example: orderBy=t_timestamp:desc (String)
 
-All parameters joins by "OR". 
+All parameters join by "OR".
 
 Example:  
 `/api/transactions?blockId=10910396031294105665&senderId=6881298120989278452C&orderBy=timestamp:desc` looks like: blockId=10910396031294105665 OR senderId=6881298120989278452C
@@ -224,6 +293,22 @@ Example:
   ]
 }
 ```
+
+**Example - blockId**
+```
+curl -k -X GET http://localhost:8000/api/transactions?blockId=<blockId>
+```
+
+**Example - senderId**
+```
+curl -k -X GET http://localhost:8000/api/transactions?senderId=<senderId>
+```
+
+**Example - senderId**
+```
+curl -k -X GET http://localhost:8000/api/transactions?recipientId=<recipientId>
+```
+
 
 ### Send transaction
 Send transaction to broadcast network.
@@ -240,6 +325,7 @@ PUT `/api/transactions`
     "secondSecret" : "Secret key from second transaction, required if user uses second signature"
 }
 ```
+
 **Response**
 ```
 {
@@ -248,8 +334,23 @@ PUT `/api/transactions`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
+http://localhost:8000/api
+```
+
+**Example - Second Secret**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>",
+"amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
+http://localhost:8000/api/api/transactions
+```
+
 ### Get transaction
-Transaction matched by id.
+Get transaction that matches the provided id.
 
 GET `/api/transactions/get?id=id`
 
@@ -277,8 +378,13 @@ GET `/api/transactions/get?id=id`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/transactions/get?id=<id>
+```
+
 ### Get unconfirmed transaction
-Get unconfirmed transaction by id.
+Get unconfirmed transaction that matches the provided id.
 
 GET `/api/transactions/unconfirmed/get?id=id`
 
@@ -305,8 +411,13 @@ GET `/api/transactions/unconfirmed/get?id=id`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/transactions/unconfirmed/get?id=<id>
+```
+
 ### Get list of unconfirmed transactions
-Get list of unconfirmed transactions.
+Gets a list of unconfirmed transactions.
 
 GET `/api/transactions/unconfirmed`
 
@@ -317,27 +428,30 @@ GET `/api/transactions/unconfirmed`
     "transactions" : [list of transaction objects]
 }
 ```
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/transactions/unconfirmed
+```
 
 ## Peers
 Peers API.
 
 ### Get peers list
-Get peers list by parameters.
+Gets list of peers from provided filter parameters.
 
-GET `/api/peers?state=state&os=os&shared=shared&version=version&limit=limit&offset=offset&orderBy=orderBy`
+GET `/api/peers?state=state&os=os&version=version&limit=limit&offset=offset&orderBy=orderBy`
 
 - state: State of peer. 1 - disconnected. 2 - connected. 0 - banned. (String)
 - os: OS of peer. (String)
-- shared: Is peer shared? Boolean: true or false. (String)
 - version: Version of peer. (String)
 - limit: Limit to show. Max limit is 100. (Integer)
 - offset: Offset to load. (Integer)
 - orderBy: Name of column to order. After column name must go "desc" or "acs" to choose order type. (String)
 
-All parameters joins by "OR". 
+All parameters joins by "OR".
 
 Example:   
-`/api/peers?state=1&version=0.1.8` looks like: state=1 OR version=0.1.8
+`/api/peers?state=1&version=0.3.2` looks like: state=1 OR version=0.3.2
 
 **Response**
 ```
@@ -349,8 +463,13 @@ Example:
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/peers
+```
+
 ### Get peer
-Get peer by ip and port
+Gets peer by IP address and port
 
 GET `/api/peers/get?ip=ip&port=port`
 
@@ -365,8 +484,13 @@ GET `/api/peers/get?ip=ip&port=port`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/peers/get?ip=<ip>&port=<port>
+```
+
 ### Get peer version, build time
-Get peer version and build time
+Gets a list peer versions and build times
 
 GET `/api/peers/version`
 
@@ -379,11 +503,16 @@ GET `/api/peers/version`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/peers/version
+```
+
 ## Blocks
-Blocks manage API.
+Blocks management API.
 
 ### Get block
-Get block by id.
+Gets block by provided id.
 
 GET `/api/blocks/get?id=id`
 
@@ -416,8 +545,13 @@ GET `/api/blocks/get?id=id`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/get?id=<id>
+```
+
 ### Get blocks
-Get all blocks.
+Gets all blocks by provided filter(s).
 
 GET `/api/blocks?generatorPublicKey=generatorPublicKey&height=height&previousBlock=previousBlock&totalAmount=totalAmount&totalFee=totalFee&limit=limit&offset=offset&orderBy=orderBy`
 
@@ -445,6 +579,11 @@ Example:
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks?generatorPublicKey=<generatorPublicKey>
+```
+
 ### Get blockchain fee
 Get transaction fee for sending "normal" transactions.
 
@@ -454,12 +593,78 @@ GET `/api/blocks/getFee`
 ```
 {
   "success": true,
-  "fee": "fee amount"
+  "fee": Integer
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getFee
+```
+
+### Get blockchain fees schedule
+Get transaction fee for all types of transactions.
+
+GET `/api/blocks/getFees`
+
+**Response**
+```
+{
+  "success": true,
+  "fees":{
+    "send": Integer,
+    "vote": Integer,
+    "secondsignature": Integer,
+    "delegate": Integer,
+    "multisignature": Integer,
+    "dapp": Integer
+  }
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getFees
+```
+
+### Get blockchain reward schedule
+Gets the forging reward for blocks.
+
+GET `/api/blocks/getReward`
+
+**Response**
+```
+{
+  "success": true,
+  "reward": Integer
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getReward
+```
+
+### Get supply of available Lisk
+Gets the total amount of Lisk in circulation
+
+GET `/api/blocks/getSupply`
+
+**Response**
+```
+{
+  "success": true,
+  "supply": Integer
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getSupply
+```
+
 ### Get blockchain height
-Get blockchain height.
+Gets the blockchain height of the client.
 
 GET `/api/blocks/getHeight`
 
@@ -471,26 +676,74 @@ GET `/api/blocks/getHeight`
 }
 ```
 
-### Get forged by account
-Get amount forged by account.
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getHeight
+```
 
-GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPublicKey`
+### Gets status of height, fee, milestone, blockreward and supply
+Gets status of height, fee, milestone, blockreward and supply
 
-- generatorPublicKey: generator id of block in hex. (String)
+GET `/api/blocks/getStatus`
 
 **Response**
 ```
 {
   "success": true,
-  "sum": "Forged amount. Integer"
+  "height": Integer
+  "fee": Integer
+  "milestone": Integer
+  "reward": Integer
+  "supply": Integer
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getStatus
+```
+
+### Get blockchain nethash
+Gets the nethash of the blockchain on a client.
+
+GET `/api/blocks/getNethash`
+
+**Response**
+```
+{
+  "success": true,
+  "nethash": "Nethash of the Blockchain. String"
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getNethash
+```
+
+### Get blockchain milestone
+Gets the milestone of the blockchain on a client.
+
+GET `/api/blocks/getMilestone`
+
+**Response**
+```
+{
+  "success": true,
+  "milestone": Integer
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/blocks/getMilestone
+```
+
 ## Signatures
-Blocks manage API.
+Signature management API.
 
 ### Get signature
-Get second signature of account.
+Gets the second signature status of an account.
 
 GET `/api/signatures/get?id=id`
 
@@ -511,8 +764,13 @@ GET `/api/signatures/get?id=id`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/signatures/get?id=<id>
+```
+
 ### Add second signature
-Add second signature to account.
+Add a second signature to an account.
 
 PUT `/api/signatures`
 
@@ -520,10 +778,11 @@ PUT `/api/signatures`
 ```
 {
   "secret": "secret key of account",
-  "secondsecret": "second key of account",
+  "secondsecret": "second secret key of account",
   "publicKey": "optional, to verify valid secret key and account"
 }
 ```
+
 **Response**
 ```
 {
@@ -533,11 +792,18 @@ PUT `/api/signatures`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>","publicKey":"<INSERT PUBLIC KEY HERE>" }' \
+http://localhost:8000/api/signatures
+```
+
 ## Delegates
 Delegates API.
 
 ### Enable delegate on account
-Calls for delegates functional.
+Puts request to create a delegate.
 
 PUT `/api/delegates`
 
@@ -557,8 +823,15 @@ PUT `/api/delegates`
 }
 ```
 
-### Get delegates
-Get delegates list.
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>","username":"<INSERT USERNAME HERE>" }' \
+http://localhost:8000/api/delegates
+```
+
+### Get delegates list
+Gets list of delegates by provided filter.
 
 GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 
@@ -576,12 +849,17 @@ GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/delegates?limit=<limit>
+```
+
 ### Get delegate
-Get delegate by transaction id.
+Gets delegate by transaction id.
 
 GET `/api/delegates/get?id=transactionId`
 
-- transactionId: Id of transaction where delegated was putted. (String)
+- transactionId: Id of transaction where delegated was created by put. (String)
 
 **Response**
 ```
@@ -594,8 +872,35 @@ GET `/api/delegates/get?id=transactionId`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/delegates/get?id=<transactionId>
+```
+
+### Get total count of delegates
+Get voters of delegate.
+
+GET `/api/delegates/count`
+
+- publicKey: Public key of registered delegate account. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "accounts": [
+    "array of accounts who vote for delegate"
+  ]
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/delegates/count
+```
+
 ### Get votes of account
-Get votes by account address.
+Get votes by account wallet address.
 
 GET `/api/accounts/delegates/?address=address`
 
@@ -611,12 +916,17 @@ GET `/api/accounts/delegates/?address=address`
 
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/accounts/delegates/?address=<address>
+```
+
 ### Get voters
 Get voters of delegate.
 
 GET `/api/delegates/voters?publicKey=publicKey`
 
-- publicKey: Public key of delegate. (String)
+- publicKey: Public key of registered delegate account. (String)
 
 **Response**
 ```
@@ -628,8 +938,13 @@ GET `/api/delegates/voters?publicKey=publicKey`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/delegates/voters?publicKey=<publicKey>
+```
+
 ### Enable forging on delegate
-Enable forging
+Enables forging for a delegate on the client node.
 
 POST `/api/delegates/forging/enable`
 
@@ -647,8 +962,15 @@ POST `/api/delegates/forging/enable`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
+http://localhost:8000/api/delegates/forging/enable
+```
+
 ### Disable forging on delegate
-Disable forging
+Disables forging for a delegate on the client node.
 
 POST `/api/delegates/forging/disable`
 
@@ -658,6 +980,7 @@ POST `/api/delegates/forging/disable`
   "secret": "secret key of delegate account"
 }
 ```
+
 **Response**
 ```
 {
@@ -666,11 +989,39 @@ POST `/api/delegates/forging/disable`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
+http://localhost:8000/api/delegates/forging/disable
+```
+
+### Get forged by account
+Get amount of Lisk forged by an account.
+
+GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPublicKey`
+
+- generatorPublicKey: generator id of block in hex. (String)
+
+**Response**
+```
+{
+  "success": true,
+  "sum": "Forged amount. Integer"
+}
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/delegates/forging/getForgedByAccount?generatorPublicKey=<generatorPublicKey>
+```
+
+
 ## Apps
-Apps API.
+Blockchain Applications API.
 
 ### Apps
-Registers a app.
+Registers a Blockchain Application.
 
 PUT `/api/dapps`
 
@@ -697,8 +1048,17 @@ PUT `/api/dapps`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>"
+"category":<INSERT INTEGER HERE>,"name":"<INSERT APPLICATION NAME HERE>",
+"type":0,"link":"<INSERT LINK TO APPLICATION HERE>"}' \
+http://localhost:8000/api/dapps
+```
+
 ### Get apps
-Gets a list of apps registered on the network.
+Gets a list of Blockchain Applications registered on the network.
 
 GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offset=offset&orderBy=orderBy`
 
@@ -718,8 +1078,13 @@ GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offs
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps?name=<INSERT APPLICATION NAME HERE>
+```
+
 ### Get app
-Gets a specific app by id.
+Gets a specific Blockchain Application by registered id.
 
 GET `/api/dapps/get?id=id`
 
@@ -733,8 +1098,13 @@ GET `/api/dapps/get?id=id`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/get?id=<id>
+```
+
 ### Search for apps
-Searches for apps by keyword(s).
+Searches for Blockchain Applications by filter(s) on a node.
 
 GET `/api/dapps/search?q=q&category=category&installed=installed`
 
@@ -752,6 +1122,11 @@ GET `/api/dapps/search?q=q&category=category&installed=installed`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/search?installed=1
+```
+
 ### Install app
 Installs a app by id on the node.
 
@@ -760,15 +1135,23 @@ POST `/api/dapps/install`
 **Request**
 ```
 {
-  "id": "dapp id to install"
+  "id": "Blockchain Application id to install"
 }
 ```
+
 **Response**
 ```
 {
   "success": true,
   "path": "dppp install path"
 }
+```
+
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"id":"<INSERT ID HERE>"}' \
+http://localhost:8000/api/dapps/install
 ```
 
 ### Installed apps
@@ -786,6 +1169,11 @@ GET `/api/dapps/installed`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/installed
+```
+
 ### Installed apps Ids
 Returns a list of installed app ids on the requested node.
 
@@ -801,6 +1189,11 @@ GET `/api/dapps/installedIds`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/installedIds
+```
+
 ### Uninstall apps
 Uninstalls a app by id from the requested node.
 
@@ -809,7 +1202,7 @@ POST `/api/dapps/uninstall`
 **Request**
 ```
 {
-  "id": "dapp id to uninstall"
+  "id": "Blockchain Application id to install"
 }
 ```
 **Response**
@@ -817,6 +1210,13 @@ POST `/api/dapps/uninstall`
 {
   "success": true
 }
+```
+
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"id":"<INSERT ID HERE>"}' \
+http://localhost:8000/api/dapps/uninstall
 ```
 
 ### Launch app
@@ -838,6 +1238,13 @@ POST `/api/dapps/launch`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"id":"<INSERT ID HERE>"}' \
+http://localhost:8000/api/dapps/launch
+```
+
 ### Installing
 Returns a list of app ids currently being installed on the requested node.
 
@@ -853,8 +1260,13 @@ GET `/api/dapps/installing`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/installing
+```
+
 ### Uninstalling
-Returns a list of app ids currently being uninstalled on the requested node.
+Returns a list of app ids currently being uninstalled on the client node.
 
 GET `/api/dapps/uninstalling`
 
@@ -868,8 +1280,13 @@ GET `/api/dapps/uninstalling`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/uninstalling
+```
+
 ### Launched
-Returns a list of app ids which are currently launched on the requested node.
+Returns a list of app ids which are currently launched on the client node.
 
 GET `/api/dapps/launched`
 
@@ -881,6 +1298,11 @@ GET `/api/dapps/launched`
     "array of dapp ids"
   ]
 }
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/launched
 ```
 
 ### Categories
@@ -896,6 +1318,11 @@ GET `/api/dapps/categories`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/dapps/categories
+```
+
 ### Stop app
 Stops a app by id on the requested node.
 
@@ -907,6 +1334,7 @@ POST `/api/dapps/stop`
   "id": "dapp id to stop"
 }
 ```
+
 **Response**
 ```
 {
@@ -914,11 +1342,18 @@ POST `/api/dapps/stop`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"id":"<INSERT ID HERE>"}' \
+http://localhost:8000/api/dapps/stop
+```
+
 ## Multi-Signature
-Multisignature group API.
+Multi-signature API.
 
 ### Get pending multi-signature transactions
-Return multisig transaction that waiting for your signature.
+Returns a list of multi-signature transactions that waiting for signature by publicKey.
 
 GET `/api/multisignatures/pending?publicKey=publicKey`
 
@@ -932,8 +1367,13 @@ GET `/api/multisignatures/pending?publicKey=publicKey`
 }
 ```
 
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/multisignatures/pending?publicKey=<publicKey>
+```
+
 ### Create multi-signature account
-Create a multisignature account.
+Create a multi-signature account.
 
 PUT `/api/multisignatures`
 
@@ -943,9 +1383,10 @@ PUT `/api/multisignatures`
     "secret": "your secret. string. required.",
     "lifetime": "request lifetime in hours (1-24). required.",
     "min": "minimum signatures needed to approve a tx or a change (1-15). integer. required",
-    "keysgroup": [array of public keys strings]. add '+' before publicKey to add an account or '-' to remove. required. 
+    "keysgroup": [array of public keys strings]. add '+' before publicKey to add an account or '-' to remove. required.
 }
 ```
+
 **Response**
 ```
 {
@@ -954,8 +1395,15 @@ PUT `/api/multisignatures`
 }
 ```
 
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X PUT -d '{"secret":"<INSERT SECRET HERE>","lifetime":<INSERT NUMBER HERE>,"min":<INSERT NUMBER OF SIGNATURES HERE>,"keysgroup":["+<INSERT PUBLIC KEY HERE>","+<INSERT PUBLIC KEY HERE>"] }' \
+http://localhost:8000/api/multisignatures
+```
+
 ### Sign transaction
-Sign transaction that wait for your signature.
+Signs a transaction that is awaiting signature.
 
 POST `/api/multisignatures/sign`
 
@@ -964,7 +1412,7 @@ POST `/api/multisignatures/sign`
 {
   "secret": "your secret. string. required.",
   "publicKey": "public key of your account. string. optional.",
-  "transactionId": "id of transaction to sign"
+  "transactionId": "id of transaction to sign. REQUIRED"
 }
 ```
 **Response**
@@ -975,8 +1423,15 @@ POST `/api/multisignatures/sign`
 }
 ```
 
-### Get accounts of multisignature
-Get accounts of multisignature.
+**Example**
+```
+curl -k -H "Content-Type: application/json" \
+-X POST -d '{"secret":"<INSERT SECRET HERE>","transactionId":"<INSERT TRANSACTION ID HERE>"}' \
+http://localhost:8000/api/multisignatures/sign
+```
+
+### Get accounts of multi-signature
+Gets a list of accounts that are part of a multi-signature account.
 
 GET `/api/multisignatures/accounts?publicKey=publicKey`
 
@@ -988,4 +1443,9 @@ GET `/api/multisignatures/accounts?publicKey=publicKey`
   "success": true,
   "accounts": "array of accounts"
 }
+```
+
+**Example**
+```
+curl -k -X GET http://localhost:8000/api/multisignatures/accounts?publicKey=<publicKey>
 ```
