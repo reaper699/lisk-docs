@@ -253,7 +253,7 @@ GET `/api/loader/status/sync`
 ```
 {
    "success": true,
-   "sync": "Is wallet is syncing with another peers? Boolean: true or false",
+   "syncing": "Is wallet is syncing with another peers? Boolean: true or false",
    "blocks": "Number of blocks remaining to sync. Integer",
    "height": "Total blocks in blockchain. Integer"
 }
