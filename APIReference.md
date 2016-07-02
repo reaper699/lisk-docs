@@ -10,7 +10,7 @@ All endpoints will return:
 
 The API is only available after the client has successfully loaded, otherwise all endpoints will return:
 
-```
+```text
 {
     "success" : false,
     "error" : "loading"
@@ -30,13 +30,13 @@ Request information about an account.
 POST `/api/accounts/open`
 
 **Request**
-```
+```text
 {
   "secret": "secret key of account"
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "account": {
@@ -53,7 +53,7 @@ POST `/api/accounts/open`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
 http://localhost:8000/api/accounts/open
@@ -67,7 +67,7 @@ GET `/api/accounts/getBalance?address=<address>`
 - address: wallet address of the account
 
 **Response**
-```
+```text
 {
   "success": true,
   "balance": "Balance of account",
@@ -76,7 +76,7 @@ GET `/api/accounts/getBalance?address=<address>`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/accounts/getBalance?address=<address>
 ```
 
@@ -88,7 +88,7 @@ GET `/api/accounts/getPublicKey?address=address`
 - address: wallet address of the account
 
 **Response**
-```
+```text
 {
   "success": true,
   "publicKey": "Public key of account. Hex"
@@ -96,7 +96,7 @@ GET `/api/accounts/getPublicKey?address=address`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/accounts/getPublicKey?address=<address>
 ```
 
@@ -106,13 +106,13 @@ Returns the public key of the provided secret key.
 POST `/api/accounts/generatePublicKey`
 
 **Request**
-```
+```text
 {
   "secret": "secret key of account"
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "publicKey": "Public key of account. Hex"
@@ -120,7 +120,7 @@ POST `/api/accounts/generatePublicKey`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
 http://localhost:8000/api/accounts/generatePublicKey
@@ -134,7 +134,7 @@ GET `/api/accounts?address=address`
 - address: wallet address of an account
 
 **Response**
-```
+```text
 {
   "success": true,
   "account": {
@@ -150,7 +150,7 @@ GET `/api/accounts?address=address`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/accounts?address=<address>
 ```
 
@@ -162,7 +162,7 @@ GET `/api/accounts/delegates?address=address`
 - address: wallet address of account
 
 **Response**
-```
+```text
 {
     "success": true,
     "delegates": [array]
@@ -173,7 +173,7 @@ GET `/api/accounts/delegates?address=address`
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/accounts/delegates?address=<address>
 ```
 
@@ -183,7 +183,7 @@ Vote for the selected delegates. Maximum of 33 delegates at once.
 PUT `/api/accounts/delegates`
 
 **Request**
-```
+```text
 {
     "secret" : "Secret key of account",
     "publicKey" : "Public key of sender account, to verify secret passphrase in wallet. Optional, only for UI",
@@ -193,7 +193,7 @@ PUT `/api/accounts/delegates`
 ```
 
 **Response**
-```
+```text
 {
     "success": true,
     "transaction": {object}
@@ -201,21 +201,21 @@ PUT `/api/accounts/delegates`
 ```
 
 **Example - No Second Secret**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>","delegates":["<INSERT DELEGATE PUBLICKEY HERE>"]}' \
 http://localhost:8000/api/accounts/delegates
 ```
 
 **Example - With Second Secret**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>",secondSecret"="<INSERT SECONDSECRET HERE>,"delegates":["<INSERT DELEGATE PUBLICKEY HERE>"]}' \
 http://localhost:8000/api/accounts/delegates
 ```
 
 **Example - Multiple Votes**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","publicKey"="<INSERT PUBLICKEY HERE>","delegates":["<INSERT DELEGATE PUBLICKEY HERE>","<INSERT DELEGATE PUBLICKEY HERE>"]}' \
 http://localhost:8000/api/accounts/delegates
@@ -230,7 +230,7 @@ Returns the status of the blockchain
 GET `/api/loader/status`
 
 **Response**
-```
+```text
 {
    "success": true,
    "loaded": "Is blockchain loaded? Boolean: true or false",
@@ -240,7 +240,7 @@ GET `/api/loader/status`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/loader/status/
 ```
 
@@ -250,7 +250,7 @@ Get the synchronization status of the client.
 GET `/api/loader/status/sync`
 
 **Response**
-```
+```text
 {
    "success": true,
    "syncing": "Is wallet is syncing with another peers? Boolean: true or false",
@@ -260,7 +260,7 @@ GET `/api/loader/status/sync`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/loader/status/sync
 ```
 
@@ -285,7 +285,7 @@ Example:
 `/api/transactions?blockId=10910396031294105665&senderId=6881298120989278452C&orderBy=timestamp:desc` looks like: blockId=10910396031294105665 OR senderId=6881298120989278452C
 
 **Response**
-```
+```text
 {
   "success": true,
   "transactions": [
@@ -295,17 +295,17 @@ Example:
 ```
 
 **Example - blockId**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions?blockId=<blockId>
 ```
 
 **Example - senderId**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions?senderId=<senderId>
 ```
 
 **Example - senderId**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions?recipientId=<recipientId>
 ```
 
@@ -316,7 +316,7 @@ Send transaction to broadcast network.
 PUT `/api/transactions`
 
 **Request**
-```
+```text
 {
     "secret" : "Secret key of account",
     "amount" : /* Amount of transaction * 10^8. Example: to send 1.1234 LISK, use 112340000 as amount */,
@@ -327,7 +327,7 @@ PUT `/api/transactions`
 ```
 
 **Response**
-```
+```text
 {
   "success": true,
   "transactionId": "id of added transaction"
@@ -335,14 +335,14 @@ PUT `/api/transactions`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
 http://localhost:8000/api
 ```
 
 **Example - Second Secret**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>",
 "amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
@@ -357,7 +357,7 @@ GET `/api/transactions/get?id=id`
 - id: String of transaction (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "transaction": {
@@ -379,7 +379,7 @@ GET `/api/transactions/get?id=id`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions/get?id=<id>
 ```
 
@@ -391,7 +391,7 @@ GET `/api/transactions/unconfirmed/get?id=id`
 - id: String of transaction (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "transaction": {
@@ -412,7 +412,7 @@ GET `/api/transactions/unconfirmed/get?id=id`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions/unconfirmed/get?id=<id>
 ```
 
@@ -422,14 +422,14 @@ Gets a list of unconfirmed transactions.
 GET `/api/transactions/unconfirmed`
 
 **Response**
-```
+```text
 {
     "success" : true,
     "transactions" : [list of transaction objects]
 }
 ```
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/transactions/unconfirmed
 ```
 
@@ -454,7 +454,7 @@ Example:
 `/api/peers?state=1&version=0.3.2` looks like: state=1 OR version=0.3.2
 
 **Response**
-```
+```text
 {
   "success": true,
   "peers": [
@@ -464,7 +464,7 @@ Example:
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/peers
 ```
 
@@ -477,7 +477,7 @@ GET `/api/peers/get?ip=ip&port=port`
 - port: Port of peer. (Integer)
 
 **Response**
-```
+```text
 {
   "success": true,
   "peer": "peer object"
@@ -485,7 +485,7 @@ GET `/api/peers/get?ip=ip&port=port`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/peers/get?ip=<ip>&port=<port>
 ```
 
@@ -495,7 +495,7 @@ Gets a list peer versions and build times
 GET `/api/peers/version`
 
 **Response**
-```
+```text
 {
   "success": true,
   "version": "version of Lisk",
@@ -504,7 +504,7 @@ GET `/api/peers/version`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/peers/version
 ```
 
@@ -519,7 +519,7 @@ GET `/api/blocks/get?id=id`
 - id: Id of block.
 
 **Response**
-```
+```text
 {
     "success": true,
     "block": {
@@ -546,7 +546,7 @@ GET `/api/blocks/get?id=id`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/get?id=<id>
 ```
 
@@ -570,7 +570,7 @@ Example:
 - orderBy: field name to order by. Format: fieldname:orderType. Example: height:desc, timestamp:asc (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "blocks": [
@@ -580,7 +580,7 @@ Example:
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks?generatorPublicKey=<generatorPublicKey>
 ```
 
@@ -590,7 +590,7 @@ Get transaction fee for sending "normal" transactions.
 GET `/api/blocks/getFee`
 
 **Response**
-```
+```text
 {
   "success": true,
   "fee": Integer
@@ -598,7 +598,7 @@ GET `/api/blocks/getFee`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getFee
 ```
 
@@ -608,7 +608,7 @@ Get transaction fee for all types of transactions.
 GET `/api/blocks/getFees`
 
 **Response**
-```
+```text
 {
   "success": true,
   "fees":{
@@ -623,7 +623,7 @@ GET `/api/blocks/getFees`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getFees
 ```
 
@@ -633,7 +633,7 @@ Gets the forging reward for blocks.
 GET `/api/blocks/getReward`
 
 **Response**
-```
+```text
 {
   "success": true,
   "reward": Integer
@@ -641,7 +641,7 @@ GET `/api/blocks/getReward`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getReward
 ```
 
@@ -651,7 +651,7 @@ Gets the total amount of Lisk in circulation
 GET `/api/blocks/getSupply`
 
 **Response**
-```
+```text
 {
   "success": true,
   "supply": Integer
@@ -659,7 +659,7 @@ GET `/api/blocks/getSupply`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getSupply
 ```
 
@@ -669,7 +669,7 @@ Gets the blockchain height of the client.
 GET `/api/blocks/getHeight`
 
 **Response**
-```
+```text
 {
   "success": true,
   "height": "Height of blockchain. Integer"
@@ -677,7 +677,7 @@ GET `/api/blocks/getHeight`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getHeight
 ```
 
@@ -687,7 +687,7 @@ Gets status of height, fee, milestone, blockreward and supply
 GET `/api/blocks/getStatus`
 
 **Response**
-```
+```text
 {
   "success": true,
   "height": Integer
@@ -699,7 +699,7 @@ GET `/api/blocks/getStatus`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getStatus
 ```
 
@@ -709,7 +709,7 @@ Gets the nethash of the blockchain on a client.
 GET `/api/blocks/getNethash`
 
 **Response**
-```
+```text
 {
   "success": true,
   "nethash": "Nethash of the Blockchain. String"
@@ -717,7 +717,7 @@ GET `/api/blocks/getNethash`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getNethash
 ```
 
@@ -727,7 +727,7 @@ Gets the milestone of the blockchain on a client.
 GET `/api/blocks/getMilestone`
 
 **Response**
-```
+```text
 {
   "success": true,
   "milestone": Integer
@@ -735,7 +735,7 @@ GET `/api/blocks/getMilestone`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/blocks/getMilestone
 ```
 
@@ -750,7 +750,7 @@ GET `/api/signatures/get?id=id`
 - id: Id of signature. (String)
 
 **Response**
-```
+```text
 {
     "success" : true,
     "signature" : {
@@ -765,7 +765,7 @@ GET `/api/signatures/get?id=id`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/signatures/get?id=<id>
 ```
 
@@ -775,7 +775,7 @@ Add a second signature to an account.
 PUT `/api/signatures`
 
 **Request**
-```
+```text
 {
   "secret": "secret key of account",
   "secondsecret": "second secret key of account",
@@ -784,7 +784,7 @@ PUT `/api/signatures`
 ```
 
 **Response**
-```
+```text
 {
   "success": true,
   "transactionId": "id of transaction with new signature",
@@ -793,7 +793,7 @@ PUT `/api/signatures`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>","publicKey":"<INSERT PUBLIC KEY HERE>" }' \
 http://localhost:8000/api/signatures
@@ -808,7 +808,7 @@ Puts request to create a delegate.
 PUT `/api/delegates`
 
 **Request**
-```
+```text
 {
   "secret": "Secret key of account",
   "secondSecret": "Second secret of account",
@@ -816,7 +816,7 @@ PUT `/api/delegates`
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "transaction": "transaction object"
@@ -824,7 +824,7 @@ PUT `/api/delegates`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>","username":"<INSERT USERNAME HERE>" }' \
 http://localhost:8000/api/delegates
@@ -840,7 +840,7 @@ GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 - orderBy: Order by field (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "delegates": "delegates objects array"
@@ -850,7 +850,7 @@ GET `/api/delegates?limit=limit&offset=offset&orderBy=orderBy`
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/delegates?limit=<limit>
 ```
 
@@ -862,7 +862,7 @@ GET `/api/delegates/get?id=transactionId`
 - transactionId: Id of transaction where delegated was created by put. (String)
 
 **Response**
-```
+```text
 {
     "success": true,
     "delegate": {
@@ -873,7 +873,7 @@ GET `/api/delegates/get?id=transactionId`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/delegates/get?id=<transactionId>
 ```
 
@@ -885,7 +885,7 @@ GET `/api/delegates/count`
 - publicKey: Public key of registered delegate account. (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "accounts": [
@@ -895,7 +895,7 @@ GET `/api/delegates/count`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/delegates/count
 ```
 
@@ -907,7 +907,7 @@ GET `/api/accounts/delegates/?address=address`
 - address: Address of account. (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "delegates": "array of delegates"
@@ -917,7 +917,7 @@ GET `/api/accounts/delegates/?address=address`
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/accounts/delegates/?address=<address>
 ```
 
@@ -929,7 +929,7 @@ GET `/api/delegates/voters?publicKey=publicKey`
 - publicKey: Public key of registered delegate account. (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "accounts": [
@@ -939,7 +939,7 @@ GET `/api/delegates/voters?publicKey=publicKey`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/delegates/voters?publicKey=<publicKey>
 ```
 
@@ -949,13 +949,13 @@ Enables forging for a delegate on the client node.
 POST `/api/delegates/forging/enable`
 
 **Request**
-```
+```text
 {
   "secret": "secret key of delegate account"
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "address": "address"
@@ -963,7 +963,7 @@ POST `/api/delegates/forging/enable`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
 http://localhost:8000/api/delegates/forging/enable
@@ -975,14 +975,14 @@ Disables forging for a delegate on the client node.
 POST `/api/delegates/forging/disable`
 
 **Request**
-```
+```text
 {
   "secret": "secret key of delegate account"
 }
 ```
 
 **Response**
-```
+```text
 {
   "success": true,
   "address": "address"
@@ -990,7 +990,7 @@ POST `/api/delegates/forging/disable`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"secret":"<INSERT SECRET HERE>"}' \
 http://localhost:8000/api/delegates/forging/disable
@@ -1004,7 +1004,7 @@ GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPubli
 - generatorPublicKey: generator id of block in hex. (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "sum": "Forged amount. Integer"
@@ -1012,7 +1012,7 @@ GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPubli
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/delegates/forging/getForgedByAccount?generatorPublicKey=<generatorPublicKey>
 ```
 
@@ -1026,7 +1026,7 @@ Registers a Blockchain Application.
 PUT `/api/dapps`
 
 **Request**
-```
+```text
 {
   "secret": "Secret of account. String. Required",
   "secondSecret": "Second secret of account. String. Optional",
@@ -1041,7 +1041,7 @@ PUT `/api/dapps`
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "transactionId": "transaction id"
@@ -1049,7 +1049,7 @@ PUT `/api/dapps`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>"
 "category":<INSERT INTEGER HERE>,"name":"<INSERT APPLICATION NAME HERE>",
@@ -1071,7 +1071,7 @@ GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offs
 - orderBy: Order by field. (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "dapps": "array of dapps"
@@ -1079,7 +1079,7 @@ GET `/api/dapps?category=category&name=name&type=type&link=link&limit=limit&offs
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps?name=<INSERT APPLICATION NAME HERE>
 ```
 
@@ -1091,7 +1091,7 @@ GET `/api/dapps/get?id=id`
 - id: Id of app
 
 **Response**
-```
+```text
 {
   "success": true,
   "dapp": "dapp object"
@@ -1099,7 +1099,7 @@ GET `/api/dapps/get?id=id`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/get?id=<id>
 ```
 
@@ -1113,7 +1113,7 @@ GET `/api/dapps/search?q=q&category=category&installed=installed`
 - installed: Search installed apps only. 1 or 0. (Integer)
 
 **Response**
-```
+```text
 {
   "success": true,
   "dapps": [
@@ -1123,7 +1123,7 @@ GET `/api/dapps/search?q=q&category=category&installed=installed`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/search?installed=1
 ```
 
@@ -1133,14 +1133,14 @@ Installs a app by id on the node.
 POST `/api/dapps/install`
 
 **Request**
-```
+```text
 {
   "id": "Blockchain Application id to install"
 }
 ```
 
 **Response**
-```
+```text
 {
   "success": true,
   "path": "dppp install path"
@@ -1148,7 +1148,7 @@ POST `/api/dapps/install`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"id":"<INSERT ID HERE>"}' \
 http://localhost:8000/api/dapps/install
@@ -1160,7 +1160,7 @@ Returns a list of installed apps on the requested node.
 GET `/api/dapps/installed`
 
 **Response**
-```
+```text
 {
   "success": "true",
   "dapps": [
@@ -1170,7 +1170,7 @@ GET `/api/dapps/installed`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/installed
 ```
 
@@ -1180,7 +1180,7 @@ Returns a list of installed app ids on the requested node.
 GET `/api/dapps/installedIds`
 
 **Response**
-```
+```text
 {
   "success": true,
   "ids": [
@@ -1190,7 +1190,7 @@ GET `/api/dapps/installedIds`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/installedIds
 ```
 
@@ -1200,20 +1200,20 @@ Uninstalls a app by id from the requested node.
 POST `/api/dapps/uninstall`
 
 **Request**
-```
+```text
 {
   "id": "Blockchain Application id to install"
 }
 ```
 **Response**
-```
+```text
 {
   "success": true
 }
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"id":"<INSERT ID HERE>"}' \
 http://localhost:8000/api/dapps/uninstall
@@ -1225,21 +1225,21 @@ Launches a app by id on the requested node.
 POST `/api/dapps/launch`
 
 **Request**
-```
+```text
 {
   "id": "dapp id to launch",
   "params": "dapp launch params, not required, array"
 }
 ```
 **Response**
-```
+```text
 {
   "success": true
 }
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"id":"<INSERT ID HERE>"}' \
 http://localhost:8000/api/dapps/launch
@@ -1251,7 +1251,7 @@ Returns a list of app ids currently being installed on the requested node.
 GET `/api/dapps/installing`
 
 **Response**
-```
+```text
 {
   "success": true,
   "installing": [
@@ -1261,7 +1261,7 @@ GET `/api/dapps/installing`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/installing
 ```
 
@@ -1271,7 +1271,7 @@ Returns a list of app ids currently being uninstalled on the client node.
 GET `/api/dapps/uninstalling`
 
 **Response**
-```
+```text
 {
   "success": true,
   "uninstalling": [
@@ -1281,7 +1281,7 @@ GET `/api/dapps/uninstalling`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/uninstalling
 ```
 
@@ -1291,7 +1291,7 @@ Returns a list of app ids which are currently launched on the client node.
 GET `/api/dapps/launched`
 
 **Response**
-```
+```text
 {
   "success": true,
   "launched": [
@@ -1301,7 +1301,7 @@ GET `/api/dapps/launched`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/launched
 ```
 
@@ -1311,7 +1311,7 @@ Returns a full list of app categories.
 GET `/api/dapps/categories`
 
 **Response**
-```
+```text
 {
   "success": true,
   "category": "object containing category names and ids"
@@ -1319,7 +1319,7 @@ GET `/api/dapps/categories`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/dapps/categories
 ```
 
@@ -1329,21 +1329,21 @@ Stops a app by id on the requested node.
 POST `/api/dapps/stop`
 
 **Request**
-```
+```text
 {
   "id": "dapp id to stop"
 }
 ```
 
 **Response**
-```
+```text
 {
   "success": true
 }
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"id":"<INSERT ID HERE>"}' \
 http://localhost:8000/api/dapps/stop
@@ -1360,7 +1360,7 @@ GET `/api/multisignatures/pending?publicKey=publicKey`
 - publicKey: Public key of account (String)
 
 **Response**
-```
+```text
 {
     "success": true,
     "transactions": ['array of transactions to sign']
@@ -1368,7 +1368,7 @@ GET `/api/multisignatures/pending?publicKey=publicKey`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/multisignatures/pending?publicKey=<publicKey>
 ```
 
@@ -1378,7 +1378,7 @@ Create a multi-signature account.
 PUT `/api/multisignatures`
 
 **Request**
-```
+```text
 {
     "secret": "your secret. string. required.",
     "lifetime": "request lifetime in hours (1-24). required.",
@@ -1388,7 +1388,7 @@ PUT `/api/multisignatures`
 ```
 
 **Response**
-```
+```text
 {
   "success": true,
   "transactionId": "transaction id"
@@ -1396,7 +1396,7 @@ PUT `/api/multisignatures`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","lifetime":<INSERT NUMBER HERE>,"min":<INSERT NUMBER OF SIGNATURES HERE>,"keysgroup":["+<INSERT PUBLIC KEY HERE>","+<INSERT PUBLIC KEY HERE>"] }' \
 http://localhost:8000/api/multisignatures
@@ -1408,7 +1408,7 @@ Signs a transaction that is awaiting signature.
 POST `/api/multisignatures/sign`
 
 **Request**
-```
+```text
 {
   "secret": "your secret. string. required.",
   "publicKey": "public key of your account. string. optional.",
@@ -1416,7 +1416,7 @@ POST `/api/multisignatures/sign`
 }
 ```
 **Response**
-```
+```text
 {
   "success": true,
   "transactionId": "transaction id"
@@ -1424,7 +1424,7 @@ POST `/api/multisignatures/sign`
 ```
 
 **Example**
-```
+```text
 curl -k -H "Content-Type: application/json" \
 -X POST -d '{"secret":"<INSERT SECRET HERE>","transactionId":"<INSERT TRANSACTION ID HERE>"}' \
 http://localhost:8000/api/multisignatures/sign
@@ -1438,7 +1438,7 @@ GET `/api/multisignatures/accounts?publicKey=publicKey`
 - publicKey: Public key of multi-signature account (String)
 
 **Response**
-```
+```text
 {
   "success": true,
   "accounts": "array of accounts"
@@ -1446,6 +1446,6 @@ GET `/api/multisignatures/accounts?publicKey=publicKey`
 ```
 
 **Example**
-```
+```text
 curl -k -X GET http://localhost:8000/api/multisignatures/accounts?publicKey=<publicKey>
 ```
