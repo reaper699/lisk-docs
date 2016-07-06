@@ -34,7 +34,3 @@ For more information please read our [white paper](https://lisk.io/documentation
 ## Node API
 
 * [Lisk API Documentation](https://lisk.io/documentation?i=lisk-docs/APIReference)
-
-## Whitepaper
-
-An updated whitepaper will be released end of June.
