@@ -6,8 +6,6 @@ Welcome to the Lisk documentation. Please note this documentation is aimed speci
 
 Lisk is a blockchain application platform and crypto-currency, which offers an all round solution for Node.js and JavaScript developers to deploy their own blockchain applications.
 
-For more information please read our [white paper](https://lisk.io/documentation?i=lisk-whitepaper/LiskWhitepaper).
-
 ## Prerequisites for Installation
 
 * [Preparing Your System for Lisk](https://lisk.io/documentation?i=lisk-docs/PrereqSetup)
