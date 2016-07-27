@@ -338,7 +338,7 @@ PUT `/api/transactions`
 ```text
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
-http://localhost:8000/api
+http://localhost:8000/api/transactions
 ```
 
 **Example - Second Secret**
@@ -346,7 +346,7 @@ http://localhost:8000/api
 curl -k -H "Content-Type: application/json" \
 -X PUT -d '{"secret":"<INSERT SECRET HERE>","secondSecret":"<INSERT SECOND SECRET HERE>",
 "amount":<INSERT AMOUNT HERE>,"recipientId":"<INSERT WALLET ADDRESS HERE>"}' \
-http://localhost:8000/api/api/transactions
+http://localhost:8000/api/transactions
 ```
 
 ### Get transaction
