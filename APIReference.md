@@ -855,26 +855,37 @@ curl -k -X GET http://localhost:8000/api/delegates?limit=<limit>
 ```
 
 ### Get delegate
-Gets delegate by transaction id.
+Gets delegate by public key or username.
 
-GET `/api/delegates/get?id=transactionId`
+GET `/api/delegates/get?publicKey=publicKey`
 
-- transactionId: Id of transaction where delegated was created by put. (String)
+- publicKey: Public key of delegate account (String)
+
+GET `/api/delegates/get?username=username`
+
+- username: Username of delegate account (String)
 
 **Response**
 ```text
 {
     "success": true,
     "delegate": {
-        "username": "username of delegate",
-        "transactionId": "transaction id",
-        "votes": "amount of stake voted for this delegate"
+        "username": "Username. String",
+        "address": "Address. String",
+        "publicKey": "Public key. String",
+        "vote": "Total votes. Integer",
+        "producedblocks": "Produced blocks. Integer",
+        "missedblocks": "Missed blocks. Integer",
+        "rate": "Ranking. Integer",
+        "approval": "Approval percentage. Float",
+        "productivity": "Productivity percentage. Float"
+    }
 }
 ```
 
 **Example**
 ```text
-curl -k -X GET http://localhost:8000/api/delegates/get?id=<transactionId>
+curl -k -X GET http://localhost:8000/api/delegates/get?publicKey=publicKey`
 ```
 
 ### Get delegates count
