@@ -877,20 +877,16 @@ GET `/api/delegates/get?id=transactionId`
 curl -k -X GET http://localhost:8000/api/delegates/get?id=<transactionId>
 ```
 
-### Get total count of delegates
-Get voters of delegate.
+### Get delegates count
+Get total count of registered delegates.
 
 GET `/api/delegates/count`
 
-- publicKey: Public key of registered delegate account. (String)
-
 **Response**
-```text
+```js
 {
   "success": true,
-  "accounts": [
-    "array of accounts who vote for delegate"
-  ]
+  "count": 101
 }
 ```
 
