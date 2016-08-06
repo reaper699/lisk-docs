@@ -8,7 +8,7 @@ The Lisk Test Network (Testnet) serves as a nonproduction environment for Lisk, 
 
 Testnet provides an environment to validate code changes, test Lisk functionality and perform development work without the costs associated with using Main-net.
 
-**3. Who is securing the Testnet?
+**3. Who is securing the Testnet?**
 
 Testnet is secured by active delegates in the same fashion as main-net. Which means its upto the community to support the network to further development.
 
