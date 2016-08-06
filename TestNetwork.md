@@ -1,24 +1,24 @@
-##Lisk Test Network
+Lisk Test Network
 
-**1. What is the Lisk Test Network?**
+## About the Test Network
 
-The Lisk Test Network (Testnet) serves as a nonproduction environment for Lisk, which means the currency is all play money in the environment.
+The Lisk Test Network (Testnet) serves as a nonproduction blockchain for testing and validation of code changes. This alternative blockchain provides an environment for both users and developers to test Lisk functionality without needing to purchase any LSK.
 
-**2. Why does Testnet exist?**
+## Connecting to Testnet
 
-Testnet provides an environment to validate code changes, test Lisk functionality and perform development work without the costs associated with using Main-net.
+There are a few ways to connect to Testnet. First way is a Lisk wallet. The Lisk team provides a wallet here: https://testnet.lisk.io/
 
-**3. Who is securing the Testnet?**
+The second way is to install a copy of Lisk on your own system. Instructions for how to do this can be found here: https://lisk.io/documentation?i=lisk-docs/BinaryInstall 
 
-Testnet is secured by active delegates in the same fashion as main-net. Which means its upto the community to support the network to further development.
+The third way involves using API calls to a public wallet. This method is recommended for advanced users and developers. Documentation for using API calls can be found here: https://lisk.io/documentation?i=lisk-docs/APIReference
 
-**4. How do I connect to Testnet?**
+## Securing Testnet
 
-Testnet has a variety of wallets hosted by the community, there is also an official wallet hosted here: https://testnet.lisk.io/
+Testnet is completely is in the hands of the 101 forging delegates. This means that it is up to the community to keep their own Lisk clients running in order to support the test blockchain. Securing Testnet is vital for the future of Lisk and anyone is welcome to participate.
 
-You can get involved with test network by installing a Lisk client of your own. The instructions for this can be found here: https://lisk.io/documentation?i=lisk-docs/BinaryInstall
+Assisting with the security of Testnet can provide valuable experience for anyone wanting to run a Delegate on Mainnet
 
-**5. How do I get free LSK for testing?**
+## Getting Testnet LSK
 
 In order to get free LSK for testing you must have a wallet. Wallets can be provisioned using the link above.
 
@@ -26,6 +26,16 @@ Once you have a wallet address, you will need to navigate in your browser to her
 
 Fill in that address and complete the captcha. The LSK should show up in your account within a minute.
 
-**6. Is there a Blockchain Explorer for Testnet?**
+*Note: Testnet LSK has no value.*
 
-Yes! The Testnet Blockchain Explorer can be found here: https://testnet-explorer.lisk.io (edited)
+## Testnet Blockchain Explorer
+
+
+Once transactions are put on the blockchain it usually takes less than 10 seconds to show in a wallet. There are a few ways to validate a transaction completed.
+
+First, The Testnet Blockchain Explorer, found here:  https://testnet-explorer.lisk.io. This can be used to look at the transaction Id, the block it was put in and more.
+
+
+
+
+
