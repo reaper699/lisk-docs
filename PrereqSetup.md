@@ -101,7 +101,7 @@ Set the systems operating language to en_US.UTF-8
 reboot
 ```
 
-#### 6. Continue on to installing Lisk!
+#### 7. Continue on to installing Lisk!
 
 * [Installing Lisk (from Binaries)](/documentation?i=lisk-docs/BinaryInstall)
 
