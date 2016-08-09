@@ -35,20 +35,27 @@ Follow the download instructions to install Lisk for your selected platform.
 
 2. Execute the install script. This will download and install Lisk, configuring the environment for use.
 
-  ```text
-  bash installLisk.sh install
-  ```
- 
- * You will be prompted for your installation directory, pressing enter will choose the default.
- * The second prompt will ask you for main network or test network. Pressing enter will take main network as a default.
-
-3. Change directory:
-
+  **Mainnet**
+    ```text
+    bash installLisk.sh install -r main
+    ```   
+   * You will be prompted for your installation directory, pressing enter will choose the default.
+   
   ```text
   cd lisk-main
   ```
 
-4. Configure environment _(optional, for apps development)_:
+  **Testnet**
+    ```text
+    bash installLisk.sh install -r test
+    ```   
+   * You will be prompted for your installation directory, pressing enter will choose the default.
+   
+  ```text
+  cd lisk-test
+  ```
+  
+3. Configure environment _(optional, for apps development)_:
 
   ```text
   source env.sh
@@ -60,13 +67,24 @@ Follow the download instructions to install Lisk for your selected platform.
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
-5. Accessing Lisk
+4. Accessing Lisk
 
-  To access the Lisk web client, open: [http://localhost:8000/](http://localhost:8000/) if on the main network (once Lisk is launched) or [http://localhost:7000/](http://localhost:7000/) if on a test network, replacing **localhost** with your public IP address if you have one.
+  To access the Lisk web client, open a browser and navigate to one of the following depending on the network:
+
+  **Mainnet**
+  ```text
+   http://localhost:8000/
+   ```
+   **Testnet**
+   ```text
+   http://localhost:7000/
+   ```
+   
+   Replace **localhost** with your public IP address if you are not running Lisk on your local machine.
 
   The Lisk web client should launch successfully.
  
-6. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
+5. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
 
 ## 3. Enable Forging
 
