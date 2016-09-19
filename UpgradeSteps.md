@@ -11,7 +11,7 @@ This tutorial will provide proper instructions on upgrading the installed versio
 
 ### 1. Upgrade Lisk
 
-Copy and paste the following commands into your terminal of choice on the node to be upgrade. Follow the section that applies for the network the node will connect to.
+Copy and paste the following commands into your terminal of choice on the node to be upgraded. Follow the section that applies for the network the node will connect to.
 
 **Mainnet**
 
