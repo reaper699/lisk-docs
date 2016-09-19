@@ -27,7 +27,7 @@ bash installLisk.sh upgrade -r main
 ```text
 cd ~
 rm -f installLisk.sh
-wget	https://downloads.lisk.io/lisk/test/installLisk.sh
+wget https://downloads.lisk.io/lisk/test/installLisk.sh
 bash installLisk.sh upgrade -r test
 ```
  * You will be prompted for your installation directory, pressing enter will choose the default.
