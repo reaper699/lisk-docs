@@ -9,7 +9,7 @@ The following operating systems and architectures are supported:
 
 - [Linux (x86_64)](#linux)
 - [Linux (i686)](#linux)
-- [Linux (armv6l)](#linux))
+- [Linux (armv6l)](#linux)
 - [Linux (armv7l)](#linux)
 - [Darwin (x86_64)](#Darwin)
 - [FreeBSD (amd64)](#FreeBSD)
