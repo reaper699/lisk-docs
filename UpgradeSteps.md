@@ -1,10 +1,9 @@
 # Upgrading Lisk
 
-This tutorial will provide proper instructions on upgrading the installed version of Lisk. The document assumes you are updating between Main Network versions. Follow the header that applies for the network the node will connect to.
+This tutorial will provide proper instructions on upgrading the installed version of Lisk. Follow the header that applies for the network the node will connect to.
 
 - [Automated Upgrade](#Automated Upgrade)
 - [Manual Upgrade](#Manual Upgrade)
-
 
 ### Automated Upgrade
 
@@ -14,23 +13,23 @@ Copy and paste the following commands into your terminal of choice on the node t
 
 **Mainnet**
 
-	```text
-	cd ~
-	rm -f installLisk.sh
-	wget https://downloads.lisk.io/lisk/main/installLisk.sh
-	bash installLisk.sh upgrade -r main
-	```
+```text
+cd ~
+rm -f installLisk.sh
+wget https://downloads.lisk.io/lisk/main/installLisk.sh
+bash installLisk.sh upgrade -r main
+```
 
  * You will be prompted for your installation directory, pressing enter will choose the default.
 
 **Testnet**
 
-	```text
-	cd ~
-	rm -f installLisk.sh
-	wget	https://downloads.lisk.io/lisk/test/installLisk.sh
-	bash installLisk.sh upgrade -r test
-	```   
+```text
+cd ~
+rm -f installLisk.sh
+wget	https://downloads.lisk.io/lisk/test/installLisk.sh
+bash installLisk.sh upgrade -r test
+```
  * You will be prompted for your installation directory, pressing enter will choose the default.
 
 
