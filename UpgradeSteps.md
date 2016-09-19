@@ -1,13 +1,15 @@
-# Upgrading Lisk
-
+## Introduction
 This tutorial will provide proper instructions on upgrading the installed version of Lisk. Follow the header that applies for the network the node will connect to.
 
-- [Automated Upgrade](#Automated Upgrade)
-- [Manual Upgrade](#Manual Upgrade)
+**Table of Contents**
 
-### Automated Upgrade
+- [Automated Upgrade](#automated-upgrade)
+- [Manual Upgrade](#manual-upgrade)
+- [Appendix](#appendix)
 
-## 1. Upgrade Lisk
+## Automated Upgrade
+
+### 1. Upgrade Lisk
 
 Copy and paste the following commands into your terminal of choice on the node to be upgrade. Follow the section that applies for the network the node will connect to.
 
@@ -33,11 +35,11 @@ bash installLisk.sh upgrade -r test
  * You will be prompted for your installation directory, pressing enter will choose the default.
 
 
-## 2. You're done!
+### 2. You're done!
 
-### Manual Upgrade
+## Manual Upgrade
 
-## 1. Switch to your Lisk folder and stop Lisk processes
+### 1. Switch to your Lisk folder and stop Lisk processes
 
 **Mainnet**
 
@@ -54,7 +56,7 @@ cd lisk-test
 bash lisk.sh stop
 ```
 
-## 2. Backup your SSL folder (if needed)
+### 2. Backup your SSL folder (if needed)
 
 ```text
 mkdir ~/backup
@@ -62,7 +64,7 @@ cp -f ./ssl/* ~/backup/
 cp -f ./config.json ~/backup/
 ```
 
-## 3. Remove your old Lisk folder and install script
+### 3. Remove your old Lisk folder and install script
 
 **Mainnet**
 ```text
@@ -78,14 +80,14 @@ rm -rf ~/lisk-test
 rm -rf installLisk.sh
 ```
 
-## 4. Follow the Binary Install Guide!
+### 4. Follow the Binary Install Guide!
 
 https://lisk.io/documentation?i=lisk-docs/BinaryInstall
 
 
-### Appendix
+## Appendix
 
-## 1. If you are upgrading from a release prior to 0.2.1 run these commands
+### 1. If you are upgrading from a release prior to 0.2.1 run these commands
 
 ```text
 sudo apt-get --purge remove postgresql postgresql postgresql-client postgresql-client postgresql-client-common postgresql-common postgresql-contrib postgresql-contrib
