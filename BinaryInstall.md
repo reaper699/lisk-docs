@@ -27,35 +27,47 @@ Follow the download instructions to install Lisk for your selected platform.
 
 ### All Platforms
 
-1. Download the install script.
+1. Login to the user you will use to run Lisk. This user was created in the [prerequisites setup guide.](https://lisk.io/documentation?i=lisk-docs/PrereqSetup). If you are already logged in to this user, please skip this step.
+
+  ```text
+  su - lisk
+  ```
+
+2. Download the install script.
 
   ```text
   wget https://downloads.lisk.io/scripts/installLisk.sh
   ```
 
-2. Execute the install script. This will download and install Lisk, configuring the environment for use.
+3. Execute the install script. This will download and install Lisk, configuring the environment for use.
 
   **Mainnet**
-    ```text
-    bash installLisk.sh install -r main
-    ```   
-   * You will be prompted for your installation directory, pressing enter will choose the default.
+  ```text
+  bash installLisk.sh install -r main
+  ```   
+  
+   You will be prompted for your installation directory, pressing enter will choose the default.
+
+   Once it the install is complete change directory to the new install directory.
    
   ```text
   cd lisk-main
   ```
 
   **Testnet**
-    ```text
-    bash installLisk.sh install -r test
-    ```   
-   * You will be prompted for your installation directory, pressing enter will choose the default.
+  ```text
+  bash installLisk.sh install -r test
+  ```   
+  
+   You will be prompted for your installation directory, pressing enter will choose the default.
+
+   Once it the install is complete change directory to the new install directory.
    
   ```text
   cd lisk-test
   ```
   
-3. Configure environment _(optional, for apps development)_:
+4. Configure environment _(optional, for apps development)_:
 
   ```text
   source env.sh
@@ -67,7 +79,7 @@ Follow the download instructions to install Lisk for your selected platform.
   echo "source $(pwd)/env.sh" >> ~/.bash_profile
   ```
 
-4. Accessing Lisk
+5. Accessing Lisk
 
   To access the Lisk web client, open a browser and navigate to one of the following depending on the network:
 
@@ -84,7 +96,7 @@ Follow the download instructions to install Lisk for your selected platform.
 
   The Lisk web client should launch successfully.
  
-5. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
+6. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
 
 ## 3. Enable Forging
 
