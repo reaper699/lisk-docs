@@ -27,7 +27,7 @@ Follow the download instructions to install Lisk for your selected platform.
 
 ### All Platforms
 
-1. Login to the user you will use to run Lisk. This user was created in the [prerequisites setup guide.](https://lisk.io/documentation?i=lisk-docs/PrereqSetup). If you are already logged in to this user, please skip this step.
+1. Login to the user you will use to run Lisk. This user was created in the [prerequisites setup guide.](https://lisk.io/documentation?i=lisk-docs/PrereqSetup) If you are already logged in to this user, please skip this step.
 
   ```text
   su - lisk
