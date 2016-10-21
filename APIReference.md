@@ -64,11 +64,10 @@
     - [Categories](#categories)
     - [Stop app](#stop-app)
   - [Multi-Signature](#multi-signature)
-    - [Get pending multi-signature transactions](#get-pending-multi-signature-transactions)
     - [Create multi-signature account](#create-multi-signature-account)
-    - [Sign transaction](#sign-transaction)
     - [Get multi-signature accounts](#get-multi-signature-accounts)
-
+    - [Sign transaction](#sign-transaction)
+    - [Get pending multi-signature transactions](#get-pending-multi-signature-transactions)
 
 
 # Lisk API
@@ -1455,26 +1454,6 @@ http://localhost:8000/api/dapps/stop
 ## Multi-Signature
 Multi-signature API.
 
-### Get pending multi-signature transactions
-Returns a list of multi-signature transactions that waiting for signature by publicKey.
-
-GET `/api/multisignatures/pending?publicKey=publicKey`
-
-- publicKey: Public key of account (String)
-
-**Response**
-```text
-{
-    "success": true,
-    "transactions": ['array of transactions to sign']
-}
-```
-
-**Example**
-```text
-curl -k -X GET http://localhost:8000/api/multisignatures/pending?publicKey=<publicKey>
-```
-
 ### Create multi-signature account
 Create a multi-signature account.
 
@@ -1505,6 +1484,26 @@ curl -k -H "Content-Type: application/json" \
 http://localhost:8000/api/multisignatures
 ```
 
+### Get multi-signature accounts
+Gets a list of accounts that belong to a multi-signature account.
+
+GET `/api/multisignatures/accounts?publicKey=publicKey`
+
+- publicKey: Public key of multi-signature account (String)
+
+**Response**
+```text
+{
+  "success": true,
+  "accounts": "array of accounts"
+}
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/multisignatures/accounts?publicKey=<publicKey>
+```
+
 ### Sign transaction
 Signs a transaction that is awaiting signature.
 
@@ -1533,22 +1532,22 @@ curl -k -H "Content-Type: application/json" \
 http://localhost:8000/api/multisignatures/sign
 ```
 
-### Get multi-signature accounts
-Gets a list of accounts that belong to a multi-signature account.
+### Get pending multi-signature transactions
+Returns a list of multi-signature transactions that waiting for signature by publicKey.
 
-GET `/api/multisignatures/accounts?publicKey=publicKey`
+GET `/api/multisignatures/pending?publicKey=publicKey`
 
-- publicKey: Public key of multi-signature account (String)
+- publicKey: Public key of account (String)
 
 **Response**
 ```text
 {
-  "success": true,
-  "accounts": "array of accounts"
+    "success": true,
+    "transactions": ['array of transactions to sign']
 }
 ```
 
 **Example**
 ```text
-curl -k -X GET http://localhost:8000/api/multisignatures/accounts?publicKey=<publicKey>
+curl -k -X GET http://localhost:8000/api/multisignatures/pending?publicKey=<publicKey>
 ```
