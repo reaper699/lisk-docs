@@ -67,7 +67,7 @@
     - [Get pending multi-signature transactions](#get-pending-multi-signature-transactions)
     - [Create multi-signature account](#create-multi-signature-account)
     - [Sign transaction](#sign-transaction)
-    - [Get accounts of multi-signature](#get-accounts-of-multi-signature)
+    - [Get multi-signature accounts](#get-multi-signature-accounts)
 
 
 
@@ -1533,8 +1533,8 @@ curl -k -H "Content-Type: application/json" \
 http://localhost:8000/api/multisignatures/sign
 ```
 
-### Get accounts of multi-signature
-Gets a list of accounts that are part of a multi-signature account.
+### Get multi-signature accounts
+Gets a list of accounts that belong to a multi-signature account.
 
 GET `/api/multisignatures/accounts?publicKey=publicKey`
 
