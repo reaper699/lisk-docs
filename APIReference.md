@@ -41,6 +41,7 @@
     - [Enable delegate on account](#enable-delegate-on-account)
     - [Get delegates list](#get-delegates-list)
     - [Get delegate](#get-delegate)
+    - [Search for delegates](#search-for-delegates)    
     - [Get total count of delegates](#get-total-count-of-delegates)
     - [Get votes of account](#get-votes-of-account)
     - [Get voters](#get-voters)
@@ -958,6 +959,29 @@ GET `/api/delegates/get?username=username`
 **Example**
 ```text
 curl -k -X GET http://localhost:8000/api/delegates/get?publicKey=publicKey`
+```
+
+### Search for delegates
+Search for Delegates by "fuzzy" username.
+
+GET `/api/delegates/search?q=username&orderBy=producedblocks:desc`
+
+- q: Search criteria. (String)
+- orderBy: Order results by ascending or descending property. Valid sort fields are: `username:asc`, `username:desc`, `address:asc`, `address:desc`, `publicKey:asc`, `publicKey:desc`, `vote:asc`, `vote:desc`, `missedblocks:asc`, `missedblocks:desc`, `producedblocks:asc`, `producedblocks:desc`
+
+**Response**
+```text
+{
+  "success": true,
+  "delegates": [
+    "array of delegates"
+  ]
+}
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/dapps/search?q=username&orderBy=producedblocks:desc
 ```
 
 ### Get delegates count
