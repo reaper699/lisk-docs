@@ -32,3 +32,7 @@ Lisk is a blockchain application platform and crypto-currency, which offers an a
 ## Node API
 
 * [Lisk API Documentation](https://lisk.io/documentation?i=lisk-docs/APIReference)
+
+## Testnet
+
+* [Testnet FAQ](https://lisk.io/documentation?i=lisk-docs/WhatIsTestnet)

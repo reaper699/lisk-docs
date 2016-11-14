@@ -19,6 +19,8 @@
     - [Get transaction](#get-transaction)
     - [Get unconfirmed transaction](#get-unconfirmed-transaction)
     - [Get list of unconfirmed transactions](#get-list-of-unconfirmed-transactions)
+    - [Get list of queued transactions](#get-list-of-queued-transactions)
+    - [Get specific queued transaction](get-specific-queued-transaction)
   - [Peers](#peers)
     - [Get peers list](#get-peers-list)
     - [Get peer](#get-peer)
@@ -503,6 +505,56 @@ GET `/api/transactions/unconfirmed`
 **Example**
 ```text
 curl -k -X GET http://localhost:8000/api/transactions/unconfirmed
+```
+
+### Get list of queued transactions
+Gets a list of queued transactions.
+
+GET `/api/transactions/queued`
+
+**Response**
+```text
+{
+    "success" : true,
+    "transactions" : [list of transaction objects]
+}
+```
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/transactions/queued
+```
+
+### Get specific queued transaction
+Get queued transaction that matches the provided id.
+
+GET `/api/transactions/queued/get?id=id`
+
+- id: String of transaction (String)
+
+**Response**
+```text
+{
+  "success": true,
+  "transaction": {
+    "id": "Id of transaction. String",
+    "type": "Type of transaction. Integer",
+    "subtype": "Subtype of transaction. Integer",
+    "timestamp": "Timestamp of transaction. Integer",
+    "senderPublicKey": "Sender public key of transaction. Hex",
+    "senderId": "Address of transaction sender. String",
+    "recipientId": "Recipient id of transaction. String",
+    "amount": "Amount. Integer",
+    "fee": "Fee. Integer",
+    "signature": "Signature. Hex",
+    "signSignature": "Second signature. Hex",
+    "confirmations": "Number of confirmations. Integer"
+  }
+}
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/transactions/queued/get?id=<id>
 ```
 
 ## Peers
