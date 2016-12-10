@@ -13,6 +13,7 @@
   - [Loader](#loader)
     - [Get loading status](#get-loading-status)
     - [Get synchronization status](#get-synchronization-status)
+    - [Get block receipt status](#get-block-receipt-status)
   - [Transactions](#transactions)
     - [Get list of transactions](#get-list-of-transactions)
     - [Send transaction](#send-transaction)
@@ -336,6 +337,23 @@ GET `/api/loader/status/sync`
 **Example**
 ```text
 curl -k -X GET http://localhost:8000/api/loader/status/sync
+```
+
+### Get block receipt status
+Get the status of last received block. Returns true if block was received in the past 120 seconds
+
+GET `/api/loader/status/ping`
+
+**Response**
+```text
+{
+   "success": true
+}
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/loader/status/ping
 ```
 
 ## Transactions
