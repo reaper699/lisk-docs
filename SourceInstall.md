@@ -2,13 +2,13 @@
 
 This tutorial describes how to install Lisk from source on a Ubuntu based machine.
 
-**NOTE:** The following is applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
+**NOTE:** The following set of instructions applicable to: **Ubuntu 14.04 (LTS) - x86_64**.
 
 ## 1. Install Essentials
 
 ```text
 sudo apt-get update
-sudo apt-get install curl build-essential gzip python tar wget
+sudo apt-get install autoconf automake build-essential curl gzip libtool python tar wget
 ```
 
 ## 2. Install PostgreSQL
@@ -23,7 +23,7 @@ After it installs, check version of psql:
 psql -version
 ```
 
-Psql should have the following version number (or greater): `9.5.2`
+Psql should have the following version number (or greater): `9.6.1`
 
 ## 3. Configure PostgreSQL
 
@@ -33,9 +33,9 @@ Create a postgresql user (and choose a password):
 sudo -u postgres createuser --createdb --password lisk
 ```
 
-Create a postgresql database:
+Create a PostgreSQL database for the client:
 
-**Maintnet** 
+**Mainnet**
 
 ```text
 createdb lisk_main
@@ -122,35 +122,33 @@ nodejs/node -v
 
 - Node.js should have the following version number (or greater): `v0.12.14`
 
-## 7. Download Blockchain
+## 7. Download Blockchain Snapshot
 
-Download the blockchain archive:
+Download the blockchain snapshot and restore it to the database made previously:
 
-**Mainnet** 
+**Mainnet**
 
 ```text
 wget https://downloads.lisk.io/lisk/main/blockchain.db.gz
+gunzip -fcq blockchain.db.gz | psql -q -U "$USER" -d lisk_main
 ```
 
 **Testnet** (_for development purposes_):
 
 ```text
 wget https://downloads.lisk.io/lisk/test/blockchain.db.gz
+gunzip -fcq blockchain.db.gz | psql -q -U "$USER" -d lisk_test
 ```
 
-Decompress the archive:
+## 8. Install Forever
 
-```text
-gunzip blockchain.db.gz
-```
-
-## 8. Start Lisk
-
-Install forever, a Node.js process manager:
+Install Forever, a Node.js process manager:
 
 ```text
 sudo npm install -g forever
 ```
+
+## 9. Start Lisk
 
 Start Lisk:
 
@@ -172,7 +170,7 @@ After it starts, open: [http://localhost:8000/](http://localhost:8000/) if on th
 
 The Lisk web client should launch successfully.
 
-## 9. Enable Forging
+## 10. Enabling Forging
 
 If you are running your node from a local machine, you can enable forging through the web client, without further interruption. **NOTE:** Should the Lisk node or machine need to be restarted, you will need to re-enable forging again.
 
@@ -194,38 +192,29 @@ Arrow down until you find the following section:
 
 ```text
 "forging": {
-  "secret" : [""]
-}
+    "force": false,
+    "secret": [],
+    "access": {
+      "whiteList": ["127.0.0.1","IP.Address.Goes.Here."] <- Replace with your IP which you will use to access your node
+    }
+},
 ```
 
-Set the secret parameter to your account secret phrase.
+
+**(Recommended for local test networks only)** Set the secret parameter to your account secret phrase.
 
 ```text
-"forging": {
   "secret" : ["YourDelegatePassphrase"] <- Replace with your delegate passphrase
 }
 ```
 
-(Optional) In the forging section you will also see an access property, this is used to allow only your IP address to enable forging through the web client.
+**(Recommended for local test networks only)** To set 2 accounts to forge on a single node, enter both account passphrases like below.
 
 ```text
-"access": {
-  "whiteList": ["127.0.0.1"] <- Replace with your IP which you will use to access your node
-}
-```
-
-To set 2 accounts to forge on a single node, enter both account passphrases like below.
-
-```text
-"forging": {
   "secret" : ["YourDelegatePassphrase1","YourDelegatePassphrase2"] <- Replace with your delegate passphrases
-  "access": {
-    "whiteList": ["127.0.0.1"]
-  }
-}
 ```
 
-After you have typed in your passphrase. Hit: `Ctrl+ X` Then: `Y`
+After you have made the appropriate changes. Hit: `Ctrl+ X` Then: `Y`
 
 Start Lisk:
 
@@ -233,9 +222,9 @@ Start Lisk:
 forever start app.js
 ```
 
-Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that **Forging (Enabled)** appears in the top left corner.
+Then, open the Lisk web client and wait for the blockchain to load. Once the blockchain has loaded, navigate to "Forging" section, and verify that forging can be enabled with the switch in the top right.
 
-## 10. Enable Secure Sockets Layer (SSL)
+## 11. Enable Secure Sockets Layer (SSL)
 
 **NOTE:** To complete this step you require a signed certificate (from a CA) and a public and private key pair.
 
@@ -281,7 +270,7 @@ forever start app.js
 
 Open the web client. You should now have an SSL enabled connection.
 
-## 11. Configure Autostart
+## 12. Configure Autostart using Forever
 
 To have Lisk automatically start each time your machine boots:
 
@@ -304,7 +293,7 @@ Your Lisk node should now automatically start when booting your machine. By inst
 * Restart:  ```sudo restart lisk```
 * Status:  ```sudo status lisk```
 
-## 12. Troubleshooting
+## Appendix: Troubleshooting
 
 ### Problem 1
 
