@@ -396,7 +396,7 @@ curl -k -X GET http://localhost:8000/api/transactions?blockId=<blockId>
 curl -k -X GET http://localhost:8000/api/transactions?senderId=<senderId>
 ```
 
-**Example - senderId**
+**Example - recipientId**
 ```text
 curl -k -X GET http://localhost:8000/api/transactions?recipientId=<recipientId>
 ```
