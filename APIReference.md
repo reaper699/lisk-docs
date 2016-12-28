@@ -51,6 +51,7 @@
     - [Enable forging on delegate](#enable-forging-on-delegate)
     - [Disable forging on delegate](#disable-forging-on-delegate)
     - [Get forged by account](#get-forged-by-account)
+    - [Get next forgers](#get-next-forgers)
   - [Apps](#apps)
     - [Apps](#apps-1)
     - [Get apps](#get-apps)
@@ -1188,6 +1189,29 @@ GET `/api/delegates/forging/getForgedByAccount?generatorPublicKey=generatorPubli
 curl -k -X GET http://localhost:8000/api/delegates/forging/getForgedByAccount?generatorPublicKey=<generatorPublicKey>
 ```
 
+### Get next forgers
+Get amount of Lisk forged by an account.
+
+GET `/api/delegates/getNextForgers?limit=limit`
+
+- limit: limits the amount of delegates returned, default 10, max 101 (Integer)
+
+**Response**
+```text
+{
+  "success": true
+  "delegates": [Array of publicKeys. String],
+  "currentSlot": "Current slot based on time. Integer"
+  "currentBlock": "Current block based on height. Integer"
+
+}
+
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/delegates/getNextForgers
+```
 
 ## Apps
 Blockchain Applications API.
