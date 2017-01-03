@@ -47,7 +47,7 @@ Execute the following code block in your command line
     yum install curl wget tar sudo unzip zip
   elif [[ -f "/etc/debian_version" ]]; then
     apt-get update
-    apt-get install curl wget tar sudo unzip zip
+    apt-get install curl wget tar sudo unzip zip libreadline6 libreadline6-dev
   fi
   ```
 
@@ -71,12 +71,12 @@ Execute the following code block in your command line
   ```text
   visudo
   ```
-  
+
   Paste this line in at the bottom of the file
   ```text
   %sudo   ALL=(ALL:ALL) ALL
   ```
-  
+
 On Ubuntu:  Hit: `Ctrl+ X` Then: `Y` to exit and save
 
 On RHEL: type `:wq!`
