@@ -33,18 +33,20 @@ Create a postgresql user (and choose a password):
 sudo -u postgres createuser --createdb --password lisk
 ```
 
-Create a PostgreSQL database for the client:
+Create a PostgreSQL database and define password for the client:
 
 **Mainnet**
 
 ```text
 createdb lisk_main
+sudo -u postgres psql -d lisk_main -c "alter user "$USER" with password 'password';"
 ```
 
 **Testnet** (_for development purposes_):
 
 ```text
 createdb lisk_test
+sudo -u postgres psql -d lisk_test -c "alter user "$USER" with password 'password';"
 ```
 
 ## 4. Install Node.js
