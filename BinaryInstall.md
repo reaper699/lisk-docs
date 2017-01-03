@@ -17,39 +17,39 @@ To complete the installation there are prerequisites that need to be completed. 
 
 * [Preparing your system for Lisk](https://lisk.io/documentation?i=lisk-docs/PrereqSetup)
 
-**NOTE:** With the release of **0.2.1**, PostgreSQL no longer needs to be installed separately. If you have installed it as part of a previous Lisk release, please review the upgrade guide before continuing.
+If you are looking to upgrade Lisk, please see this document instead.
 
 * [Preparing your system for upgrade](https://lisk.io/documentation?i=lisk-docs/UpgradeSteps)
 
 ## 2. Download Lisk
 
-Follow the download instructions to install Lisk for your selected platform. 
+Follow the download instructions to install Lisk for your selected platform.
 
 ### All Platforms
 
-1. Login to the user you will use to run Lisk. This user was created in the [prerequisites setup guide.](https://lisk.io/documentation?i=lisk-docs/PrereqSetup) If you are already logged in to this user, please skip this step.
+1. Login to the user you will use to run Lisk. This user was created in the [Prerequisites Guide.](https://lisk.io/documentation?i=lisk-docs/PrereqSetup) If you are already logged in to this user, please skip this step.
 
   ```text
   su - lisk
   ```
 
-2. Download the install script.
+2. Download the installation script.
 
   ```text
   wget https://downloads.lisk.io/scripts/installLisk.sh
   ```
 
-3. Execute the install script. This will download and install Lisk, configuring the environment for use.
+3. Execute the installation script. This will configure the environment, download and install the Lisk client.
 
   **Mainnet**
   ```text
   bash installLisk.sh install -r main
   ```   
-  
+
    You will be prompted for your installation directory, pressing enter will choose the default.
 
-   Once it the install is complete change directory to the new install directory.
-   
+   Once the installation is complete change directory to the new installation directory.
+
   ```text
   cd lisk-main
   ```
@@ -58,28 +58,15 @@ Follow the download instructions to install Lisk for your selected platform.
   ```text
   bash installLisk.sh install -r test
   ```   
-  
-   You will be prompted for your installation directory, pressing enter will choose the default.
+  You will be prompted for your installation directory, pressing enter will choose the default.
 
-   Once it the install is complete change directory to the new install directory.
-   
+  Once the installation is complete change directory to the new installation directory.
+
   ```text
   cd lisk-test
   ```
-  
-4. Configure environment _(optional, for apps development)_:
 
-  ```text
-  source env.sh
-  ```
-
-  Add this to your `.bash_profile` to make this change permanent:
-
-  ```text
-  echo "source $(pwd)/env.sh" >> ~/.bash_profile
-  ```
-
-5. Accessing Lisk
+4. Accessing Lisk
 
   To access the Lisk web client, open a browser and navigate to one of the following depending on the network:
 
@@ -91,12 +78,12 @@ Follow the download instructions to install Lisk for your selected platform.
    ```text
    http://localhost:7000/
    ```
-   
+
    Replace **localhost** with your public IP address if you are not running Lisk on your local machine.
 
   The Lisk web client should launch successfully.
- 
-6. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
+
+5. Proceed with the next step in this tutorial to [Enable Forging](#3-enable-forging).
 
 ## 3. Enable Forging
 
@@ -163,7 +150,7 @@ Then, open the Lisk web client and wait for the blockchain to load. Once the blo
 
 ## 4. Enable Secure Sockets Layer (SSL)
 
-**NOTE:** To complete this step you require a signed certificate (from a CA) and a public and private key pair.
+**NOTE:** To complete this step require a signed certificate (from a CA) and a public and private key pair.
 
 Stop the running Lisk node:
 
@@ -191,7 +178,7 @@ Arrow down until you find the following section:
 }
 ```
 
-After you are done, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
+After you have finished, save changes and exit. Hit: `Ctrl+ X` Then: `Y`
 
 **NOTE:** If SSL Port configured above (ssl > options > port) is within well known ports range (below 1024), you must alter the port specified with setcap or change it to be outside of that range.
 
