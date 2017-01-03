@@ -95,7 +95,7 @@ The API is only available after the client has successfully loaded, otherwise al
 
 In the case the client is not fully synced all routes may return intermediate/old values.
 
-Each API entry contains an example call to help provide understanding of how to use the call. These examples rely on `curl` being installed and Lisk running on the localhost. The examples also include `<field>`; use this for easy identification of what needs to be changed for the call to function.
+Each API entry contains an example call to help provide understanding of how to use the call. These examples rely on `curl` being installed and Lisk running on the localhost on port 8000 (Mainnet). The examples also include `<field>`; use this for easy identification of what needs to be changed for the call to function.
 
 ## Accounts
 API calls related to Account functionality.
