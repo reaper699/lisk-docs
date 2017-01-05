@@ -375,7 +375,7 @@ GET `/api/transactions?blockId=blockId&senderId=senderId&recipientId=recipientId
 All parameters join by "OR".
 
 Example:  
-`/api/transactions?blockId=10910396031294105665&senderId=6881298120989278452C&orderBy=timestamp:desc` looks like: blockId=10910396031294105665 OR senderId=6881298120989278452C
+`/api/transactions?blockId=10910396031294105665&senderId=6881298120989278452L&orderBy=timestamp:desc` looks like: blockId=10910396031294105665 OR senderId=6881298120989278452L
 
 **Response**
 ```text
