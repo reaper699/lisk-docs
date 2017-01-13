@@ -38,7 +38,7 @@
     - [Get blockchain nethash](#get-blockchain-nethash)
     - [Get blockchain milestone](#get-blockchain-milestone)
   - [Signatures](#signatures)
-    - [Get signature](#get-signature)
+    - [Get signature fees](#get-signature-fees)
     - [Add second signature](#add-second-signature)
   - [Delegates](#delegates)
     - [Enable delegate on account](#enable-delegate-on-account)
@@ -885,31 +885,23 @@ curl -k -X GET http://localhost:8000/api/blocks/getMilestone
 ## Signatures
 Signature management API.
 
-### Get signature
+### Get Signature Fees
 Gets the second signature status of an account.
 
-GET `/api/signatures/get?id=id`
+GET `/api/signatures/fee`
 
-- id: Id of signature. (String)
 
 **Response**
 ```text
 {
     "success" : true,
-    "signature" : {
-        "id" : "Id. String",
-        "timestamp" : "TimeStamp. Integer",
-        "publicKey" : "Public key of signature. hex",
-        "generatorPublicKey" : "Public Key of Generator. hex",
-        "signature" : [array],
-        "generationSignature" : "Generation Signature"
-    }
+    "fee" : Integer
 }
 ```
 
 **Example**
 ```text
-curl -k -X GET http://localhost:8000/api/signatures/get?id=<id>
+curl -k -X GET http://localhost:8000/api/signatures/fee
 ```
 
 ### Add second signature
