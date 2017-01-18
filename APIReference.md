@@ -220,7 +220,8 @@ GET `/api/accounts?address=address`
     "publicKey": "Public key of account. Hex",
     "unconfirmedSignature": "If account enabled second signature, but it's still not confirmed. Boolean: true or false",
     "secondSignature": "If account enabled second signature. Boolean: true or false",
-    "secondPublicKey": "Second signature public key. Hex"
+    "multisignatures": "Array",
+    "u_multisignatures": "Array"
   }
 }
 ```
@@ -331,7 +332,9 @@ GET `/api/loader/status/sync`
    "success": true,
    "syncing": "Is wallet is syncing with another peers? Boolean: true or false",
    "blocks": "Number of blocks remaining to sync. Integer",
-   "height": "Total blocks in blockchain. Integer"
+   "height": "Total blocks in blockchain. Integer",
+   "broadhash": "Block propagation efficiency and reliability. String",
+   "consensus": "Efficiency (%). Integer"
 }
 ```
 
