@@ -458,8 +458,9 @@ GET `/api/transactions/get?id=id`
   "success": true,
   "transaction": {
     "id": "Id of transaction. String",
+    "height": "Tx blockchain height. Integer",
+    "blockId" "Tx blockId. String",
     "type": "Type of transaction. Integer",
-    "subtype": "Subtype of transaction. Integer",
     "timestamp": "Timestamp of transaction. Integer",
     "senderPublicKey": "Sender public key of transaction. Hex",
     "senderId": "Address of transaction sender. String",
@@ -467,9 +468,9 @@ GET `/api/transactions/get?id=id`
     "amount": "Amount. Integer",
     "fee": "Fee. Integer",
     "signature": "Signature. Hex",
-    "signSignature": "Second signature. Hex",
-    "companyGeneratorPublicKey": "If transaction was sent to merchant, provided comapny generator public key to find company. Hex",
-    "confirmations": "Number of confirmations. Integer"
+    "signatures": "Signatures. Array",
+    "confirmations": "Number of confirmations. Integer",
+    "asset": "Resources. Object"
   }
 }
 ```
