@@ -628,13 +628,13 @@ GET `/api/peers/get?ip=ip&port=port`
 {
   "success": true,
   "peer": {
-        "ip":"requested ip. String",
-        "port":"requested port. Integer",
+        "ip":"Requested ip. String",
+        "port":"Requested port. Integer",
         "state":"1 - disconnected. 2 - connected. 0 - banned. Integer",
-        "os":"operating system. String",
+        "os":"Operating system. String",
         "version":"Lisk client version. String",
-        "broadhash":"peer block propagation efficiency and reliability. String",
-        "height":"blockchain height. Integer"
+        "broadhash":"Peer block propagation efficiency and reliability. String",
+        "height":"Blockchain height. Integer"
   }
 }
 ```
@@ -653,8 +653,8 @@ GET `/api/peers/version`
 ```text
 {
   "success": true,
-  "version": "version of Lisk. String",
-  "build": "time of build. String"
+  "version": "Version of Lisk. String",
+  "build": "Time of build. String"
 }
 ```
 
