@@ -492,18 +492,18 @@ GET `/api/transactions/unconfirmed/get?id=id`
 {
   "success": true,
   "transaction": {
-    "id": "Id of transaction. String",
     "type": "Type of transaction. Integer",
-    "subtype": "Subtype of transaction. Integer",
-    "timestamp": "Timestamp of transaction. Integer",
-    "senderPublicKey": "Sender public key of transaction. Hex",
-    "senderId": "Address of transaction sender. String",
-    "recipientId": "Recipient id of transaction. String",
     "amount": "Amount. Integer",
-    "fee": "Fee. Integer",
+    "senderPublicKey": "Sender public key of transaction. Hex",
+    "timestamp": "Timestamp of transaction. Integer",
+    "asset": "Resources. Object"
+    "recipientId": "Recipient id of transaction. String",
     "signature": "Signature. Hex",
-    "signSignature": "Second signature. Hex",
-    "confirmations": "Number of confirmations. Integer"
+    "id": "Id of transaction. String",
+    "fee": "Fee. Integer",
+    "senderId": "Address of transaction sender. String",
+    "relays": "Propagation. Integer",
+    "receivedAt": "Timestamp. String"
   }
 }
 ```
