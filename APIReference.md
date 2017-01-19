@@ -653,8 +653,8 @@ GET `/api/peers/version`
 ```text
 {
   "success": true,
-  "version": "version of Lisk",
-  "build": "time of build"
+  "version": "version of Lisk. String",
+  "build": "time of build. String"
 }
 ```
 
