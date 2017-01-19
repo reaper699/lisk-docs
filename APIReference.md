@@ -588,7 +588,7 @@ Gets list of peers from provided filter parameters.
 
 GET `/api/peers?state=state&os=os&version=version&limit=limit&offset=offset&orderBy=orderBy`
 
-- state: State of peer. 1 - disconnected. 2 - connected. 0 - banned. (String)
+- state: State of peer. 1 - disconnected. 2 - connected. 0 - banned. (Integer)
 - os: OS of peer. (String)
 - version: Version of peer. (String)
 - limit: Limit to show. Max limit is 100. (Integer)
