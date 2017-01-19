@@ -605,7 +605,7 @@ Example:
 {
   "success": true,
   "peers": [
-    "list of peers"
+    "list of peers as objects (see below the peer object response)"
   ]
 }
 ```
