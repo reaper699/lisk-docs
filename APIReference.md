@@ -458,8 +458,9 @@ GET `/api/transactions/get?id=id`
   "success": true,
   "transaction": {
     "id": "Id of transaction. String",
+    "height": "Tx blockchain height. Integer",
+    "blockId" "Tx blockId. String",
     "type": "Type of transaction. Integer",
-    "subtype": "Subtype of transaction. Integer",
     "timestamp": "Timestamp of transaction. Integer",
     "senderPublicKey": "Sender public key of transaction. Hex",
     "senderId": "Address of transaction sender. String",
@@ -467,9 +468,9 @@ GET `/api/transactions/get?id=id`
     "amount": "Amount. Integer",
     "fee": "Fee. Integer",
     "signature": "Signature. Hex",
-    "signSignature": "Second signature. Hex",
-    "companyGeneratorPublicKey": "If transaction was sent to merchant, provided comapny generator public key to find company. Hex",
-    "confirmations": "Number of confirmations. Integer"
+    "signatures": "Signatures. Array",
+    "confirmations": "Number of confirmations. Integer",
+    "asset": "Resources. Object"
   }
 }
 ```
@@ -491,18 +492,18 @@ GET `/api/transactions/unconfirmed/get?id=id`
 {
   "success": true,
   "transaction": {
-    "id": "Id of transaction. String",
     "type": "Type of transaction. Integer",
-    "subtype": "Subtype of transaction. Integer",
-    "timestamp": "Timestamp of transaction. Integer",
-    "senderPublicKey": "Sender public key of transaction. Hex",
-    "senderId": "Address of transaction sender. String",
-    "recipientId": "Recipient id of transaction. String",
     "amount": "Amount. Integer",
-    "fee": "Fee. Integer",
+    "senderPublicKey": "Sender public key of transaction. Hex",
+    "timestamp": "Timestamp of transaction. Integer",
+    "asset": "Resources. Object"
+    "recipientId": "Recipient id of transaction. String",
     "signature": "Signature. Hex",
-    "signSignature": "Second signature. Hex",
-    "confirmations": "Number of confirmations. Integer"
+    "id": "Id of transaction. String",
+    "fee": "Fee. Integer",
+    "senderId": "Address of transaction sender. String",
+    "relays": "Propagation. Integer",
+    "receivedAt": "Timestamp. String"
   }
 }
 ```
@@ -587,7 +588,7 @@ Gets list of peers from provided filter parameters.
 
 GET `/api/peers?state=state&os=os&version=version&limit=limit&offset=offset&orderBy=orderBy`
 
-- state: State of peer. 1 - disconnected. 2 - connected. 0 - banned. (String)
+- state: State of peer. 1 - disconnected. 2 - connected. 0 - banned. (Integer)
 - os: OS of peer. (String)
 - version: Version of peer. (String)
 - limit: Limit to show. Max limit is 100. (Integer)
@@ -604,7 +605,7 @@ Example:
 {
   "success": true,
   "peers": [
-    "list of peers"
+    "List of peers as objects (see below the peer object response)"
   ]
 }
 ```
@@ -626,7 +627,15 @@ GET `/api/peers/get?ip=ip&port=port`
 ```text
 {
   "success": true,
-  "peer": "peer object"
+  "peer": {
+        "ip":"Requested ip. String",
+        "port":"Requested port. Integer",
+        "state":"1 - disconnected. 2 - connected. 0 - banned. Integer",
+        "os":"Operating system. String",
+        "version":"Lisk client version. String",
+        "broadhash":"Peer block propagation efficiency and reliability. String",
+        "height":"Blockchain height. Integer"
+  }
 }
 ```
 
@@ -644,8 +653,8 @@ GET `/api/peers/version`
 ```text
 {
   "success": true,
-  "version": "version of Lisk",
-  "build": "time of build"
+  "version": "Version of Lisk. String",
+  "build": "Time of build. String"
 }
 ```
 
