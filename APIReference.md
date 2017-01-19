@@ -627,7 +627,15 @@ GET `/api/peers/get?ip=ip&port=port`
 ```text
 {
   "success": true,
-  "peer": "peer object"
+  "peer": {
+        "ip":"requested ip. String",
+        "port":"requested port. Integer",
+        "state":"1 - disconnected. 2 - connected. 0 - banned. Integer",
+        "os":"operating system. String",
+        "version":"Lisk client version. String",
+        "broadhash":"peer block propagation efficiency and reliability. String",
+        "height":"blockchain height. Integer"
+  }
 }
 ```
 
