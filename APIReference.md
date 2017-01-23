@@ -242,9 +242,10 @@ GET `/api/accounts/delegates?address=address`
 ```text
 {
     "success": true,
-    "delegates": [array]
+    "delegates": [
+      "array of delegates object. (see below the delegate object response)"
+    ]
 }
-
 ```
 
 - Delegates Array includes: delegateId, address, publicKey, vote (# of votes), producedBlocks, missedBlocks, rate, productivity
@@ -271,9 +272,29 @@ PUT `/api/accounts/delegates`
 
 **Response**
 ```text
-{
-    "success": true,
-    "transaction": {object}
+{  
+   "success": true,
+   "transaction": {  
+      "type": "Type of transaction. Integer",
+      "amount": "Amount. Integer",
+      "senderPublicKey": "Sender public key. String",
+      "requesterPublicKey": "Requester public key. String",
+      "timestamp": "Time. Integer",
+      "asset":{  
+         "votes":[  
+            "+VotedPublickKey",
+            "-RemovedVotePublicKey"
+         ]
+      },
+      "recipientId": "Recipient address. String",
+      "signature": "Signature. String",
+      "signSignature": "Sign signature. String",
+      "id": "Tx ID. String",
+      "fee": "Fee. Integer",
+      "senderId": "Sender address. String",
+      "relays": "Propagation. Integer",
+      "receivedAt": "Time. String"
+   }
 }
 ```
 
@@ -666,45 +687,6 @@ curl -k -X GET http://localhost:8000/api/peers/version
 ## Blocks
 Blocks management API.
 
-### Get block
-Gets block by provided id.
-
-GET `/api/blocks/get?id=id`
-
-- id: Id of block.
-
-**Response**
-```text
-{
-    "success": true,
-    "block": {
-        "id": "Id of block. String",
-        "version": "Version of block. Integer",
-        "timestamp": "Timestamp of block. Integer",
-        "height": "Height of block. Integer",
-        "previousBlock": "Previous block id. String",
-        "numberOfRequests": "Not using now. Will be removed in 0.2.0",
-        "numberOfTransactions": "Number of transactions. Integer",
-        "numberOfConfirmations": "Not using now.",
-        "totalAmount": "Total amount of block. Integer",
-        "totalFee": "Total fee of block. Integer",
-        "payloadLength": "Payload length of block. Integer",
-        "requestsLength": "Not using now. Will be removed in 0.2.0",
-        "confirmationsLength": "Not using now.,
-        "payloadHash": "Payload hash. Hex",
-        "generatorPublicKey": "Generator public key. Hex",
-        "generatorId": "Generator id. String.",
-        "generationSignature": "Generation signature. Not using. Will be removed in 0.2.0",
-        "blockSignature": "Block signature. Hex"
-    }
-}
-```
-
-**Example**
-```text
-curl -k -X GET http://localhost:8000/api/blocks/get?id=<id>
-```
-
 ### Get blocks
 Gets all blocks by provided filter(s).
 
@@ -729,7 +711,7 @@ Example:
 {
   "success": true,
   "blocks": [
-    "array of blocks"
+    "array of blocks (see below block object response)"
   ]
 }
 ```
@@ -737,6 +719,43 @@ Example:
 **Example**
 ```text
 curl -k -X GET http://localhost:8000/api/blocks?generatorPublicKey=<generatorPublicKey>
+```
+
+### Get block
+Gets block by provided id.
+
+GET `/api/blocks/get?id=id`
+
+- id: Id of block.
+
+**Response**
+```text
+{
+    "success": true,
+    "block": {
+        "id": "Id of block. String",
+        "version": "Version of block. Integer",
+        "timestamp": "Timestamp of block. Integer",
+        "height": "Height of block. Integer",
+        "previousBlock": "Previous block id. String",
+        "numberOfTransactions": "Number of transactions. Integer",
+        "totalAmount": "Total amount of block. Integer",
+        "totalFee": "Total fee of block. Integer",
+        "reward": "Reward block. Integer",
+        "payloadLength": "Payload length of block. Integer",
+        "payloadHash": "Payload hash of block. Integer",
+        "generatorPublicKey": "Generator public key. Hex",
+        "generatorId": "Generator id. String.",
+        "blockSignature": "Block signature. Hex",
+        "confirmations": "Block confirmations. Integer",
+        "totalForged": "Total block forged. Integer"
+    }
+}
+```
+
+**Example**
+```text
+curl -k -X GET http://localhost:8000/api/blocks/get?id=<id>
 ```
 
 ### Get blockchain fee
@@ -932,10 +951,27 @@ PUT `/api/signatures`
 
 **Response**
 ```text
-{
-  "success": true,
-  "transactionId": "id of transaction with new signature",
-  "publicKey": "Public key of signature. hex"
+{  
+   "success": true,
+   "transaction": {  
+      "type": "Type of transaction. Integer",
+      "amount": "Amount. Integer",
+      "senderPublicKey": "Sender public key. String",
+      "requesterPublicKey": "Requester public key. String",
+      "timestamp": Integer,
+      "asset":{  
+         "signature":{  
+            "publicKey": "Public key. String"
+         }
+      },
+      "recipientId": "Recipient address. String",
+      "signature": "Signature. String",
+      "id": "Tx ID. String",
+      "fee": "Fee Integer",
+      "senderId": "Sender address. String",
+      "relays": "Propagation. Integer",
+      "receivedAt": "Time. String"
+   }
 }
 ```
 
@@ -964,9 +1000,29 @@ PUT `/api/delegates`
 ```
 **Response**
 ```text
-{
-  "success": true,
-  "transaction": "transaction object"
+{  
+   "success":true,
+   "transaction":{  
+      "type": "Type of transaction. Integer",
+      "amount": "Amount. Integer",
+      "senderPublicKey": "Sender public key. String",
+      "requesterPublicKey": "Requester public key. String",
+      "timestamp": "Time. Integer",
+      "asset":{  
+         "delegate":{  
+            "username": "Delegate username. String",
+            "publicKey": "Delegate public key. String"
+         }
+      },
+      "recipientId": "Recipient address. String",
+      "signature": "Signature. String",
+      "signSignature": "Sign signature. String",
+      "id": "Tx ID. String",
+      "fee": "Fee. Integer",
+      "senderId": "Sender address. String",
+      "relays": "Propagation. Integer",
+      "receivedAt": "Time. String"
+   }
 }
 ```
 
@@ -1087,7 +1143,9 @@ GET `/api/accounts/delegates/?address=address`
 ```text
 {
   "success": true,
-  "delegates": "array of delegates"
+  "delegates": [
+      "array of of delegates object (see above delegate object response)"
+    ]
 }
 ```
 
@@ -1110,7 +1168,12 @@ GET `/api/delegates/voters?publicKey=publicKey`
 {
   "success": true,
   "accounts": [
-    "array of accounts who vote for delegate"
+    {
+      username: "Voter username. String",
+      address: "Voter address. String",
+      publicKey: "Voter public key. String",
+      balance: "Voter balance. String"
+    }
   ]
 }
 ```
@@ -1194,7 +1257,7 @@ curl -k -X GET http://localhost:8000/api/delegates/forging/getForgedByAccount?ge
 ```
 
 ### Get next forgers
-Get amount of Lisk forged by an account.
+Get next delegate lining up to forge.
 
 GET `/api/delegates/getNextForgers?limit=limit`
 
@@ -1203,11 +1266,12 @@ GET `/api/delegates/getNextForgers?limit=limit`
 **Response**
 ```text
 {
-  "success": true
-  "delegates": [Array of publicKeys. String],
-  "currentSlot": "Current slot based on time. Integer"
-  "currentBlock": "Current block based on height. Integer"
-
+  "success": true,
+  "currentBlock": "Current block based on height. Integer",
+  "currentSlot": "Current slot based on time. Integer",
+  "delegates": [
+          "array of publicKeys. Strings"
+        ]
 }
 
 ```
@@ -1561,6 +1625,7 @@ PUT `/api/multisignatures`
 ```text
 {
     "secret": "your secret. string. required.",
+    "secondSecret": "your second secret of the account. optional"
     "lifetime": "request lifetime in hours (1-24). required.",
     "min": "minimum signatures needed to approve a tx or a change (1-15). integer. required",
     "keysgroup": [array of public keys strings]. add '+' before publicKey to add an account or '-' to remove. required.
@@ -1594,6 +1659,24 @@ GET `/api/multisignatures/accounts?publicKey=publicKey`
 {
   "success": true,
   "accounts": "array of accounts"
+  "accounts": [
+    {
+      "address": "Multisig account. String",
+      "balance": "Multisig account balance. String",
+      "multisignatures": [
+        "Multisig public key member. String"
+      ],
+      "multimin": "Min N of sign for a valid tx. Integer",
+      "multilifetime": "Lifetime. Integer",
+      multisigaccounts": [
+        {
+          "address": "Multisig address member. String",
+          "publicKey": "Multisig public key member. String",
+          "balance": "Multisig balance member. String"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -1640,8 +1723,43 @@ GET `/api/multisignatures/pending?publicKey=publicKey`
 **Response**
 ```text
 {
-    "success": true,
-    "transactions": ['array of transactions to sign']
+  "success": true,
+  "transactions": [
+    {
+      "max": "Max. Integer",
+      "min": "Min. Integer",
+      "lifetime": "Lifetime. Integer",
+      "signed": true,
+      "transaction": {
+        "type": "Type of transaction. Integer",
+        "amount": "Amount. Integer",
+        "senderPublicKey": "Sender public key of transaction. Hex",
+        "requesterPublicKey": "Requester public key. String",
+        "timestamp": "Timestamp. Integer",
+        "asset": {
+          "multisignature": {
+            "min": "Min signatures needed for valid tx. Integer",
+            "keysgroup": [
+              "+Multisig public key member. String"
+            ],
+            "lifetime": "Lifetime. Integer",
+          }
+        },
+        "recipientId": "Recipient address. String",
+        "signature": "Signature. String",
+        "signSignature": "Sign signature. String",
+        "id": "Tx ID",
+        "fee": "Fee. Integer",
+        "senderId": "Sender address. String",
+        "relays": "Propagation. Integer",
+        "receivedAt": Time. String",
+        "signatures": [
+          "array of signatures"
+        ],
+        "ready": false
+      }
+    }
+  ]
 }
 ```
 
