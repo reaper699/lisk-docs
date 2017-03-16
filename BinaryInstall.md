@@ -36,7 +36,7 @@ Follow the download instructions to install Lisk for your selected platform.
 2. Download the install script.
 
   ```text
-  wget https://downloads.lisk.io/scripts/installLisk.sh
+  wget https://downloads.lisk.io/lisk/main/installLisk.sh
   ```
 
 3. Execute the install script. This will download and install Lisk, configuring the environment for use.
